@@ -56,15 +56,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 */
 
-// $route['news/create'] = 'news/create';
-// $route['news/(:any)'] = 'news/view/$1';
-// $route['news'] = 'news';
-
-// $route['rss/(:any)'] = 'rss/$1';
-// $route['rss'] = 'rss';
-
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['(:any)'] = 'welcome';
+$route['default_controller'] = 'welcome';
