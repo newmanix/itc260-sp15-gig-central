@@ -8,9 +8,9 @@
  *
  * @package ITC260
  * @subpackage Customer
- * @author 
+ * @author
  * @version 1.0 2015/5/14
- * @link  
+ * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see controllers/Customer.php
  * @see models/Customer_model.php
@@ -19,16 +19,13 @@
 
 $this->load->view($this->config->item('theme').'header'); ?>
 
-<h2><?php echo $title ?></h2>
-<?php echo $query ?>
+<h2><?= $title; ?></h2>
 
+<?php foreach($query->result() as $customer): ?>
 
+    <?php echo $customer->FirstName . "<br / >"; ?>
 
-<?php foreach ($query as $customer): ?>
-
-    <?php echo $customer['FirstName'] . "<br / >"; ?>
-
-<?php endforeach ?>
+<?php endforeach; ?>
 
 
 

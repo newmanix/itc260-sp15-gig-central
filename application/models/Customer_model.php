@@ -6,9 +6,9 @@
  *
  * @package ITC260
  * @subpackage Customer
- * @author 
- * @version 1.0 2015/5/14 
- * @link 
+ * @author
+ * @version 1.0 2015/5/14
+ * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see Customer.php
  * @see index.php
@@ -37,7 +37,6 @@ class Customer_model extends CI_Model {
 
     public function get_customers()
     {
-        return 'Hello from the customer model';
         return $this->db->get('test_Customers');
     }
 
