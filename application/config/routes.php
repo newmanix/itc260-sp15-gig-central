@@ -67,4 +67,4 @@ $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'customer';
