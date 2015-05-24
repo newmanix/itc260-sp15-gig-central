@@ -61,5 +61,10 @@ $route['login'] = 'login';
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 
+<<<<<<< HEAD
 $route['(:any)'] = 'welcome';
 $route['default_controller'] = 'welcome';
+=======
+$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'customer';
+>>>>>>> origin/master
