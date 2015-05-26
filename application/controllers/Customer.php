@@ -6,9 +6,9 @@
  *
  * @package ITC260
  * @subpackage Customer
- * @author 
- * @version 1.0 2015/05/14 
- * @link 
+ * @author
+ * @version 1.0 2015/05/14
+ * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see Customer_model.php
  * @see index.php
@@ -38,6 +38,7 @@ class Customer extends CI_Controller {
                 parent::__construct();
                 $this->load->model('customer_model');
                 $this->config->set_item("banner", "Global Customer Banner");
+                $this->load->helper('form');
         }
 
         /**
@@ -53,6 +54,19 @@ class Customer extends CI_Controller {
                 $data['title'] = 'Customer';
                 $this->load->view('customer/index', $data);
 
+        }
+
+        /**
+         * Shows form example with BootStrap classes
+         *
+         * @param none
+         * @return void
+         * @todo none
+         */
+        public function example() {
+            $this->config->set_item('banner', 'Flatly Example Banner');
+            $this->config->set_item('title', 'Flatly example');
+            $this->load->view('forms/example');
         }
 
 }//END Customer

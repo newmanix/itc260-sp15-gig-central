@@ -66,5 +66,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 
+//bootswatch example route
+$route['example'] = 'customer/example';
+
+
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'customer';
