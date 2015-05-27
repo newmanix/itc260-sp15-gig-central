@@ -67,5 +67,8 @@ $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 $route['startups'] = 'startups';
 
+//bootswatch example route
+$route['example'] = 'customer/example';
+
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'customer';
