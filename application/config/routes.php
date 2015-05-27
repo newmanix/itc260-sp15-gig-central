@@ -65,6 +65,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
+$route['startups'] = 'startups';
 
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
