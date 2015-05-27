@@ -17,8 +17,11 @@
  * @todo none
  */
 
-$this->load->view($this->config->item('theme').'header'); ?>
+$this->load->view($this->config->item('theme').'header'); 
+$this->load->library('passphraseclass');
+$this->passphraseclass->passphrase();
 
+?>
 <h2><?= $title; ?></h2>
 
 <?php foreach($query->result() as $customer): ?>
