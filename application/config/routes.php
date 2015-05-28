@@ -60,6 +60,10 @@ $route['login'] = 'login';
 
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
+$route['startups'] = 'startups';
+
+//bootswatch example route
+$route['example'] = 'customer/example';
 
 <<<<<<< HEAD
 $route['(:any)'] = 'welcome';
@@ -67,4 +71,7 @@ $route['default_controller'] = 'welcome';
 =======
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'customer';
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
