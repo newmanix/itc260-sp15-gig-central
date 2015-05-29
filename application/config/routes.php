@@ -61,6 +61,7 @@ $route['login'] = 'login';
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 $route['startups'] = 'startups';
+$route['profile_form'] = 'profile_form';
 
 //bootswatch example route
 $route['example'] = 'customer/example';
