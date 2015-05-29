@@ -1,34 +1,34 @@
 <?php
 /**
- * view/customer/index.php
- *
- * view page for generic Customer controller
- *
- * Used to show how to do CRUD in CodeIgniter
- *
+ * index.php - a view page for generic Customer controller.
+ * 
+ * Additionaly, it does CRUD within the CI Framework.
+ * 
+ * views/customer/index.php
+ * 
  * @package ITC260
  * @subpackage Customer
- * @author
- * @version 1.0 2015/5/14
- * @link
+ * @author Aleksandar Petrovic <alpe88.junk@gmail.com>
+ * @version 1.0 2015/04/30 
+ * @link http://www.thisisablankspace.com/ 
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @see controllers/Customer.php
- * @see models/Customer_model.php
+ * @see Customer_model.php
+ * @see Customer.php
  * @todo none
  */
+?>
 
-$this->load->view($this->config->item('theme').'header'); ?>
+<?php foreach ($customer as $customer_info): ?>
 
-<h2><?= $title; ?></h2>
+        <div class="main">
+		
+                <?php echo '<h2>Full Name:</h2><h3>'.$customer_info['LastName'] ." ". $customer_info['FirstName'].'</h3>';
+			echo '<h2>Email:</h2> <h3>'.$customer_info['Email'].'</h3>';
+		?>
+        </div>
+        <!--<p>
+		<?php echo anchor($customer_info['slug'], 'View Article'); ?>
+	 </p>-->
 
-<?php foreach($query->result() as $customer): ?>
-
-    <?php echo $customer->FirstName . "<br / >"; ?>
-
-<?php endforeach; ?>
-
-
-
-
-
-<?php $this->load->view($this->config->item('theme').'footer'); ?>
+		
+<?php endforeach ?>
