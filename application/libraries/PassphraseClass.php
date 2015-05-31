@@ -1,67 +1,49 @@
 <?php 
 /**
-* libraries/PassphraseClass.php
+ * libraries/PassphraseClass.php
+ *
+ * library for one passphrase login feature
+ *
+ * @package GigCentral
+ * @subpackage PassPhrase
+ * @author Kate Lee, Casey Choiniere
+ * @version 1.0 2015/5/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see views/passphrase/index.php
+ *
+ * <code>
+ * $this->load->library('passphraseclass');
+ * $this->passphraseclass->passphrase();
+ * </code>
+ * 
+ * @todo none
 */
 if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 class PassphraseClass {
-    
     public function passphrase()
     {
-
-        $message ="";
-        define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
-        //store the passcode
-        $key ='abc123';
-        if(isset($_POST['submit'])) {
-                //create a session variable that will confirm your revisit before the session ends.
-                $_SESSION['passed-phrase'] = $_POST['password'];
+        
+        $CI =& get_instance(); //assign the CodeIgniter object to a variable to use load class
+        $key ='gigcentral'; //store the passcode
+        $data['red'] = $_SERVER['REQUEST_URI'];
+        if($_SESSION['passed-phrase'] != $key){
+            if(isset($_POST['submit'])) {//if any password has submitted
+                $_SESSION['passed-phrase'] = $_POST['password'];//create a session variable that will confirm your revisit before the session ends.
                 if ($_POST['password'] == $key){//when the form get submitted check the submitted value
                     //show the page
                 }else{
-                    //wrong password. show log-in form
-                    //createForm($message); 
-                    echo ' <br/><br/><div class=login>
-                    <h3 class=login-message>' . $message.  '</h3>
-                    <form action="' . THIS_PAGE . '" method="post">
-                    <input type="password" name="password" value=""  class="login-input"/>
-                    <br />
-                    <input type="submit" name="submit" value="Login" />
-                    </form>
-                    </div>
-                    ';
-                    echo 'Wrong password. Please enter again.';//should use the feedback helper, just using this for now
-                    die; 
+                    $data['message'] = 'Wrong password. Please enter again.';
+                    $CI->load->view('passphrase/index', $data); 
+                    exit();
                 }
-        }else{
-            //default show log-in form
-            $message = 'Enter your password to see this page';
-            //createForm($message);
-            echo ' <div class=login>
-            <h3 class=login-message>' . $message.  '</h3>
-            <form action="' . THIS_PAGE . '" method="post">
-            <input type="password" name="password" value=""  class="login-input"/>
-            <br />
-            <input type="submit" name="submit" value="Login" />
-            </form>
-            </div>
-            ';
-        die;
+            }else{
+            //default show log-in form            
+                $data['message'] = 'Enter your password to see this page';
+                $CI->load->view('passphrase/index', $data); 
+                exit();
+            }
         }
     }
-    
-    /*
-    function createForm($message){
-        echo ' <div class=login>
-            <h3 class=login-message>' . $message.  '</h3>
-            <form action="' . THIS_PAGE . '" method="post">
-            <input type="password" name="password" value=""  class="login-input"/>
-            <br />
-            <input type="submit" name="submit" value="Login" />
-            </form>
-            </div>
-            ';
-        die;
-    }
-    */
 }
 /* End of file LoginClass.php */
