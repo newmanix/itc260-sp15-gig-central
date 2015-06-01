@@ -25,25 +25,26 @@ class PassphraseClass {
 
     public function passphrase()
     {
+        
         $CI =& get_instance(); //assign the CodeIgniter object to a variable to use load class
         $key ='gigcentral'; //store the passcode
-        $SESSION['red'] = $_SERVER['REQUEST_URI']; //Path derives properly on Windows & UNIX. alternatives: SCRIPT_URL, PHP_SELF
-        $data['red'] = $SESSION['red']; 
-        
-        if(isset($_POST['submit'])) {//if any password has submitted
-            $_SESSION['passed-phrase'] = $_POST['password'];//create a session variable that will confirm your revisit before the session ends.
-            if ($_POST['password'] == $key){//when the form get submitted check the submitted value
-                //show the page
+        $data['red'] = $_SERVER['REQUEST_URI'];
+        if($_SESSION['passed-phrase'] != $key){
+            if(isset($_POST['submit'])) {//if any password has submitted
+                $_SESSION['passed-phrase'] = $_POST['password'];//create a session variable that will confirm your revisit before the session ends.
+                if ($_POST['password'] == $key){//when the form get submitted check the submitted value
+                    //show the page
+                }else{
+                    $data['message'] = 'Wrong password. Please enter again.';
+                    $CI->load->view('passphrase/index', $data); 
+                    exit();s
+                }
             }else{
-                $data['message'] = 'Wrong password. Please enter again.';
+            //default show log-in form            
+                $data['message'] = 'Enter your password to see this page';
                 $CI->load->view('passphrase/index', $data); 
                 exit();
             }
-        }else{
-        //default show log-in form            
-            $data['message'] = 'Enter your password to see this page';
-            $CI->load->view('passphrase/index', $data); 
-            exit();
         }
     }
 }
