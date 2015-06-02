@@ -37,7 +37,7 @@ class PassphraseClass {
                 }else{
                     $data['message'] = 'Wrong password. Please enter again.';
                     $CI->load->view('passphrase/index', $data); 
-                    exit();s
+                    exit();
                 }
             }else{
             //default show log-in form            
