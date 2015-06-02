@@ -1,35 +1,35 @@
 <?php
 //Startups.php controller
-class Startups extends CI_Controller {
+class Profile_List extends CI_Controller {
 
     public function __construct()
     {//everything here is global to all methods in the controller
          parent::__construct();
-         $this->load->model('startup_model');
+         $this->load->model('profile_model');
          $this->config->set_item('banner','Global Startup Banner');
     }#end constructor()
 
 	public function index()
 	{
-			$data['startups'] = $this->startup_model->get_startups();
-			$data['title'] = 'Startups';
-			$this->load->view('startups/index', $data);
+			$data['profiles'] = $this->startup_model->get_startups();
+			$data['title'] = 'Profiles';
+			$this->load->view('profiles/index', $data);
 	}#end index()
 
 	public function view($slug = NULL)
 	{
-			$data['startup'] = $this->startup_model->get_startups($slug);
+			$data['profile'] = $this->startup_model->get_startups($slug);
 
-			if (empty($data['startup']))
+			if (empty($data['profile']))
 			{
 					show_404();
 			}
 
-			$data['title'] = $data['startup']['title'];
-			$this->load->view('startups/view', $data);
+			$data['title'] = $data['profile']['title'];
+			$this->load->view('profiles/view', $data);
 	}#end view()
-
-
+    
+    
     public function create()
     {
         $this->load->helper('form');
