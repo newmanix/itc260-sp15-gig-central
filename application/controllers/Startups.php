@@ -7,6 +7,7 @@ class Startups extends CI_Controller {
          parent::__construct();
          $this->load->model('startup_model');
          $this->config->set_item('banner','Global Startup Banner');
+         $this->config->set_item("banner-img", "img/Startup-logo.png");
     }#end constructor()
 
 	public function index()
