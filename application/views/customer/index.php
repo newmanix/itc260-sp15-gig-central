@@ -4,7 +4,7 @@
  *
  * view page for generic Customer controller
  *
- * Used to TEST GigCentral
+ * Used to show how to do CRUD in CodeIgniter
  *
  * @package ITC260
  * @subpackage Customer
@@ -17,10 +17,8 @@
  * @todo none
  */
 
-$this->load->view($this->config->item('theme').'header'); 
-$this->load->library('passphraseclass');
-$this->passphraseclass->passphrase();
-?>
+$this->load->view($this->config->item('theme').'header'); ?>
+
 <h2><?= $title; ?></h2>
 
 <?php foreach($query->result() as $customer): ?>
@@ -28,5 +26,9 @@ $this->passphraseclass->passphrase();
     <?php echo $customer->FirstName . "<br / >"; ?>
 
 <?php endforeach; ?>
+
+
+
+
 
 <?php $this->load->view($this->config->item('theme').'footer'); ?>

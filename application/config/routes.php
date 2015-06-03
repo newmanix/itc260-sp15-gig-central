@@ -56,23 +56,15 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 */
 
-$route['login'] = 'login';
+// $route['news/create'] = 'news/create';
+// $route['news/(:any)'] = 'news/view/$1';
+// $route['news'] = 'news';
+
+// $route['rss/(:any)'] = 'rss/$1';
+// $route['rss'] = 'rss';
 
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
-$route['startups'] = 'startups';
-$route['profile_form'] = 'profile_form';
-
-//bootswatch example route
-$route['example'] = 'customer/example';
-
-<<<<<<< HEAD
-$route['(:any)'] = 'welcome';
-$route['default_controller'] = 'welcome';
-=======
+$route['gig/form'] = 'gig/form';
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'customer';
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
