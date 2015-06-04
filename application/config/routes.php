@@ -56,8 +56,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 */
 
-$route['login'] = 'login';
-
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 $route['startups'] = 'startups';
@@ -67,4 +65,4 @@ $route['profile_form'] = 'profile_form';
 $route['example'] = 'customer/example';
 
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'customer';
+$route['default_controller'] = 'welcome';
