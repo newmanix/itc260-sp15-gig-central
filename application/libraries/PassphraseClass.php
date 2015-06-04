@@ -19,31 +19,43 @@
  * 
  * @todo none
 */
+
 if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 class PassphraseClass {
+
     public function passphrase()
     {
         
         $CI =& get_instance(); //assign the CodeIgniter object to a variable to use load class
         $key ='gigcentral'; //store the passcode
         $data['red'] = $_SERVER['REQUEST_URI'];
-        if($_SESSION['passed-phrase'] != $key){
-            if(isset($_POST['submit'])) {//if any password has submitted
-                $_SESSION['passed-phrase'] = $_POST['password'];//create a session variable that will confirm your revisit before the session ends.
-                if ($_POST['password'] == $key){//when the form get submitted check the submitted value
-                    //show the page
-                }else{
-                    $data['message'] = 'Wrong password. Please enter again.';
-                    $CI->load->view('passphrase/index', $data); 
-                    exit();
-                }
+        
+        if(isset($_SESSION['passed-phrase']) == false){ 
+        //If not key stored in session do this.
+            
+            if( isset($_POST['submit']) && $_POST['password'] == $key ) {
+            //if summitted password matches the key
+                
+                $_SESSION['passed-phrase'] = $_POST['password'];
+                //store the correct password to a session variable and  
+                //show the page
+                
+            }elseif( isset($_POST['submit']) && $_POST['password'] != $key ){
+            // else if summitted password is wrong
+                
+                $data['message'] = 'Wrong password. Please enter again.';
+                $CI->load->view('passphrase/index', $data); 
+                exit();
+            
             }else{
             //default show log-in form            
+                
                 $data['message'] = 'Enter your password to see this page';
                 $CI->load->view('passphrase/index', $data); 
                 exit();
             }
         }
+        //show current page
     }
 }
 /* End of file LoginClass.php */

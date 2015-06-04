@@ -53,6 +53,7 @@ class Customer extends CI_Controller {
                 $data['query'] = $this->customer_model->get_customers();
                 $data['title'] = 'Customer';
                 $this->load->view('customer/index', $data);
+                $this->config->set_item("banner-img", "img/Gig-logo.png");
 
         }
 

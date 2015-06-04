@@ -56,12 +56,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 */
 
-// $route['news/create'] = 'news/create';
-// $route['news/(:any)'] = 'news/view/$1';
-// $route['news'] = 'news';
-
-// $route['rss/(:any)'] = 'rss/$1';
-// $route['rss'] = 'rss';
+$route['login'] = 'login';
 
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
@@ -70,6 +65,8 @@ $route['profile_form'] = 'profile_form';
 
 //bootswatch example route
 $route['example'] = 'customer/example';
+
+$route['profile/(:any)'] = 'profile/view/$1';
 
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'customer';
