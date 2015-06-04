@@ -66,13 +66,5 @@ $route['profile_form'] = 'profile_form';
 //bootswatch example route
 $route['example'] = 'customer/example';
 
-<<<<<<< HEAD
-$route['(:any)'] = 'welcome';
-$route['default_controller'] = 'welcome';
-=======
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'customer';
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
