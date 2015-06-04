@@ -6,6 +6,6 @@ class Profile_model extends CI_Model {
     }
 
     public function loadProfile($userId) {
-        return $this->db->get_where('profiles', array('id' => $userId));
+        return $this->db->get_where('Profile', array('ProfileID' => $userId));
     }
 }

@@ -8,11 +8,12 @@ class Profile extends CI_Controller {
 
     public function view($userId) {
         $userQuery = $this->profile_model->loadProfile($userId);
-        if (empty($userQuery)) {
+        if (!$userQuery->result_id->num_rows) {
             return show_404();
         }
-        $this->config->set_item('title', $userQuery->userId);
-        $data["profile"] = $userQuery;
+        $userResults = $userQuery->result()[0];
+        $this->config->set_item('title',$userResults->FirstName . " " . $userResults->LastName . "'s Profile");
+        $data["profile"] = $userResults;
         $this->load->view("profile/index", $data);
     }
 }
