@@ -67,4 +67,6 @@ $route['example'] = 'customer/example';
 $route['profile/(:any)'] = 'profile/view/$1';
 
 $route['(:any)'] = 'pages/view/$1';
+//Kate's homepage routes
+$route['welcome2'] = 'welcome2';
 $route['default_controller'] = 'welcome';
