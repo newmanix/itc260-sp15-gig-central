@@ -71,21 +71,21 @@ CREATE TABLE sc_VenueReview(
     INDEX VenueReviewKey_index(VenueReviewKey)
 )ENGINE=INNODB;
 
-INSERT INTO sc_VenueType values (null, Coffee shop);
-INSERT INTO sc_VenueType values (null, Library);
+INSERT INTO sc_VenueType values (null, 'Coffee shop');
+INSERT INTO sc_VenueType values (null, 'Library');
 
-INSERT INTO sc_Venue values (null, "Elliott Bay Book Company", 1, "1521 10th Ave, Seattle, WA  98122", "2066246600", "http://www.elliottbaybook.com", "M-Th 10am-10pm, F-S 10am-11pm, Sun INSERT INTO sc_values VenueAmenity (null, 7, "$", 1, "L", 1, 1);
+INSERT INTO sc_Venue values (null, "Elliott Bay Book Company", 1, "1521 10th Ave, Seattle, WA  98122", "2066246600", "http://www.elliottbaybook.com", "M-Th 10am-10pm, F-S 10am-11pm, Sun"); 
 
-INSERT INTO sc_Venue values (null, "Caffe Vita", 1, "1005 E Pike St, Seattle, WA  98122", "2067094440", "http://www.caffevita.com/locations/wa/capitol-hill", "M-F 6am-11pm, S-Sun 7am-11pm")
-INSERT INTO sc_VenueAmenity values (null, 7, "$", 1, "H", 0, 1);
+INSERT INTO sc_VenueAmenity values (null, 1, "$", 1, "L", 1, 1);
 
-INSERT INTO sc_Venue values (null, "Seattle Public Library - Capitol Hill Branch", 2, "425 Harvard Ave E, Seattle, WA  98102", "2066844715", "http://www.spl.org/locations/capitol-hill-branch", "M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm")
-INSERT INTO sc_VenueAmenity values(null, 10, "Free", 1, "L", 0, 1);
+INSERT INTO sc_Venue values (null, "Caffe Vita", 1, "1005 E Pike St, Seattle, WA  98122", "2067094440", "http://www.caffevita.com/locations/wa/capitol-hill", "M-F 6am-11pm, S-Sun 7am-11pm");
 
-INSERT INTO sc_VenueReview values (null, 9, 1, 3, "It's noisy and their WiFi drops continuously", 20150526);
-(Casey Choiniere)
+INSERT INTO sc_VenueAmenity values (null, 2, "$", 1, "H", 0, 1);
+
+INSERT INTO sc_Venue values (null, "Seattle Public Library - Capitol Hill Branch", 2, "425 Harvard Ave E, Seattle, WA  98102", "2066844715", "http://www.spl.org/locations/capitol-hill-branch", "M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm");
+
+INSERT INTO sc_VenueAmenity values(null, 3, "Free", 1, "L", 0, 1);
+
+INSERT INTO sc_VenueReview values (null, 1, 1, 3, "It's noisy and their WiFi drops continuously", 20150526);
 
 SET foreign_key_checks = 0; #turn off constraints temporarily
-INSERT INTO sc_VenueAmenity (null, 7, "$", 1, "L", 1, 1);
-INSERT INTO sc_VenueAmenity (null, 9, "$", 1, "H", 0, 1);
-INSERT INTO sc_VenueAmenity (null, 10, "Free", 1, "L", 0, 1);
