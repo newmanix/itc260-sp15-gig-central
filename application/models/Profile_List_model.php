@@ -1,42 +1,35 @@
 <?php
-class Profile_List_model extends CI_Model {
-
-      public function __construct()
-            {
+class Profile_List_model extends CI_Model
+{
+    public function __construct()
+    {
         $this->load->database();
     
-}//end constructor
+    }//end constructor
 
-
-    public function get_startups($slug = FALSE)
+    public function get_profiles($slug = FALSE)
     {
         if ($slug === FALSE)
         {
-            $query = $this->db->get('profile');
+            $query = $this->db->get('Profile');
             return $query->result_array();
-        
-}
-
-        $query = $this->db->get_where('profiles', array('slug' => $slug));
+        }
+        $query = $this->db->get_where('profiles', array('FirstName' => $slug));
         return $query->row_array();
      
-}//end get_news method
+    }//end get_news method
 
-
-    public function set_startups()
+    public function set_profiles()
     {
          $this->load->helper('url');
 
-                 $slug = url_title($this->input->post('title'), 'dash', TRUE);
+         $slug = url_title($this->input->post('FirstName'), 'dash', TRUE);
 
          $data = array(
-            'title' => $this->input->post('title'),
+            'FirstName' => $this->input->post('FirstName'),
             'slug' => $slug,
-            'text' => $this->input->post('text')
-                                
+            'Email' => $this->input->post('Email')
          );
-
         return $this->db->insert('profiles', $data);
-    
-}//end set_startups method
+    }//end set_profiles method
 }//end class
