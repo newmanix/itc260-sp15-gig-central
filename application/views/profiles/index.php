@@ -1,18 +1,18 @@
 <?php
-//views/startups/index.php
+//views/profiles/index.php
 $this->load->view($this->config->item('theme') . 'header');
 ?>
 <h2><?php echo $title ?></h2>
 
 <?php foreach ($profiles as $profile): ?>
 
-        <h3><?php echo $profile['title'] ?></h3>
+        <h3><?php echo $profile['FirstName']; $profile['LastName'] ?></h3>
         <div class="main">
-                <?php echo $profile['text'] ?>
+                <?php echo $profile['Email'] ?>
         </div>
 <p>
 <?php
-    echo anchor('profiles/' . $profile['slug'],'View Startup');
+    echo anchor('profiles/' . $profile['ProfileID'],'View Profile');
 ?>
 </p>
 
