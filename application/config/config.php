@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://gigcentral.kateleeseattle.com/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +28,7 @@ $config['base_url'] = 'http://gigcentral.kateleeseattle.com/';
 | something else. If you are using mod_rewrite to remove the page set this
 | variable so that it is blank.
 |
+| DEFAULT: $config['index_page'] = 'index.php';
 */
 $config['index_page'] = '';
 
