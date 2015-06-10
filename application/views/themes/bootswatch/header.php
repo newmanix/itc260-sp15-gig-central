@@ -10,7 +10,11 @@
     <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- font-awesome CSS link -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
+
   <body>
      <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
