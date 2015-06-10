@@ -57,14 +57,18 @@ $route['translate_uri_dashes'] = FALSE;
 */
 
 $route['login'] = 'login';
-$route['gig'] = 'gig';
+
+$route['about'] = 'about';
+
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
-$route['rss'] = 'rss';
-$route['rss/(:any)'] = 'rss/view/';
-$route['news/create'] = 'news/create';
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
+$route['startups'] = 'startups';
+$route['profile_form'] = 'profile_form';
+
+//bootswatch example route
+$route['example'] = 'customer/example';
+
 $route['profile/(:any)'] = 'profile/view/$1';
-$route['(:any)'] = 'pages/$1';
-$route['default_controller'] = 'pages';
+
+$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'customer';
