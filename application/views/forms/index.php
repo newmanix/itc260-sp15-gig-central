@@ -1,5 +1,26 @@
+<?php
+/**
+ * view/forms/index.php
+ *
+ * view page for generic Customer controller
+ *
+ * Used to TEST GigCentral
+ *
+ * @package ITC260
+ * @subpackage Startup_Form
+ * @author
+ * @version 1.0 2015/6/09
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see controllers/Startup.php
+ * @see models/Startup_model.php
+ * @todo none
+ */
 
-<?php $this->load->view($this->config->item('theme') . 'header'); ?> #Set this up for the new theme
+$this->load->view($this->config->item('theme').'header'); 
+$this->load->library('passphraseclass');
+$this->passphraseclass->passphrase();
+?>
 <div class="container">
   <div class="col-lg-10">
     <h1>Startup Central Form</h1>
@@ -126,4 +147,5 @@
     </div>
 </div>
 
-<?php $this->load->view($this->config->item('theme') . 'footer'); ?> #Set this up for the new theme
+
+<?php $this->load->view($this->config->item('theme').'footer'); ?>
