@@ -14,7 +14,7 @@ class Profile_List_model extends CI_Model
             $query = $this->db->get('Profile');
             return $query->result_array();
         }
-        $query = $this->db->get_where('profiles', array('FirstName' => $slug));
+        $query = $this->db->get_where('profiles', array('slug' => $slug));
         return $query->row_array();
      
     }//end get_news method
