@@ -1,7 +1,10 @@
-      <footer>
+<footer>
         <div class="row">
-          <div class="col-lg-12">
-            
+		<div class="col-xs-12">
+			<?php if(isset($footernav) && !empty($footernav)) echo $footernav; ?>
+		</div>
+          <div class="col-xs-12">
+		<hr />
             <ul class="list-unstyled">
               <li class="pull-right"><a href="#top">Back to top</a></li>
             </ul>
