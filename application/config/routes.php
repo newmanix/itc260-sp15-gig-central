@@ -64,6 +64,7 @@ $route['startups'] = 'startups';
 $route['profile_form'] = 'profile_form';
 $route['profiles'] = 'profile_list';
 
+//bootswatch example route
 $route['example'] = 'customer/example';
 
 $route['rss'] = 'rss';
@@ -74,3 +75,4 @@ $route['news'] = 'news';
 $route['profile/(:any)'] = 'profile/view/$1';
 $route['(:any)'] = 'pages/$1';
 $route['default_controller'] = 'pages';
+
