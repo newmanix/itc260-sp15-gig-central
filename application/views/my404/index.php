@@ -26,8 +26,7 @@ $this->load->view($this->config->item('theme') . 'header');
             <h1>404 Page</h1>
             
             <div class="well bs-component">
-                <h3>Oops! We all make mistakes. The page you are looking for does not exist</h3>
-                
+                <h3>Oops! We all make mistakes. The page you are looking for does not exist.</h3>
             </div><!-- end .well .bs-compent div -->
         </div>
         
