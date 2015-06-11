@@ -11,3 +11,5 @@
  $config['copyright'] = 'Default Copyright';
  $config['theme'] = 'themes/bootswatch/';
  $config['banner-href'] = './';
+ $config['banner-href'] = './';
+ $config['banner-img'] = 'img/Gig-logo.png';
