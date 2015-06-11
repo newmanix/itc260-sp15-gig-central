@@ -29,8 +29,8 @@ class Startups extends CI_Controller {
 			$data['title'] = $data['startup']['title'];
 			$this->load->view('startups/view', $data);
 	}#end view()
-    
-    
+
+
     public function create()
     {
         $this->load->helper('form');
