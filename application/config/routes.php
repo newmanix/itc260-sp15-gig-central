@@ -70,3 +70,5 @@ $route['profile/(:any)'] = 'profile/view/$1';
 
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'customer';
+
+$route['404_override'] = 'my404';
