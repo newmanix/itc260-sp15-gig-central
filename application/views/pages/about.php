@@ -16,4 +16,5 @@ Gig Central is based in the Seattle area and is currently limited to local emplo
     </div><!-- end .row -->
 </div><!-- end .container -->
 
+
 <?php $this->load->view($this->config->item('theme').'footer'); ?>
