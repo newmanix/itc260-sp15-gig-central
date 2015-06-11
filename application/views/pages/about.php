@@ -1,5 +1,7 @@
 <?php $this->load->view($this->config->item('theme').'header'); ?>
 
+<div class="container">
+    <div class="row col-xs-12 col-md-8">
 <h1>About Us</h1>
 <p>
 Gig Central was created in May 2015 as a student project at Seattle Central College.  We are an online meeting place for web developers and employers.  Our goal is to create a community that serves the needs of both companies and technology professionals.</p>
@@ -11,5 +13,7 @@ At Gig Central web developers can find work projects that fit their skill sets. 
 Most web developers at Gig Central are current students at Seattle Central College.  Our services are also open to recent graduates.  The project is managed by students with advice and support from college instructors.</p>
 <p>
 Gig Central is based in the Seattle area and is currently limited to local employers.  The service may possibly be extended to other cities later.</p>
+    </div><!-- end .row -->
+</div><!-- end .container -->
 
 <?php $this->load->view($this->config->item('theme').'footer'); ?>
