@@ -67,17 +67,7 @@ $route['profiles'] = 'profile_list';
 //bootswatch example route
 $route['example'] = 'customer/example';
 
-$route['rss'] = 'rss';
-$route['rss/(:any)'] = 'rss/view/';
-$route['news/create'] = 'news/create';
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
 $route['profile/(:any)'] = 'profile/view/$1';
 $route['(:any)'] = 'pages/$1';
 $route['default_controller'] = 'pages';
-
-
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'customer';
 $route['404_override'] = 'my404';
-
