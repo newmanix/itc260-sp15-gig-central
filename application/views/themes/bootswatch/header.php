@@ -21,7 +21,7 @@
         <div class="navbar-header">
 
 
-          <a href="<?= $this->config->item('banner-href'); ?>" class="navbar-brand"><img src="<?= $this->config->item('banner-img'); ?>"></a>
+          <a href="<?= $this->config->item('banner-href'); ?>" class="navbar-brand"><img src="<?= base_url() .  $this->config->item('banner-img'); ?>"></a>
 
 
 		    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
