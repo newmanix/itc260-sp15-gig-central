@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS Profiles;
 
 CREATE TABLE Profiles (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
- i_am_a ENUM('checkbox','radio','select','text') DEFAULT 'select',
+ i_am_a TEXT DEFAULT '',
  first_name TEXT DEFAULT '',
  last_name TEXT DEFAULT '',
  email TEXT DEFAULT '',

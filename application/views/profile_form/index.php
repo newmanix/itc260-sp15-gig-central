@@ -45,9 +45,9 @@ $this->load->view($this->config->item('theme') . 'header');
           <?php echo form_error('i_am_a'); ?>
           <?php $options = array(
             ''  => 'Please Select',
-            'example_value1'    => 'Student',
-            'example_value2'    => 'Alumni',
-            'example_value3'    => 'Staff'
+            'Student'    => 'Student',
+            'Alumni'    => 'Alumni',
+            'Staff'    => 'Staff'
           ); ?>
           <br /><?php echo form_dropdown('i_am_a', $options, set_value('i_am_a'))?>
         </div>
