@@ -17,45 +17,16 @@
 
 SET foreign_key_checks = 0; #turn off constraints temporarily
 
-DROP TABLE IF EXISTS Profile;
-DROP TABLE IF EXISTS Profile_responses;
+
+DROP TABLE IF EXISTS Profiles;
 
 
-
-
-
-CREATE TABLE Profile(
-ProfileID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-User TEXT DEFAULT '',
-InputType ENUM('checkbox','radio','select','text') DEFAULT 'select',
-FirstName TEXT DEFAULT '',
-LastName TEXT DEFAULT '',
-Email TEXT DEFAULT '',
-Languages TEXT DEFAULT '',
-DateAdded DATETIME,
-LastUpdated TIMESTAMP DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (ProfileID)
-)ENGINE=INNODB;
-
-INSERT INTO Profile VALUES (NULL,'I am a','select','First Name','Last Name','Email', 'Languages and Skills',NOW(),NOW());
-
-
-CREATE TABLE Profile_responses(
-ProfileResponsesID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-ProfileID INT UNSIGNED DEFAULT 0,
-UserResponses TEXT DEFAULT '',
-FirstNameResponses TEXT DEFAULT '',
-LastNameResponses TEXT DEFAULT '',
-EmailResponses TEXT DEFAULT '',
-LanguagesResponses TEXT DEFAULT '',
-DateAdded DATETIME,
-LastUpdated TIMESTAMP DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
-Status INT DEFAULT 0,
-PRIMARY KEY (ProfileResponsesID),
-INDEX Profile_index(ProfileID),
-FOREIGN KEY (ProfileID) REFERENCES Profile(ProfileID) ON DELETE CASCADE
-)ENGINE=INNODB;
-
-INSERT INTO Profile_responses values (NULL,1,'Student','','','','',NOW(),NOW(),0);
-INSERT INTO Profile_responses values (NULL,1,'Alumni','','','','',NOW(),NOW(),0);
-INSERT INTO Profile_responses values (NULL,1,'Staff','','','','',NOW(),NOW(),0);
+CREATE TABLE Profiles (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ i_am_a ENUM('checkbox','radio','select','text') DEFAULT 'select',
+ first_name TEXT DEFAULT '',
+ last_name TEXT DEFAULT '',
+ email TEXT DEFAULT '',
+ languages TEXT DEFAULT '',
+ PRIMARY KEY (id)
+) ENGINE=INNODB;

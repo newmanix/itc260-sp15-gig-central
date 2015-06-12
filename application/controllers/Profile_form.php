@@ -10,7 +10,7 @@
 * @version 1.0 2015/05/21
 * @link http://www.example.com/
 * @license http://www.apache.org/licenses/LICENSE-2.0
-* @see Profile_model.php
+* @see Profile_form-model.php
 * @see index.php
 * @todo none
 */
@@ -35,19 +35,60 @@ class Profile_form extends CI_Controller {//begin controller
   */
   public function __construct()
   {//begin constructor
-
+    //$this->config->set_item('banner', 'Global News Banner');
     parent::__construct();
-    $this->config->set_item('banner', 'Global News Banner');
+    $this->load->library('form_validation');
+    $this->load->database();
+    $this->load->helper('form');
+    $this->load->helper('email');
+    $this->load->helper('url');
+    $this->load->model('Profile_form_model');
+
 
 
   }//end constructor
+  //$this->load->view('profile_form/index');
 
-  public function index()
-  {//begin function index
 
-    $this->load->view('profile_form/index');
+  function index()
+  {
+    $this->form_validation->set_rules('i_am_a', 'I am a', 'required');
+    $this->form_validation->set_rules('first_name', 'First Name', 'required');
+    $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+    $this->form_validation->set_rules('languages', 'Languages', 'required');
 
-}//end function index
+    $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
+
+    if ($this->form_validation->run() == FALSE) // validation hasn't been passed
+    {
+      $this->load->view('profile_form/index');
+    }
+    else // passed validation proceed to post success logic
+    {
+      // build array for the model
+
+      $form_data = array(
+        'i_am_a' => set_value('i_am_a'),
+        'first_name' => set_value('first_name'),
+        'last_name' => set_value('last_name'),
+        'email' => set_value('email'),
+        'languages' => set_value('languages')
+      );
+
+      // run insert model to write data to db
+
+      if ($this->Profile_form_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
+      {
+        $this->load->view('profile_form/success');   // or whatever logic needs to occur
+      }
+      else
+      {
+        echo 'An error occurred saving your information. Please try again later';
+        // Or whatever error handling is necessary
+      }
+    }
+  }
 
 
 }//end controller
