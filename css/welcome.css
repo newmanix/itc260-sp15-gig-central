@@ -67,6 +67,7 @@ body{
 
 .inner-box h1{
     font-size: 2em;
+    margin-top: 15px;
 }
 
 @media (min-width: 768px){
