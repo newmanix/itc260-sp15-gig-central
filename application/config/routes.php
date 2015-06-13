@@ -60,13 +60,16 @@ $route['login'] = 'login';
 $route['gig'] = 'gig';
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
-$route['rss'] = 'rss';
-$route['rss/(:any)'] = 'rss/view/';
-$route['news/create'] = 'news/create';
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
+$route['startups'] = 'startups';
+$route['profile_form'] = 'profile_form';
+$route['profiles'] = 'profile_list';
+
+//bootswatch example route
+$route['example'] = 'customer/example';
+
 $route['profile/(:any)'] = 'profile/view/$1';
 $route['(:any)'] = 'pages/$1';
+$route['404_override'] = 'my404';
 
-//Kate's homepage routes
+//homepage routes
 $route['default_controller'] = 'welcome';

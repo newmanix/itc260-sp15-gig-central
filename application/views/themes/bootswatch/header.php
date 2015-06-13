@@ -28,7 +28,7 @@
       </button>
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
-      <?php if(isset($headernav) && !empty($headernav)) echo $headernav; ?>
+      <?= $this->navigation->loadHeader(); ?>
     </div>
   </div>
 </div>

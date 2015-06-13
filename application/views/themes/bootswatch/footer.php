@@ -1,7 +1,7 @@
 <footer>
         <div class="row">
 		<div class="col-xs-12">
-			<?php if(isset($footernav) && !empty($footernav)) echo $footernav; ?>
+            <?= $this->navigation->loadHeader(); ?>
 		</div>
           <div class="col-xs-12">
 		<hr />
@@ -13,9 +13,9 @@
 
           </div>
         </div>
-        
+
       </footer>
-    
+
 
     </div>
 
@@ -23,5 +23,20 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="<?=base_url();?>public/themes/bootswatch/js/bootstrap.min.js"></script>
     <script src="<?=base_url();?>public/themes/bootswatch/js/bootswatch.js"></script>
+    <script src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+    <script>
+      $(".navbar-brand").rotate({
+         bind:
+           {
+              mouseover : function() {
+                  $(this).rotate({animateTo:360})
+              },
+              mouseout : function() {
+                  $(this).rotate({animateTo:0})
+              }
+           }
+
+      });
+    </script>
   </body>
 </html>
