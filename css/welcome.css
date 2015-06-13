@@ -155,7 +155,6 @@ body{
 
 .column{
     padding: 0 !important;
-    width: 65%;
     position: relative;
     float: left;
     overflow: auto;
