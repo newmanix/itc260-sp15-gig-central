@@ -1,5 +1,6 @@
 <?php
 //views/welcome_page.php
+$this->load->view($this->config->item('theme') . 'header');
 ?>
 
 <div class="panel-home">
@@ -214,3 +215,7 @@ function doNothing() {}
 
 </script>
 <!-- End Startup Map Script --->
+
+<?php
+$this->load->view($this->config->item('theme') . 'footer');
+?>
