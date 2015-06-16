@@ -12,8 +12,10 @@ $this->load->view($this->config->item('theme') . 'header');
         <p><a href="<?php echo ('contact/'.$contact_item['email']); ?>">View email</a></p>
 <?php endforeach ?>
 
-<p><a href="http://mykhabarovsk.com/repo/contact/create"</a>Send new email</p>
-<p><a href="http://mykhabarovsk.com/repo/contact"</a>Go back to Contact </p>
+<?php
+echo '<p>' . anchor('contact/create', 'Send new email') . '</p>';
+echo '<p>' . anchor('contact/', 'Go back') . '</p>';
+?>
 
 <?php
 $this->load->view($this->config->item('theme') . 'footer');
