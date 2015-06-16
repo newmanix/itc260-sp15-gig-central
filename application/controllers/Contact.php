@@ -100,18 +100,15 @@ class Contact extends CI_Controller {
             {
                 // mail sent
                 $this->load->view('contact/success');
-              //  redirect('contact/');
             }
             else
             {
                 //error
-              //  $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">There is error in sending mail! Please try again later</div>');
                 redirect('contact/');
             }
 
           }
 
 
-          //$this->load->view('contact/success');
       }
   }
