@@ -57,17 +57,22 @@ $route['translate_uri_dashes'] = FALSE;
 */
 
 $route['login'] = 'login';
-$route['gig'] = 'gig';
+
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 $route['startups'] = 'startups';
 $route['profile_form'] = 'profile_form';
-$route['profiles'] = 'profile_list';
+
+$route['contact/view'] = 'contact/view';
+
+$route['contact/create'] = 'contact/create';
+$route['contact/(:any)'] = 'contact/view/$1';
+$route['contact'] = 'contact';
 
 //bootswatch example route
 $route['example'] = 'customer/example';
 
 $route['profile/(:any)'] = 'profile/view/$1';
-$route['(:any)'] = 'pages/$1';
-$route['default_controller'] = 'pages';
-$route['404_override'] = 'my404';
+
+$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'customer';
