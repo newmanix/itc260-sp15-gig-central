@@ -1,4 +1,26 @@
 <?php
+/**
+ * models/Profile_List_model.php
+ * controller for a generic Profile_List
+ * used to show how to do CRUD in CodeIgniter
+ *
+ * @package ITC260
+ * @subpackage Profile_List
+ * @author
+ * @version 1.0 2015/5/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see Profile_list.php
+ * @see index.php
+ * @todo none
+ */
+/**
+ * Profile_List model for our CRUD demo
+ *
+ * @see controllers/Profile_list.php
+ * @todo none
+ */
+ 
 class Profile_List_model extends CI_Model
 {
     public function __construct()
