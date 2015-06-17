@@ -1,4 +1,5 @@
 <?php
+
 /**
 * Customer.php controller for a generic customer
 *

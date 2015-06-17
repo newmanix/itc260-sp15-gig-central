@@ -1,5 +1,20 @@
 <?php
-//Contact.php controller
+
+/**
+ * controllers/Contact.php
+ * 
+ * Contact page for Gig Central
+ *
+ * @package ITC260
+ * @subpackage Contact
+ * @author 
+ * @version 1.0 2015/05/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see Contact_model.php
+ * @todo 
+ */
+
 class Contact extends CI_Controller {
 
     public function __construct()

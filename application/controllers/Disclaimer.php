@@ -1,19 +1,23 @@
 <?php
+
 /**
  * controllers/Disclaimer.php
- * controller for disclaimer
+ * 
+ * Disclaimer page for Gig Central
  *
- * Derek Juhl
- * ITC 260
- * 06/11/15
- *
- * Compare:
- * itc260-sp15-gig-central/application/controllers/About.php
+ * @package ITC260
+ * @subpackage Disclaimer
+ * @author Derek Juhl
+ * @version 1.0 2015/06/11
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see 
+ * @todo 
  *
  * View Gig Central disclaimer here:
  *
  * http://derekjuhl.com/itc260/gig-central/ci/disclaimer/
-**/
+ */
 
 class Disclaimer extends CI_Controller {	
 	

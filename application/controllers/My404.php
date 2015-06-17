@@ -1,26 +1,20 @@
 <?php
+
 /**
- * controllers/Customer.php
- * controller for a generic Customer
- * used to show how to do CRUD in CodeIgniter
+ * controllers/404.php
+ * 
+ * 404 page for Gig Central
  *
  * @package ITC260
- * @subpackage Customer
- * @author
+ * @subpackage my404
+ * @author Jacob
  * @version 1.0 2015/05/14
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @see Customer_model.php
- * @see index.php
- * @todo none
+ * @see
+ * @todo 
  */
 
-/**
- * Customer controller for our CRUD demo
- *
- * @see models/Customer_model.php
- * @todo none
- */
 class my404 extends CI_Controller {
 
         /**
@@ -36,13 +30,13 @@ class my404 extends CI_Controller {
         {
                 //everything here is global to all methods in the controller
                 parent::__construct();
-                $this->load->model('customer_model');
-                $this->config->set_item("banner", "Global Customer Banner");
+                $this->load->model('404_model');
+                $this->config->set_item("banner", "Global 404 Banner");
                 $this->load->helper('form');
         }
 
         /**
-         * Shows initial Customer Database data
+         * Shows initial 404 Database data
          *
          * @param none
          * @return void
@@ -63,4 +57,4 @@ class my404 extends CI_Controller {
          */
         
 
-}//END Customer
+}//END 404

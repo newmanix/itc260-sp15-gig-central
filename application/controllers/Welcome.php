@@ -1,4 +1,20 @@
 <?php
+
+/**
+ * controllers/Welcome.php
+ * 
+ * Welcome page for Gig Central
+ *
+ * @package ITC260
+ * @subpackage Welcome
+ * @author 
+ * @version 1.0 2015/05/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see
+ * @todo 
+ */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {

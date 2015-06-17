@@ -1,4 +1,5 @@
 <?php
+
 /**
  * controllers/Startup_form.php
  * controller for a generic Customer
@@ -21,6 +22,7 @@
  * @see models/Startup_model.php
  * @todo none
  */
+
 class Customer extends CI_Controller {
 
         /**
