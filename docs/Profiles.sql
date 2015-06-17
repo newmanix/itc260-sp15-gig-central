@@ -17,27 +17,26 @@
 
 SET foreign_key_checks = 0; #turn off constraints temporarily
 
-DROP TABLE IF EXISTS Profile;
+DROP TABLE IF EXISTS Profiles;
 DROP TABLE IF EXISTS Profile_responses;
 
 
 
 
 
-CREATE TABLE Profile(
+CREATE TABLE Profiles(
 ProfileID INT UNSIGNED NOT NULL AUTO_INCREMENT,
 User TEXT DEFAULT '',
-InputType ENUM('checkbox','radio','select','text') DEFAULT 'select',
-FirstName TEXT DEFAULT '',
-LastName TEXT DEFAULT '',
-Email TEXT DEFAULT '',
-Languages TEXT DEFAULT '',
+i_am_a ENUM('Student','Alumni','Staff') DEFAULT 'Student',
+first_name TEXT DEFAULT '',
+last_name TEXT DEFAULT '',
+email TEXT DEFAULT '',
+languages TEXT DEFAULT '',
 DateAdded DATETIME,
 LastUpdated TIMESTAMP DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (ProfileID)
 )ENGINE=INNODB;
 
-INSERT INTO Profile VALUES (NULL,'I am a','select','First Name','Last Name','Email', 'Languages and Skills',NOW(),NOW());
 
 
 CREATE TABLE Profile_responses(
@@ -59,3 +58,5 @@ FOREIGN KEY (ProfileID) REFERENCES Profile(ProfileID) ON DELETE CASCADE
 INSERT INTO Profile_responses values (NULL,1,'Student','','','','',NOW(),NOW(),0);
 INSERT INTO Profile_responses values (NULL,1,'Alumni','','','','',NOW(),NOW(),0);
 INSERT INTO Profile_responses values (NULL,1,'Staff','','','','',NOW(),NOW(),0);
+
+

@@ -59,9 +59,7 @@ $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 $route['startups'] = 'startups';
 $route['profile_form'] = 'profile_form';
-<<<<<<< HEAD
 $route['profiles'] = 'profile_list';
-=======
 
 $route['contact/view'] = 'contact/view';
 
@@ -69,17 +67,15 @@ $route['contact/create'] = 'contact/create';
 $route['contact/(:any)'] = 'contact/view/$1';
 $route['contact'] = 'contact';
 
->>>>>>> contact_form
+
 //bootswatch example route
 $route['example'] = 'customer/example';
 $route['profile/(:any)'] = 'profile/view/$1';
-<<<<<<< HEAD
+
 $route['(:any)'] = 'pages/$1';
 $route['404_override'] = 'my404';
 //homepage routes
 $route['default_controller'] = 'welcome';
-=======
-
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'customer';
->>>>>>> contact_form
+
+
