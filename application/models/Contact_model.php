@@ -1,4 +1,27 @@
 <?php
+/**
+ * models/Contact_model.php
+ * controller for a generic Contact
+ * used to show how to do CRUD in CodeIgniter
+ *
+ * @package ITC260
+ * @subpackage Contact
+ * @author
+ * @version 1.0 2015/5/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see Contact.php
+ * @see index.php
+ * @todo none
+ */
+ 
+/**
+ * Contact model for our CRUD demo
+ *
+ * @see controllers/Contact.php
+ * @todo none
+ */ 
+ 
 class Contact_model extends CI_Model {
         public function __construct()
         {
