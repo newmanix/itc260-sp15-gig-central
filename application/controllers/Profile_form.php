@@ -1,17 +1,16 @@
 <?php
 /**
-* Customer.php controller for a generic customer
+* Profile_form.php form that takes profile info
 *
-* Use to show how to do crud in codeigniter
 *
-* @package LARGE_PIECE_OF_PROGRAM
+* @package MEDIUM_PIECE_OF_PROGRAM
 * @subpackage Profile_form
 * @author Evan Smyth <evsmyth@yahoo.com>
 * @version 1.0 2015/05/21
 * @link http://www.example.com/
 * @license http://www.apache.org/licenses/LICENSE-2.0
 * @see Profile_form-model.php
-* @see index.php
+* @see @see profile_form/index.php
 * @todo none
 */
 
@@ -35,7 +34,7 @@ class Profile_form extends CI_Controller {//begin controller
   */
   public function __construct()
   {//begin constructor
-    //$this->config->set_item('banner', 'Global News Banner');
+
     parent::__construct();
     $this->load->library('form_validation');
     $this->load->database();
@@ -44,11 +43,7 @@ class Profile_form extends CI_Controller {//begin controller
     $this->load->helper('url');
     $this->load->model('Profile_form_model');
 
-
-
   }//end constructor
-  //$this->load->view('profile_form/index');
-
 
   function index()
   {
