@@ -16,13 +16,7 @@
 */
 
 
-/**
-* Profile_form controller
-*
-*
-* @see Profile_model.php
-* @todo none
-*/
+
 class Profile_form_model extends CI_Model {// Begin model
 
 

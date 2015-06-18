@@ -1,0 +1,310 @@
+/**
+ * public/theme/bootswatch/css/home-style.css
+ *
+ * css style for home page
+ *
+ * @package GigCentral
+ * @subpackage Home
+ * @author Kate Lee
+ * @version 1.0 2015/6/6
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see application/view/themes/bootswatch/header.php
+ * @todo none
+ */
+
+body{
+    padding-top: 80px !important;
+}
+
+.main-box-container{
+    overflow: visual;
+}
+
+.main-box{
+    float: left;
+    padding-bottom: 50%;
+    position: relative;
+}
+
+@media (min-width: 580px){
+    .main-box{
+        padding-bottom: 35%;
+    }
+}
+
+@media (min-width: 768px){
+    .main-box{
+        padding-bottom: 30%;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-box{
+        padding-bottom: 30%;
+    }
+}
+@media (min-width: 1200px) {
+    .main-box{
+        padding-bottom: 25%;
+    }
+}
+
+.inner-box{
+    padding: 1em;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px; 
+    background-color: #fff;
+    text-align: center;
+    border: 1px #18BC9C solid;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.inner-box h1{
+    font-size: 2em;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px){
+    .inner-box h1{
+        font-size: 2em;
+    }
+    
+    .inner-box:hover h1{
+    font-size: 2em;
+    }
+}
+
+@media (min-width: 992px) {
+    .inner-box h1{
+        font-size: 3em;
+    }
+}
+@media (min-width: 1200px) {
+    .inner-box h1{
+        font-size: 5em;
+    }
+}
+
+.inner-box h3{
+    /* display: none; */
+}
+
+.bar{
+    margin: 0 auto;
+    display: none;
+    height: 7px;
+    width: 120px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.inner-box:hover{
+    border: 1px #fff solid;
+    background-color: #18BC9C;
+}
+
+.inner-box:hover h1{
+    font-size: 2em;
+    color: #fff;
+}
+
+.inner-box:hover > h3{
+    display: block;
+    color: #fff;
+}
+
+.inner-box:hover .bar{
+    display: block;
+}
+
+.inner-box:hover > p{
+    color: #fff;
+}
+
+.inner-box:hover > .fa{
+    color: #fff;
+}
+
+.inner-column h2{
+    margin-top: 10px !important;
+}
+
+#recent-data{
+    background-color: #fff;
+    position: relative;
+    width:100%;
+}
+
+.panel-body ul{
+    list-style: none;
+}
+
+.panel-body li{
+    margin-bottom: 1em;
+}
+
+.clea-both{
+    clear: both;
+}
+
+.column{
+    padding: 0 !important;
+    position: relative;
+    float: left;
+    overflow: auto;
+}
+
+.inner-column{
+    margin: 5px;
+    padding: 1em;  
+    border: 1px #18BC9C solid;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.map-small{
+    width: 100%;
+    height: 300px;
+}
+
+.list{
+    list-style: none;
+    padding-left: 0px !important;
+}
+
+/* Home 2 Design */
+.panel-home{
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: #fff;
+    overflow: auto;
+    /*padding: 20px 0;*/
+}
+
+.panel-home:nth-child(even){
+    background-color: #ecf0f1;;
+}
+
+.panel-home:nth-child(odd) > .panel-body > .panel-image{
+    float: left;
+}
+
+.panel-home:nth-child(even) > .panel-body > .panel-image{
+    float: right;
+}
+
+.panel-home-body{
+    padding: 0;
+    overflow: aut0;
+    height: 400px;
+    text-align: center;
+}
+
+.panel-image{
+    height:inherit;
+    background-color: rgba(67, 67, 67, 1);
+    width: 30%;
+    position:relative;
+}
+
+.panel-image::after{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+.panel-image:hover{
+    background-color: #fff;
+}
+
+.panel-image:hover .panel-image::after{
+    opacity: 1;
+}
+
+.panel-image h1{
+    z-index: 1;
+    font-size: 6em;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    text-shadow: 0px 0px 8px #666666;
+}
+
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.panel-contents{
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    padding-bottom: 20px;
+    width:70%;
+}
+
+.panel-home-heading{
+    padding: 0;
+}
+.panel-home-title{
+}
+
+
+.panel-list{
+    padding-left: 0px;
+    list-style: none;
+}
+
+.panel-list li{
+    margin-bottom: 1.5em;
+}
+.panel-control{
+    clear: both;
+    text-align: center;
+}
+
+#pl-img-1::after{
+    background-image: url('http://gigcentral.kateleeseattle.com/img/panel-image-1.jpg');
+}
+
+#pl-img-2::after{
+    background-image: url('http://gigcentral.kateleeseattle.com/img/panel-image-2.jpg');
+}
+
+#pl-img-3::after{
+    background-image: url('http://gigcentral.kateleeseattle.com/img/panel-image-3.jpg');
+}
+
+#pl-img-4::after{
+    background-image: url('http://gigcentral.kateleeseattle.com/img/panel-image-4.jpg');
+}

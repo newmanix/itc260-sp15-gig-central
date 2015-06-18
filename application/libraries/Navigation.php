@@ -9,62 +9,74 @@ class Navigation {
 		$menuOne = array
 		(
 			1 => 	array(
-				'text'		=> 	'Home',	
+				'text'		=> 	'Home',
 				'link'		=> 	base_url(),
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
 			2 => 	array(
-				'text'		=> 	'Find a Gig',	
-				'link'		=> 	base_url() . 'gig_find',
-				'show_condition'=>	1,
+				'text'		=> 	'Find a Gig',
+				'link'		=> 	base_url() . 'gig',
+				'show_condition'=> 1,
 				'parent'	=>	0
 			),
 			3 =>	array(
-				'text'		=> 	'Post a Gig',	
+				'text'		=> 	'Post a Gig',
 				'link'		=> 	base_url() . 'gig_post',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
 			4 =>	array(
-				'text'		=> 	'Profiles',	
-				'link'		=> 	base_url() . 'gig_profiles',
+				'text'		=> 	'Profiles',
+				'link'		=> 	base_url() . 'profiles',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
 			5 =>	array(
-				'text'		=> 	'FAQ',	
-				'link'		=> 	base_url() . 'gig_faq',
+				'text'		=> 	'FAQ',
+				'link'		=> 	base_url() . 'faq',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
-		); 
+            5 =>	array(
+				'text'		=> 	'FAQ',
+				'link'		=> 	base_url() . 'faq',
+				'show_condition'=>	1,
+				'parent'	=>	1
+			)
+		);
 		$menuTwo = array
 		(
 			1 => 	array(
-				'text'		=> 	'Startup Central',	
+				'text'		=> 	'Startup Central',
 				'link'		=> 	base_url(),
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
 			2 => 	array(
-				'text'		=> 	'About',	
+				'text'		=> 	'About',
 				'link'		=> 	base_url() . 'gig_about',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
 			3 =>	array(
-				'text'		=> 	'Contact',	
+				'text'		=> 	'Contact',
 				'link'		=> 	base_url() . 'gig_contact',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
 			4 =>	array(
-				'text'		=> 	'Disclaimer',	
+				'text'		=> 	'Disclaimer',
 				'link'		=> 	base_url() . 'gig_disclaimer',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
+            5 =>	array(
+				'text'		=> 	'RSS',
+				'link'		=> 	base_url() . 'rss',
+				'show_condition'=>	1,
+				'parent'	=>	0
+			)
 		);
 		$this->setHeaderMenu($menuOne);
 		$this->setFooterMenu($menuTwo);
@@ -81,12 +93,12 @@ class Navigation {
 		$CI =& get_instance();
 		$this->footerMenu = $myMenu;
 	}
-		
+
 	/*
 	 * loadHeader - Return HTML navigation string
 	 */
 	public function loadHeader($selected = null)
-	{	
+	{
 		$out = '<ul class="nav navbar-nav">';
 		foreach ( $this->headerMenu as $i=>$arr )
 		{
@@ -95,12 +107,12 @@ class Navigation {
 				{
 					/*** Set class for current nav item ***/
 					(strcasecmp($this->headerMenu[ $i ] [ 'text' ], $selected) == 0 ) ? $class = "active" : $class = ""; //  Binary safe case-insensitive string comparison
-					
+
 					if($this->hasChildren($i))
 					{
 						$class .=" dropdown";
 						$out .= "<li class=\"" . $class . "\">";
-						$out .= "<a href=\"" . $this->menu [ $i ] [ 'link' ] . "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">";
+						$out .= "<a href=\"" . $this->headerMenu [ $i ] [ 'link' ] . "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">";
 						$out .= $this->headerMenu [ $i ] [ 'text' ];
 						$out .= '<b class="caret"></b>';
 						$out .= '</a>';
@@ -119,7 +131,7 @@ class Navigation {
 					}
 				}
 			}
-			else 
+			else
 			{
 				die ( sprintf ( 'menu nr %s must be an array', $i ) );
 			}
@@ -128,16 +140,16 @@ class Navigation {
 		$out .= '</ul>';
 		return $out;
 	}
-	
+
 	private function hasChildren($menu_id)
 	{
 		foreach ( $this->headerMenu as $i=>$arr ){
-		
+
 			if ( $this->headerMenu [ $i ] [ 'show_condition' ] && $this->headerMenu [ $i ] [ 'parent' ] == $menu_id ) {
 				return TRUE;
 			}
 		}
-		
+
 		return FALSE;
 	}
 	/**
@@ -155,16 +167,16 @@ class Navigation {
 		$out = '';
 		$out .= "\n".'	<ul class="dropdown-menu">' . "\n";
 		foreach ( $this->headerMenu as $i=>$arr ){
-		
+
 			if ( $this->headerMenu [ $i ] [ 'show_condition' ] && $this->headerMenu [ $i ] [ 'parent' ] == $el_id ) {//are we allowed to see this menu?
 				$has_subcats = TRUE;
-				
-				$out .= "<li><a href=\"{$this->headerMenu[ $i ][ 'link' ]}\">{$this->headerMenu [ $i ] [ 'text' ]}</a>" . $this->getChildren ( $this->menu, $i ) . "</li>";
+
+				$out .= "<li><a href=\"{$this->headerMenu[ $i ][ 'link' ]}\">{$this->headerMenu [ $i ] [ 'text' ]}</a>" . $this->getChildren ( $this->headerMenu, $i ) . "</li>";
 			}
 		}
 		$out .= '	</ul>'."\n";
-		
-		
+
+
 		return ( $has_subcats ) ? $out : FALSE;
 	}
 
@@ -173,7 +185,7 @@ class Navigation {
 	 * loadFooter - Return HTML navigation string
 	 */
 	public function loadFooter($selected = null)
-	{	
+	{
 		$out = '<ul class="nav navbar-nav">';
 		foreach ( $this->footerMenu as $i=>$arr )
 		{
@@ -182,12 +194,12 @@ class Navigation {
 				{
 					/*** Set class for current nav item ***/
 					(strcasecmp($this->footerMenu[ $i ] [ 'text' ], $selected) == 0 ) ? $class = "active" : $class = ""; //  Binary safe case-insensitive string comparison
-					
+
 					if($this->hasChildrenFooter($i))
 					{
 						$class .=" dropdown";
 						$out .= "<li class=\"" . $class . "\">";
-						$out .= "<a href=\"" . $this->menu [ $i ] [ 'link' ] . "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">";
+						$out .= "<a href=\"" . $this->footerMenu [ $i ] [ 'link' ] . "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">";
 						$out .= $this->footerMenu [ $i ] [ 'text' ];
 						$out .= '<b class="caret"></b>';
 						$out .= '</a>';
@@ -206,7 +218,7 @@ class Navigation {
 					}
 				}
 			}
-			else 
+			else
 			{
 				die ( sprintf ( 'menu nr %s must be an array', $i ) );
 			}
@@ -215,16 +227,16 @@ class Navigation {
 		$out .= '</ul>';
 		return $out;
 	}
-	
+
 	private function hasChildrenFooter($menu_id)
 	{
 		foreach ( $this->footerMenu as $i=>$arr ){
-		
+
 			if ( $this->footerMenu [ $i ] [ 'show_condition' ] && $this->footerMenu [ $i ] [ 'parent' ] == $menu_id ) {
 				return TRUE;
 			}
 		}
-		
+
 		return FALSE;
 	}
 	/**
@@ -242,19 +254,19 @@ class Navigation {
 		$out = '';
 		$out .= "\n".'	<ul class="dropdown-menu">' . "\n";
 		foreach ( $this->footerMenu as $i=>$arr ){
-		
+
 			if ( $this->footerMenu [ $i ] [ 'show_condition' ] && $this->footerMenu [ $i ] [ 'parent' ] == $el_id ) {//are we allowed to see this menu?
 				$has_subcats = TRUE;
-				
-				$out .= "<li><a href=\"{$this->footerMenu[ $i ][ 'link' ]}\">{$this->footerMenu [ $i ] [ 'text' ]}</a>" . $this->getChildrenFooter ( $this->menu, $i ) . "</li>";
+
+				$out .= "<li><a href=\"{$this->footerMenu[ $i ][ 'link' ]}\">{$this->footerMenu [ $i ] [ 'text' ]}</a>" . $this->getChildrenFooter ( $this->footerMenu, $i ) . "</li>";
 			}
 		}
 		$out .= '	</ul>'."\n";
-		
-		
+
+
 		return ( $has_subcats ) ? $out : FALSE;
 	}
 
 
 
-}	
+}

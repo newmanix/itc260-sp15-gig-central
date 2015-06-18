@@ -1,6 +1,7 @@
+<?php
 /**
  * models/Startupform_model.php
- * controller for a generic Customer
+ * controller for a generic Startup_form
  * used to show how to do CRUD in CodeIgniter
  *
  * @package ITC260
@@ -9,17 +10,18 @@
  * @version 1.0 2015/06/09
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @see Customer.php
+ * @see Startup_form.php
  * @see index.php
  * @todo none
  */
 
 /**
- * Customer model for our CRUD demo
+ * Startup_form model for our CRUD demo
  *
  * @see controllers/Startup_form.php
  * @todo none
  */
+ 
 class Startupform_model extends CI_Model {
 
     /**

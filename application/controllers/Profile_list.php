@@ -1,5 +1,20 @@
 <?php
-//Profile_List.php controller
+
+/**
+ * controllers/Profile_list.php
+ * 
+ * Profile list page for Gig Central
+ *
+ * @package ITC260
+ * @subpackage Profile_list
+ * @author Doug Doner
+ * @version 1.0 2015/05/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see Profile_list_model.php
+ * @todo 
+ */
+
 class Profile_list extends CI_Controller {
 
     public function __construct()

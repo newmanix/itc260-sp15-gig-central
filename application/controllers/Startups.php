@@ -1,5 +1,20 @@
 <?php
-//Startups.php controller
+
+/**
+ * controllers/Startups.php
+ * 
+ * Startups page for Gig Central
+ *
+ * @package ITC260
+ * @subpackage Startups
+ * @author Rafael Malave
+ * @version 1.0 2015/05/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see Startup_model.php
+ * @todo 
+ */
+
 class Startups extends CI_Controller {
 
     public function __construct()
@@ -23,7 +38,7 @@ class Startups extends CI_Controller {
 
 			if (empty($data['startup']))
 			{
-					show_404();
+					show_Startups();
 			}
 
 			$data['title'] = $data['startup']['title'];

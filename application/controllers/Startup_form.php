@@ -1,4 +1,5 @@
 <?php
+
 /**
  * controllers/Startup_form.php
  * controller for a generic Customer
@@ -6,7 +7,7 @@
  *
  * @package ITC260
  * @subpackage Forms
- * @author
+ * @author Lydia King
  * @version 1.0 2015/06/09
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -21,6 +22,7 @@
  * @see models/Startup_model.php
  * @todo none
  */
+
 class Customer extends CI_Controller {
 
         /**

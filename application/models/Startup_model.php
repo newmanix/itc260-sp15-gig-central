@@ -1,4 +1,25 @@
 <?php
+/**
+ * models/Startup_model.php
+ * controller for a generic Startups
+ * used to show how to do CRUD in CodeIgniter
+ *
+ * @package ITC260
+ * @subpackage Startups
+ * @author
+ * @version 1.0 2015/5/14
+ * @link
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see Startups.php
+ * @see index.php
+ * @todo none
+ */
+/**
+ * Startups model for our CRUD demo
+ *
+ * @see controllers/Startups.php
+ * @todo none
+ */
 class Startup_model extends CI_Model {
 
       public function __construct()
