@@ -25,7 +25,7 @@ class PassphraseClass {
 
     public function passphrase()
     {
-        
+        $_SESSION['passed-phrase'] = '';
         $CI =& get_instance(); //assign the CodeIgniter object to a variable to use load class
         $key ='gigcentral'; //store the passcode
         $data['red'] = $_SERVER['REQUEST_URI'];
