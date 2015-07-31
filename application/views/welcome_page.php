@@ -111,14 +111,17 @@
 <script>
 //<![CDATA[
 
+/*
+//custom Icons
 var customIcons = {
-  '1': {
+  1: {
     icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
   },
-  '2': {
+  2: {
     icon: 'http://labs.google.com/ridefinder/images/mm_20_red.png'
   }
 };
+*/
 
 /*
 //get user's geolocation
@@ -164,7 +167,8 @@ $(document).ready(function() {
             parseFloat(markers[i].getAttribute("lat")),
             parseFloat(markers[i].getAttribute("lng")));
         var html = "<b>" + name + "</b> <br/>" + address;
-        var icon = customIcons[type] || {};
+        //var icon = customIcons[type] || {};
+        var icon = {};
         var marker = new google.maps.Marker({
           map: map,
           position: point,

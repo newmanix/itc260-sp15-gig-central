@@ -53,8 +53,16 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 */
+
 $route['login'] = 'login';
 
+
+//gig routes 
+$route['gigs'] = 'gig/index';
+$route['gigs/add'] = 'gig/add';
+$route['gigs/(:any)'] = 'gig/view/$1';
+
+//other page routes
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 $route['startups'] = 'startups';
@@ -74,6 +82,11 @@ $route['profile/(:any)'] = 'profile/view/$1';
 
 $route['(:any)'] = 'pages/$1';
 $route['404_override'] = 'my404';
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> gigcentral-kate
 //homepage routes
 $route['default_controller'] = 'welcome';
 $route['(:any)'] = 'pages/view/$1';
