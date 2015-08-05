@@ -82,11 +82,7 @@ $route['profile/(:any)'] = 'profile/view/$1';
 
 $route['(:any)'] = 'pages/$1';
 $route['404_override'] = 'my404';
-<<<<<<< HEAD
-=======
 
-
->>>>>>> gigcentral-kate
 //homepage routes
 $route['default_controller'] = 'welcome';
 $route['(:any)'] = 'pages/view/$1';
