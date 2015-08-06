@@ -9,7 +9,7 @@
  * @version 1.0 2015/05/14
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @see
+ * @see view/pages/about.php
  * @todo 
  */
 
