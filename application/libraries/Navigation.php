@@ -67,7 +67,7 @@ class Navigation {
 			),
 			4 =>	array(
 				'text'		=> 	'Disclaimer',
-				'link'		=> 	base_url() . 'gig_disclaimer',
+				'link'		=> 	base_url() . 'pages/disclaimer',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
