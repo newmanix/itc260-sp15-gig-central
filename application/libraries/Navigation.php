@@ -36,13 +36,20 @@ class Navigation {
 				'text'		=> 	'FAQ',
 				'link'		=> 	base_url() . 'faq',
 				'show_condition'=>	1,
-				'parent'	=>	0
+				'parent'	=>	1
 			),
             5 =>	array(
 				'text'		=> 	'FAQ',
 				'link'		=> 	base_url() . 'faq',
 				'show_condition'=>	1,
 				'parent'	=>	1
+			),
+
+      6 =>	array(
+				'text'		=> 	'add a profile',
+				'link'		=> 	base_url() . 'profile_form',
+				'show_condition'=>	1,
+				'parent'	=>	4
 			)
 		);
 		$menuTwo = array
