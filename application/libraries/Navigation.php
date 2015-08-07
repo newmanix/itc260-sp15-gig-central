@@ -16,7 +16,7 @@ class Navigation {
 			),
 			2 => 	array(
 				'text'		=> 	'Find a Gig',
-				'link'		=> 	base_url() . 'gig',
+				'link'		=> 	base_url() . 'gigs',
 				'show_condition'=> 1,
 				'parent'	=>	0
 			),
