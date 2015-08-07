@@ -30,7 +30,7 @@ class my404 extends CI_Controller {
         {
                 //everything here is global to all methods in the controller
                 parent::__construct();
-                $this->load->model('404_model');
+                $this->load->model('My404_model');
                 $this->config->set_item("banner", "Global 404 Banner");
                 $this->load->helper('form');
         }
