@@ -51,7 +51,7 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
         </div>
 
         <div class="form-group">
-          <label for="i_am_a" class="col-lg-3 control-label">I am a <span class="required">*</span></label>
+          <label for="i_am_a" class="btn btn-default dropdown-toggle" >I am a <span class="required">*</span></label>
             <?php echo form_error('i_am_a'); ?>
             <?php $options = array(
               ''  => 'Please Select',
@@ -96,7 +96,7 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
         </div>
         <br />
 
-        <?php echo form_submit( 'submit', 'Submit'); ?>
+        <?php echo form_submit('loginSubmit', 'Login',"class='btn btn-danger'"); ?>
 
         <?php echo form_close(); ?>
 
