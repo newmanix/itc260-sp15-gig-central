@@ -1,11 +1,20 @@
 <?php
 /**
+<<<<<<< HEAD
  * index.php - a view page for generic Customer controller.
  * 
  * Additionaly, it does CRUD within the CI Framework.
  * 
  * views/customer/index.php
  * 
+=======
+ * view/customer/index.php
+ *
+ * view page for generic Customer controller
+ *
+ * Used to show how to do CRUD in CodeIgniter
+ *
+>>>>>>> Mahilet_gigForm_Branch
  * @package ITC260
  * @subpackage Customer
  * @author Aleksandar Petrovic <alpe88.junk@gmail.com>
@@ -16,8 +25,15 @@
  * @see Customer.php
  * @todo none
  */
+<<<<<<< HEAD
 $this->load->library('passphraseclass');
 $this->passphraseclass->passphrase();
+=======
+
+$this->load->view($this->config->item('theme').'header'); ?>
+
+<h2><?= $title; ?></h2>
+>>>>>>> Mahilet_gigForm_Branch
 
 ?>
 
@@ -33,5 +49,13 @@ $this->passphraseclass->passphrase();
 		<?php echo anchor($customer_info['slug'], 'View Article'); ?>
 	 </p>-->
 
+<<<<<<< HEAD
 		
 <?php endforeach ?>
+=======
+
+
+
+
+<?php $this->load->view($this->config->item('theme').'footer'); ?>
+>>>>>>> Mahilet_gigForm_Branch

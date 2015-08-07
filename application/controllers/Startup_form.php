@@ -7,7 +7,9 @@
  *
  * @package ITC260
  * @subpackage Forms
+
  * @author Lydia King
+
  * @version 1.0 2015/06/09
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -23,7 +25,7 @@
  * @todo none
  */
 
-class Customer extends CI_Controller {
+class Startup_form extends CI_Controller {
 
         /**
          * Loads default data into object
@@ -38,7 +40,8 @@ class Customer extends CI_Controller {
         {
                 //everything here is global to all methods in the controller
                 parent::__construct();
-                $this->load->model('startup_model');
+
+                $this->load->model('Startup_model');
                 $this->config->set_item("banner", "Global Customer Banner");
                 $this->load->helper('form');
         }
@@ -52,7 +55,8 @@ class Customer extends CI_Controller {
          */
         public function index()
         {
-                $data['query'] = $this->startup_model->get_startup_form();
+
+              $data['query'] = $this->Startup_model->get_startups();
                 $data['title'] = 'Startup_form';
                 $this->load->view('forms/index', $data);
                 $this->config->set_item("banner-img", "img/Gig-logo.png");
@@ -69,7 +73,9 @@ class Customer extends CI_Controller {
         public function example() {
             $this->config->set_item('banner', 'Flatly Example Banner');
             $this->config->set_item('title', 'Flatly example');
-            $this->load->view('forms/index');
+          	$data['query'] = $this->Startup_model->get_startups();
+            $this->load->view('forms/example', $data);
+
         }
 
 }//END Customer

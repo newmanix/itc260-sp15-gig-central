@@ -17,9 +17,11 @@
  * @todo none
  */
 
-$this->load->view($this->config->item('theme').'header'); 
-$this->load->library('passphraseclass');
-$this->passphraseclass->passphrase();
+
+$this->load->view($this->config->item('theme').'header');
+//$this->load->library('passphraseclass');
+//$this->passphraseclass->passphrase();
+
 ?>
 <div class="container">
   <div class="col-lg-10">

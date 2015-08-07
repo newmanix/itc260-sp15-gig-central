@@ -62,7 +62,6 @@ $autoload['packages'] = array();
 
 $autoload['libraries'] = array('PassphraseClass', 'Navigation');
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers

@@ -13,5 +13,3 @@
  $config['banner-href'] = './';
  $config['banner-href'] = './';
  $config['banner-img'] = 'img/Gig-logo.png';
- 
- 

@@ -10,12 +10,13 @@
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
     <!-- font-awesome CSS link -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- Homepage CSS Link -->
     <link rel="stylesheet" href="<?=base_url()?>css/welcome.css" media="screen">
 </head>
-    
+  
 <body>
  <div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -26,6 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
       <?= $this->navigation->loadHeader(); ?>
