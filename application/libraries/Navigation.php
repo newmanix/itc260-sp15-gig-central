@@ -22,7 +22,7 @@ class Navigation {
 			),
 			3 =>	array(
 				'text'		=> 	'Post a Gig',
-				'link'		=> 	base_url() . 'gig_post',
+				'link'		=> 	base_url() . 'gig/add',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
