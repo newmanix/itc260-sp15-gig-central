@@ -83,12 +83,7 @@ $route['contact'] = 'contact';
 //bootswatch example route
 $route['example'] = 'customer/example';
 $route['profile/(:any)'] = 'profile/view/$1';
-$route['(:any)'] = 'pages/$1';
 $route['404_override'] = 'my404';
 
 //homepage routes
 $route['default_controller'] = 'welcome';
-$route['(:any)'] = 'pages/view/$1';
-
-
-
