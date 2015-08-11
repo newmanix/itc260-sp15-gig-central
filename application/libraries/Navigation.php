@@ -53,7 +53,7 @@ class Navigation {
 			),
 
       6 =>	array(
-				'text'		=> 	'contact us',
+				'text'		=> 	'contact us!',
 				'link'		=> 	base_url() . 'contact',
 				'show_condition'=>	1,
 				'parent'	=>	0
