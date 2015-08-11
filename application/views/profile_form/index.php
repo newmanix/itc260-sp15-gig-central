@@ -105,6 +105,6 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
   </div>
 </div>
 
-
-<?php $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch theme and footer
+<?php
+$this->load->view($this->config->item('theme').'footer');
 ?>

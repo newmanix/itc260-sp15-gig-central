@@ -50,6 +50,13 @@ class Navigation {
 				'link'		=> 	base_url() . 'profile_form',
 				'show_condition'=>	1,
 				'parent'	=>	4
+			),
+
+      6 =>	array(
+				'text'		=> 	'contact us',
+				'link'		=> 	base_url() . 'contact',
+				'show_condition'=>	1,
+				'parent'	=>	0
 			)
 		);
 		$menuTwo = array
