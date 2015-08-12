@@ -41,5 +41,8 @@ class Welcome extends CI_Controller {
         $this->load->view('welcome_page');
         //$this->load->view('templates/footer'); // Alex's path
         $this->load->view($this->config->item('theme') . 'footer');
+		
+		//Add Gig Info from DB
+		$data['gigs'] = $this->gig_model->get_gigs();
 	}
 }
