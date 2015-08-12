@@ -1,0 +1,34 @@
+Gig Central: Instruction
+
+*These are the instruction text that will be included in the Gig Central site. It is subject to change as the site gets built and features added on.
+
+How to Create a Gig:
+1.	Click “Create a Gig” at the top of the page. 
+2.	Fill out the Create a Gig form.
+3.	Click Submit.
+
+How to Find a Gig:
+1.	Click “Find a Gig” at the top of the page.
+2.	Search the various gigs that are posted.
+3.	Once you find a gig for which you would like to apply, submit your resume/CV and any relevant URLs to the contact person listed on the gig.
+
+How to Create a Profile:
+1.	Click “Profile” located at the top of the page.
+2.	Click “Create a Profile”.
+3.	Fill out the form, including any relevant URLs.
+4.	Click Submit.
+
+How to Browse Profiles:
+1.	Click “Profile”.
+2.	Browses profiles.
+
+Find a Venue:
+1.	Click “Find A Venue”.
+2.	Browse Venues.
+
+Post a Venue:
+1.	Click ”Post A Venue”.
+2.	Fill out the form.
+3.	Click Submit.
+
+
