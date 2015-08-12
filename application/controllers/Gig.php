@@ -46,9 +46,7 @@ class Gig extends CI_Controller
         $data['gigs'] = $this->gig_model->get_gigs();
         $data['title']= 'Gigs';
         
-        $this->load->view($this->config->item('theme') . 'header');
         $this->load->view('gigs/index', $data);
-        $this->load->view($this->config->item('theme') . 'footer');
     }#end function index
 
     public function view($slug = NULL)
@@ -60,9 +58,7 @@ class Gig extends CI_Controller
         }
         $data['title']= 'Gig';
         
-        $this->load->view($this->config->item('theme') . 'header');
         $this->load->view('gigs/view', $data);
-        $this->load->view($this->config->item('theme') . 'footer');
     }#end function index
 
     public function add()
@@ -76,9 +72,7 @@ class Gig extends CI_Controller
 
         if ($this->form_validation->run() === FALSE)
         {//create form to add gigs
-            $this->load->view($this->config->item('theme') . 'header');
             $this->load->view('gigs/add', $data); 
-            $this->load->view($this->config->item('theme') . 'footer');
         }
         else
         {//this processes
@@ -86,15 +80,8 @@ class Gig extends CI_Controller
             $data['title']= 'Gigs';
             $this->gig_model->add_gig();
             
-            $this->load->view($this->config->item('theme') . 'header');
             $this->load->view('gigs/index', $data);
-            $this->load->view($this->config->item('theme') . 'footer');
         }
     }#end function addForm()
-
-
-
-
-
 
 }#end Gigs class/controller
