@@ -1,33 +1,22 @@
 <?php
-//$this->load->view('themes/bootswatch/header');
+//views/contact/index.php
 $this->load->view($this->config->item('theme') . 'header');
 ?>
-<article id="text">
-<section class="contact">
-<h2>Contact Us</h2>
 
-<?php echo validation_errors(); ?>
+<?php foreach ($contact as $contact_item): ?>
 
-<?php echo form_open('contact/create') ?>
-
-<label for="name">Name:</label>
-<input name="name" type="text">
-<label for="email">Email:</label>
-<input name="email" type="email">
-<label for="subject">Subject:</label>
-<select name="subject">
-<option value="General Inquiry" selected="selected">General Inquiry</option>
-<option value="Specific Inquiry">Specific Inquiry</option>
-<option value="Stoopid Inquiry">Stoopid Inquiry</option>
-</select>
-<label for="message">Message:</label>
-<textarea name="message" cols="40" rows="5" required></textarea>
-<input name="submit" type="submit" value="Submit Message" />
-
-</form>
+        <h3><?php echo $contact_item['name'] ?></h3>
+        <div class="main">
+                <?php echo $contact_item['message'] ?>
+        </div>
+        <p><a href="<?php echo ('contact/'.$contact_item['email']); ?>">View email</a></p>
+<?php endforeach ?>
 
 <?php
-//$this->load->view('themes/bootswatch/footer');
-$this->load->view($this->config->item('theme') . 'footer');
+echo '<p>' . anchor('contact/create', 'Send new email') . '</p>';
+echo '<p>' . anchor('contact/', 'Go back') . '</p>';
+?>
 
+<?php
+$this->load->view($this->config->item('theme') . 'footer');
 ?>
