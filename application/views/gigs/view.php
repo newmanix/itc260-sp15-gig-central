@@ -15,6 +15,7 @@
 * @todo none
 */
 ?>
+<?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
 <div class="container">
     <h2><?php echo $gig['CompanyName']; ?></h2>
@@ -32,3 +33,5 @@
     <p><b>Date Posted: </b><?php echo $gig['GigPosted']; ?></p>
     <p><b>Last Update: </b><?php echo $gig['LastUpdated']; ?></p>
 </div>
+
+<?php $this->load->view($this->config->item('theme') . 'footer'); ?>

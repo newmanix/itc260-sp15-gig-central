@@ -1,16 +1,10 @@
 <?php
 /**
- * view/my404/index.php
- *
- * view page for generic 404 controller
- *
- * Used to TEST GigCentral
- *
  * @package ITC260
  * @subpackage my404
- * @author
- * @version 1.0 2015/5/14
- * @link
+ * @author ITC260 Summer Class
+ * @version 1.0 2015/8/11
+ * @link view/my404/index.php
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see controllers/My404.php
  * @see models/My404_model.php
@@ -27,8 +21,8 @@ $this->load->view($this->config->item('theme') . 'header');
             
             <div class="well bs-component">
                 <h3>Oops! We all make mistakes. The page you are looking for does not exist.</h3>
-            </div><!-- end .well .bs-compent div -->
-        </div>
+            </div><!-- end well bs-component -->
+        </div><!-- end container -->
         
     
 

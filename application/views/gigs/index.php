@@ -17,6 +17,7 @@
 */
 ?>
 
+<?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
 <h1>Gigs List</h1>
 <h2><strong>Gig Opportunity</strong></h2>
@@ -28,3 +29,5 @@
 <p><?php echo anchor('gigs/'.$gig['GigID'] , 'Read More');?></p>
 
 <?php endforeach ?>
+
+<?php $this->load->view($this->config->item('theme') . 'footer'); ?>

@@ -15,6 +15,7 @@
 * @todo none
 */
 ?>
+<?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
 <div class="container">
   <div class="col-lg-10">
@@ -166,3 +167,4 @@
         </form>
     </div>
 </div>
+<?php $this->load->view($this->config->item('theme') . 'footer'); ?>

@@ -8,7 +8,7 @@
  * @package ITC260
  * @subpackage my404
  * @author Mandy Foster mandy.s.foster@gmail.com
- * @version 1.0 2015/05/14
+ * @version 2.0 2015/08/08
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see none
