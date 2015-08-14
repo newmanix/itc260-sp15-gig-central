@@ -65,7 +65,6 @@ $route['translate_uri_dashes'] = FALSE;
 //gig routes 
 $route['gigs'] = 'gig/index';
 $route['gigs/add'] = 'gig/add';
-$route['gig/form'] = 'gig/form';
 $route['gigs/(:any)'] = 'gig/view/$1';
 
 //other page routes

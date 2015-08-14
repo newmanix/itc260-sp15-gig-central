@@ -1,17 +1,17 @@
 <?php
 /**
-* view.php view page for generic gigs_form controller
+* view.php is view page for an individual gig for Gigs controller
 *
-* views/gigs/view
+* views/gigs/view.php
 * 
 * @package ITC 260 Gig Central CodeIgnitor
-* @subpackage Gig
+* @subpackage Gig Controller
 * @author Patricia Barker <pbarke01@seattlecentral.edu>
 * @version 2.2 2015/06/11
 * @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/
 * @license http://www.apache.org/licenses/LICENSE-2.0
 * @see Gig_model.php
-* @see view.php
+* @see Gig.php
 * @todo none
 */
 ?>

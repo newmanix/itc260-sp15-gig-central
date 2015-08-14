@@ -2,17 +2,16 @@
 /**
 * Gig.php controller for Gigs at SCC
 *
-* Used to show how to do CRUD in CodeIgnitor
-*
 * @package ITC 260 Gig Central CodeIgnitor
-* @subpackage Gigs_form
+* @subpackage Gig Controller
 * @author Patricia Barker <patriciabethbarker@gmail.com>
 * @version 2.2 2015/06/12
 * @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/
 * @license http://www.apache.org/licenses/LICENSE-2.0
 * @see Gig_model.php
-* @see view/gigs/add.php
+* @see view/gigs/index.php
 * @see view/gigs/view.php
+* @see view/gigs/add.php
 * @todo none
 */
 

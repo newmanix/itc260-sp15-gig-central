@@ -1,11 +1,11 @@
 <?php
 /**
-* add.php view page for generic gigs_form controller
+* add.php is the add gigs page for Gigs controller
 *
 * views/gigs/add.php
 *
 * @package ITC 260 Gig Central CodeIgnitor
-* @subpackage Gig
+* @subpackage Gig Controller
 * @author Patricia Barker <pbarke01@seattlecentral.edu>
 * @version 2.1 2015/06/11
 * @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/

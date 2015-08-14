@@ -1,12 +1,11 @@
 <?php
 /**
-* index.php view page for generic gigs_form controller
+* index.php is the view page of all gigs for Gigs controller
 *
-*
-* views/gigs_form/index.php
+* views/gigs/index.php
 *
 * @package ITC 260 Gig Central CodeIgnitor
-* @subpackage Gig
+* @subpackage Gig Controller
 * @author Patricia Barker <pbarke01@seattlecentral.edu>
 * @version 1.0 2015/05/25
 * @link http://www.tcbcommercialproperties.com/sandbox/ci/

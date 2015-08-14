@@ -1,11 +1,9 @@
 <?php
 /**
-* Gig_model.php   model for a generic Customer
-*
-* Used to show how to do CRUD in CodeIgnitor
+* Gig_model.php model for Gig Controller
 *
 * @package ITC 260 CodeIgnitor - Gig Central
-* @subpackage CONTROLLER
+* @subpackage Gig Controller
 * @author Patricia Barker <patriciabethbarker@gmail.com>
 * @version 2.1 2015/06/11
 * @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/
