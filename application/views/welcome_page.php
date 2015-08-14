@@ -8,7 +8,7 @@
 
 <div id="instruction" class="main-box-container">
     
-    <a href="<?php echo base_url().'gigs'; ?>">
+    <a href="<?php echo base_url().'gig'; ?>">
         <div id="find-gig" class="main-box col-lg-3 col-sm-6 col-xs-12">
         <div class="inner-box">
             <h1><i class="fa fa-search"></i></h1>
