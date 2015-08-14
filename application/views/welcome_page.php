@@ -8,7 +8,7 @@
 
 <div id="instruction" class="main-box-container">
     
-    <a href="/gigcentral/index">
+    <a href="<?php echo base_url().'gigs'; ?>">
         <div id="find-gig" class="main-box col-lg-3 col-sm-6 col-xs-12">
         <div class="inner-box">
             <h1><i class="fa fa-search"></i></h1>
@@ -18,7 +18,7 @@
         </div></div>
     </a>
     
-    <a href="/gigcentral/create">
+    <a href="<?php echo base_url().'gig/add'; ?>">
         <div id="post-gig" class="main-box col-lg-3 col-sm-6 col-xs-12">
         <div class="inner-box">
             <h1><i class="fa fa-briefcase"></i></h1>
