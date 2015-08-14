@@ -71,7 +71,7 @@
             <div class="form-group">
                 <label for="GigPosted" class="col-lg-3 control-label"><em>Gig Posting Date</em> <br> &nbsp(mm/dd/yyyy)</label>
                     <div class="col-md-6">
-                        <input type="date" class="form-control" id="GigPostDate" name="GigPostDate" placeholder="Date Gig Posted">
+                        <input type="date" class="form-control" id="GigPosted" name="GigPosted" placeholder="Date Gig Posted">
                     </div>
             </div>
         <br>
