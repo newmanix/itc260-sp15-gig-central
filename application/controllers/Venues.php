@@ -54,7 +54,6 @@ class Venues extends CI_Controller {
              $data['venues'] = $this->Venues_model->get_venues();
              $data['title'] = 'Venues';
              $this->load->view('venues/index', $data);
-             $this->config->set_item("banner-img", "img/Gig-logo.png");
        }//end index()
 
     

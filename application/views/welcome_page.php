@@ -28,7 +28,7 @@
         </div></div>
     </a>
     
-    <a href="<?=base_url()?>venues/index">
+    <a href="<?=base_url()?>venues">
         <div id="post-venue" class="main-box col-lg-3 col-sm-6 col-xs-12">
         <div class="inner-box">
             <h1><i class="fa fa-map-marker"></i></h1>

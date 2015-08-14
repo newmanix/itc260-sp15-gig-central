@@ -40,4 +40,6 @@ $this->load->view($this->config->item('theme').'header');
 
 <?php endforeach ?>
 
+<a href="<?=base_url()?>venues/add"><button type="submit" class="btn btn-default">Add a New Venue</button></a>
+
 <?php $this->load->view($this->config->item('theme').'footer'); ?>
