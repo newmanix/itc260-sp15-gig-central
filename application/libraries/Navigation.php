@@ -26,33 +26,43 @@ class Navigation {
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
-			4 =>	array(
+            
+            4 =>	array(
+				'text'		=> 	'Find a Venue',
+				'link'		=> 	base_url() . 'venues',
+				'show_condition'=>	1,
+				'parent'	=>	0
+			),
+            
+            5 =>	array(
+				'text'		=> 	'Post a Venue',
+				'link'		=> 	base_url() . 'venues/add',
+				'show_condition'=>	1,
+				'parent'	=>	0
+			),
+            
+			6 =>	array(
 				'text'		=> 	'Profiles',
 				'link'		=> 	base_url() . 'profiles',
 				'show_condition'=>	1,
 				'parent'	=>	0
 			),
-			5 =>	array(
-				'text'		=> 	'FAQ',
-				'link'		=> 	base_url() . 'faq',
-				'show_condition'=>	1,
-				'parent'	=>	1
-			),
-            5 =>	array(
+            
+			7 =>	array(
 				'text'		=> 	'FAQ',
 				'link'		=> 	base_url() . 'faq',
 				'show_condition'=>	1,
 				'parent'	=>	1
 			),
 
-      6 =>	array(
+            8 =>	array(
 				'text'		=> 	'add a profile',
 				'link'		=> 	base_url() . 'profile_form',
 				'show_condition'=>	1,
-				'parent'	=>	4
+				'parent'	=>	6
 			),
 
-      6 =>	array(
+            9 =>	array(
 				'text'		=> 	'contact us!',
 				'link'		=> 	base_url() . 'contact',
 				'show_condition'=>	1,

@@ -24,21 +24,21 @@
             <h1><i class="fa fa-briefcase"></i></h1>
             <h3>Post a gig</h3>
             <div class="bar"></div>
-            <p>Are you hiring a deveoper who can help your website building? Share with us</p>
+            <p>Are you hiring a developer who can help your website building? Share with us</p>
         </div></div>
     </a>
     
-    <a href="/startups/index">
+    <a href="<?=base_url()?>venues/index">
         <div id="post-venue" class="main-box col-lg-3 col-sm-6 col-xs-12">
         <div class="inner-box">
             <h1><i class="fa fa-map-marker"></i></h1>
             <h3>Find a venue</h3>
             <div class="bar"></div>
-            <p>Are you a start up looking for a place to gether and work? See our list</p>
+            <p>Are you a start up looking for a place to gather and work? See our list</p>
         </div></div>
     </a>
     
-    <a href="/startups/create">
+    <a href="<?=base_url()?>venues/add">
         <div id="post-gig" class="main-box col-lg-3 col-sm-6 col-xs-12">
         <div class="inner-box">
             <h1><i class="fa fa-share-alt"></i></h1>
