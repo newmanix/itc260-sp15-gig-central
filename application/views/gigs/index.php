@@ -25,7 +25,7 @@
 <h3><?php echo $gig['CompanyName'] ?></h3>
 <p><?php echo $gig['City'] ?></p>
 <p><?php echo $gig['GigOutline'] ?></p>
-<p><?php echo anchor('gigs/'.$gig['GigID'] , 'Read More');?></p>
+<p><?php echo anchor('gig/'.$gig['GigID'] , 'Read More');?></p>
 
 <?php endforeach ?>
 
