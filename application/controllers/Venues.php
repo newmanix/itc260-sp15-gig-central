@@ -82,9 +82,7 @@ class Venues extends CI_Controller {
 
         if ($this->form_validation->run() === FALSE)
         {
-            $this->load->view('templates/header', $data);
             $this->load->view('venues/add', $data);
-            $this->load->view('templates/footer', $data);
 
         }
         else
