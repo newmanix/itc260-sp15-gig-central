@@ -54,9 +54,9 @@
 
     
 <div id="data-example" class="main-box-container">
-    <div class="column col-lg-8 col-sm-12 col-xs-12">
-        <div class="inner-column">
-            <h2>Recent Gig Posts</h2>
+         <div class="column col-lg-8 col-sm-12 col-xs-12">
+         <div class="inner-column">
+             <h2>Recent Gig Posts</h2>
 -            <p><a href=""> Read More &raquo;</a> </p>
              <div class="post">
 -                <ul class="list">
