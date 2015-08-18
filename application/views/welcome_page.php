@@ -57,14 +57,35 @@
     <div class="column col-lg-8 col-sm-12 col-xs-12">
         <div class="inner-column">
             <h2>Recent Gig Posts</h2>
-            <div class="post">
-                <?php foreach ($gigs as $gig): ?>
-				<h3><?php echo $gig['CompanyName'] ?></h3>
-				<p><?php echo $gig['City'] ?></p>
-				<p><?php echo $gig['GigOutline'] ?></p>
-				<p><?php echo anchor('gigs/'.$gig['GigID'] , 'Read More');?></p>
-				<?php endforeach ?>
-            </div>
+-            <p><a href=""> Read More &raquo;</a> </p>
+             <div class="post">
+-                <ul class="list">
+-                    <li>
+-                        <a href=""><h4>Web Developer </h4></a>
+-                        <h5 class="city">Seattle</h5>
+-                    <p>Need a good developer for cheap. Need a good developer for cheap.Need a good developer for cheap.Need a good developer for cheap. </p>
+-                    </li>
+-                    <li>
+-                        <a href=""><h4>Database Developer</h4></a>
+-                        <h5 class="city">Bellevue</h5>
+-                        <p>In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.</p>
+-                    </li>
+-                    <li>
+-                        <a href=""><h4>Python</h4></a>
+-                        <h5 class="city">Seattle</h5>
+-                        <p>Need a good developer for cheap. Need a good developer for cheap.Need a good developer for cheap.Need a good developer for cheap. </p>
+-                    </li>
+-                    <li>
+-                        <a href=""><h4>PHP Expert</h4></a>
+-                        <h5 class="city">Bellevue</h5>
+-                        <p>Need a good developer for cheap. Need a good developer for cheap.Need a good developer for cheap.Need a good developer for cheap. </p>
+-                    </li>
+-                    <li>
+-                        <a href=""><h4>Python Programmer</h4></a>
+-                        <h5 class="city">Seattle</h5>
+-                        <p>In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.</p>
+-                    </li>
+-                </ul>
         </div>
     </div>
     <div class="column col-lg-4 col-sm-12 col-xs-12">
