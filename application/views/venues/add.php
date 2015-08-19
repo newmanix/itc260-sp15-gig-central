@@ -15,51 +15,51 @@
 */
 
 $this->load->view($this->config->item('theme').'header');
+$attributes = array('class'=>'form-horizontal', 'role'=>'form');
 ?>
-
 
 <div class="container">
   <div class="col-lg-10">
     <h1>Add a Startup Venue</h1>
-
-        <form class="form-horizontal" role="form" method="post">
+      <?php echo form_open('venues/add', $attributes); ?>
+        <!--<form class="form-horizontal" role="form" method="post">-->
 
             <fieldset>
             <div class="form-group">
-                <label for="VenueName" class="col-lg-3 control-label"><em>Venue Name</em></label>
+                <label for="VenueName" class="col-lg-3 control-label" required><em>Venue Name*</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="VenueName" name="VenueName" placeholder="Venue Name">
+                        <input type="text" class="form-control" id="VenueName" name="VenueName" placeholder="Venue Name"><?php echo form_error('VenueName'); ?>
                     </div>
             </div>
 
             <div class="form-group">
-                <label for="VenueAddress" class="col-lg-3 control-label"><em>Venue Address</em></label>
+                <label for="VenueAddress" class="col-lg-3 control-label" required><em>Venue Address*</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="VenueAddress" name="VenueAddress" placeholder="Venue Address">
+                        <input type="text" class="form-control" id="VenueAddress" name="VenueAddress" placeholder="Venue Address"><?php echo form_error('VenueAddress'); ?>
                     </div>
             </div>
             <div class="form-group">
-                <label for="City" class="col-lg-3 control-label"><em>City</em></label>
+                <label for="City" class="col-lg-3 control-label"><em>City*</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="City" name="City" placeholder="City">
+                        <input type="text" class="form-control" id="City" name="City" placeholder="City"><?php echo form_error('City'); ?>
                     </div>
             </div>
             <div class="form-group">
-                <label for="State" class="col-lg-3 control-label"><em>State</em></label>
+                <label for="State" class="col-lg-3 control-label"><em>State*</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="State" name="State" placeholder="State">
+                        <input type="text" class="form-control" id="State" name="State" placeholder="State"><?php echo form_error('State'); ?>
                     </div>
             </div>
             <div class="form-group">
-                <label for="ZipCode" class="col-lg-3 control-label"><em>Zip Code</em></label>
+                <label for="ZipCode" class="col-lg-3 control-label"><em>Zip Code*</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="Zip Code">
+                        <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="Zip Code"><?php echo form_error('ZipCode'); ?>
                     </div>
             </div>
             <div class="form-group">
-                <label for="VenuePhone" class="col-lg-3 control-label"><em>Phone number</em></label>
+                <label for="VenuePhone" class="col-lg-3 control-label"><em>Phone number*</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="VenuePhone" name="VenuePhone" placeholder="Venue Phone Number">
+                        <input type="text" class="form-control" id="VenuePhone" name="VenuePhone" placeholder="Venue Phone Number"><?php echo form_error('VenuePhone'); ?>
                     </div>
              </div>
             <div class="form-group">
@@ -68,19 +68,13 @@ $this->load->view($this->config->item('theme').'header');
                         <input type="text" class="form-control" id="VenueWebsite" name="VenueWebsite" placeholder="Venue Website">
                     </div>
             </div>
-            </fieldset>
-            <br />
-
-            <fieldset>
-            <legend><h3><strong>Venue Amenities</strong></h3></legend>
-
            <div class="form-group">
             <label for="VenueHours" class="col-lg-3 control-label"><em>Hours</em></label><br>
                 <div class="col-md-6">
                   <input type="text" class="form-control" id="VenueHours" name="VenueHours" placeholder="Venue Hours">
                 </div>
            </div>
-           <!--<div class="form-group">
+          <div class="form-group">
               <label for="VenueTypeKey" class="col-lg-3 control-label"><em>Venue Type</em></label>
                   <div class="col-md-6">
                       <select class="form-control" id="VenueTypeKey" name="VenueTypeKey">
@@ -91,7 +85,11 @@ $this->load->view($this->config->item('theme').'header');
                           <option value="5">Other</option>
                       </select>
                   </div>
-          </div>-->
+                </div>
+        </fieldset>
+            
+        <fieldset>   
+        <legend><h3><strong>Venue Amenities</strong></h3></legend>
            <div class="form-group">
               <label for="Food" class="col-lg-3 control-label"><em>Venue Amenities</em></label>
                   <div class="col-md-6">

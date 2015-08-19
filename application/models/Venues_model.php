@@ -29,14 +29,35 @@ class Venues_model extends CI_Model {
 
     public function get_venues($slug = FALSE)
     {
+        /*
+        $this->db->select('*');
+        $this->db->from('blogs');
+        $this->db->join('comments', 'comments.id = blogs.id');
+
+        $query = $this->db->get();
+
+        // Produces: 
+        // SELECT * FROM blogs
+        // JOIN comments ON comments.id = blogs.id
+        
+        */
         if ($slug === FALSE)
         {
-            $query = $this->db->get('sc_Venue');
+            $this->db->select('*');
+            $this->db->from('sc_Venue');
+            $this->db->join('sc_VenueType', 'sc_VenueType.VenueTypeKey = sc_Venue.VenueTypeKey');
+
+            $query = $this->db->get();
+            //$query = $this->db->get('sc_Venue');
             return $query->result_array();
 
         }
 
-        $query = $this->db->get_where('sc_Venue', array('VenueKey' => $slug));
+        $this->db->select('*');
+        $this->db->from('sc_Venue');
+        $this->db->join('sc_VenueType', 'sc_VenueType.VenueTypeKey = sc_Venue.VenueTypeKey')->where(array('VenueKey' => $slug));
+        
+        $query = $this->db->get();
         return $query->row_array();
 
     }//end get_venues method
@@ -50,7 +71,7 @@ class Venues_model extends CI_Model {
 
          $data = array(
             'VenueName' => $this->input->post('VenueName'),
-            /*'VenueTypeKey' => $this->input->post('VenueTypeKey'),*/
+            'VenueTypeKey' => $this->input->post('VenueTypeKey'),
             'VenueAddress' => $this->input->post('VenueAddress'),
             'City' => $this->input->post('City'),
             'State' => $this->input->post('State'),
@@ -67,7 +88,7 @@ class Venues_model extends CI_Model {
             'Parking' => $this->input->post('Parking')
 
          );
-
+        
         return $this->db->insert('sc_Venue', $data);
 
 }//end add_venues method
