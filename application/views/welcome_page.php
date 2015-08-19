@@ -54,38 +54,17 @@
 
     
 <div id="data-example" class="main-box-container">
-         <div class="column col-lg-8 col-sm-12 col-xs-12">
+<div class="column col-lg-8 col-sm-12 col-xs-12">
          <div class="inner-column">
              <h2>Recent Gig Posts</h2>
--            <p><a href=""> Read More &raquo;</a> </p>
              <div class="post">
--                <ul class="list">
--                    <li>
--                        <a href=""><h4>Web Developer </h4></a>
--                        <h5 class="city">Seattle</h5>
--                    <p>Need a good developer for cheap. Need a good developer for cheap.Need a good developer for cheap.Need a good developer for cheap. </p>
--                    </li>
--                    <li>
--                        <a href=""><h4>Database Developer</h4></a>
--                        <h5 class="city">Bellevue</h5>
--                        <p>In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.</p>
--                    </li>
--                    <li>
--                        <a href=""><h4>Python</h4></a>
--                        <h5 class="city">Seattle</h5>
--                        <p>Need a good developer for cheap. Need a good developer for cheap.Need a good developer for cheap.Need a good developer for cheap. </p>
--                    </li>
--                    <li>
--                        <a href=""><h4>PHP Expert</h4></a>
--                        <h5 class="city">Bellevue</h5>
--                        <p>Need a good developer for cheap. Need a good developer for cheap.Need a good developer for cheap.Need a good developer for cheap. </p>
--                    </li>
--                    <li>
--                        <a href=""><h4>Python Programmer</h4></a>
--                        <h5 class="city">Seattle</h5>
--                        <p>In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.In search of starving brilliant students to build my startup for no pay.</p>
--                    </li>
--                </ul>
+                <?php foreach ($gigs as $gig): ?>
+				<h3><?php echo $gig['CompanyName'] ?></h3>
+			    <p><?php echo $gig['City'] ?></p>
+				<p><?php echo $gig['GigOutline'] ?></p>
+				<p><?php echo anchor('gig/'.$gig['GigID'] , 'Read More');?></p>
+				<?php endforeach ?>
+            </div>
         </div>
     </div>
     <div class="column col-lg-4 col-sm-12 col-xs-12">
@@ -109,7 +88,6 @@
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
 //<![CDATA[
-
 /*
 //custom Icons
 var customIcons = {
@@ -121,18 +99,14 @@ var customIcons = {
   }
 };
 */
-
 /*
 //get user's geolocation
 if (navigator.geolocation) {
     var location_timeout = setTimeout("geolocFail()", 10000);
-
     navigator.geolocation.getCurrentPosition(function(position) {
         clearTimeout(location_timeout);
-
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
-
         geocodeLatLng(lat, lng);
     }, function(error) {
         clearTimeout(location_timeout);
@@ -143,7 +117,6 @@ if (navigator.geolocation) {
     geolocFail();
 } 
 */
-
 $(document).ready(function() {
     
     var map = new google.maps.Map(document.getElementById("map"), {
@@ -153,7 +126,6 @@ $(document).ready(function() {
     mapTypeId: 'roadmap'
     });
     var infoWindow = new google.maps.InfoWindow;
-
   // Change this depending on the name of your PHP file
   downloadUrl("public/phpsqlajax_genxml.php", function(data) {
     var xml = data.responseXML;
@@ -177,35 +149,27 @@ $(document).ready(function() {
     }
   });
 });
-
 function bindInfoWindow(marker, map, infoWindow, html) {
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.setContent(html);
     infoWindow.open(map, marker);
   });
 }
-
 function downloadUrl(url, callback) {
   var request = window.ActiveXObject ?
       new ActiveXObject('Microsoft.XMLHTTP') :
       new XMLHttpRequest;
-
   request.onreadystatechange = function() {
     if (request.readyState == 4) {
       request.onreadystatechange = doNothing;
       callback(request, request.status);
     }
   };
-
   request.open('GET', url, true);
   request.send(null);
 }
     
-
-
 function doNothing() {}
-
 //]]>
-
 </script>
 <!-- End Startup Map Script --->

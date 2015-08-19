@@ -34,11 +34,19 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	
+	
 	public function index()
 	{
+		$this->load->model('gig_model');
+		$data['gigs'] = $this->gig_model->get_gigs();
+		
+		$this->load->view('welcome_page', $data);
+
 		// $this->load->view('templates/header'); // Alex's path
         $this->load->view($this->config->item('theme') . 'header');
-        $this->load->view('welcome_page');
+
         //$this->load->view('templates/footer'); // Alex's path
         $this->load->view($this->config->item('theme') . 'footer');
 
