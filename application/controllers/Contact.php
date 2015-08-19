@@ -43,6 +43,26 @@ class Contact extends CI_Controller {
         }
         else
         {//process data, send email!
+
+          $this->contact_model->set_emails();
+
+          //get the form data
+            $name = $this->input->post('name');
+            $email = $this->input->post('email');
+            $subject = $this->input->post('subject');
+            $message = $this->input->post('message');
+
+            //set to_email id to which you want to receive mails
+            $to_email = 'mdiediker@gmail.com';
+            $this->load->helper('url');
+
+
+            //send mail
+            $this->email->from($to_email, $name);
+            $this->email->to($email);
+            $this->email->subject($subject);
+            $this->email->message($message);
+
      if ($this->email->send())
            $this->contact_model->send_email();
             $this->load->view('contact/success');
@@ -81,18 +101,7 @@ class Contact extends CI_Controller {
             //set to_email id to which you want to receive mails
             $to_email = 'mdiediker@gmail.com';
             $this->load->helper('url');
-            //configure email settings
-            $config['protocol'] = 'smtp';
-            $config['smtp_host'] = 'ssl://smtp.gmail.com';
-            $config['smtp_port'] = '465';
-            $config['smtp_user'] = 'example@gmail.com';
-            $config['smtp_pass'] = 'password';
-            $config['mailtype'] = 'html';
-            $config['charset'] = 'iso-8859-1';
-            $config['wordwrap'] = TRUE;
-            $config['newline'] = "\r\n"; //use double quotes
-            $this->load->library('email', $config);
-            $this->email->initialize($config);
+
 
             //send mail
             $this->email->from($to_email, $name);
