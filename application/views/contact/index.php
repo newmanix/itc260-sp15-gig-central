@@ -28,7 +28,7 @@ $this->load->view($this->config->item('theme') . 'header');
 
       <option value="General Inquiry" selected="selected">General Inquiry</option>
       <option value="Specific Inquiry">Specific Inquiry</option>
-      <option value="Stoopid Inquiry">Stoopid Inquiry</option>
+      <option value="Stoopid Inquiry">Sto0opid Inquiry</option>
     </select>
 </div>
 <label for="message">Message:</label>
