@@ -62,7 +62,7 @@ $route['translate_uri_dashes'] = FALSE;
 // $route['rss'] = 'rss';
 
 
-//gig routes 
+//gig routes
 $route['gig'] = 'gig/index';
 $route['gig/add'] = 'gig/add';
 $route['gig/(:any)'] = 'gig/view/$1';
@@ -83,6 +83,7 @@ $route['contact/view'] = 'contact/view';
 $route['contact/create'] = 'contact/create';
 $route['contact/(:any)'] = 'contact/view/$1';
 $route['contact'] = 'contact';
+$route['contact/success'] = 'contact/success';
 
 
 //bootswatch example route
