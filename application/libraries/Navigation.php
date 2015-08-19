@@ -54,7 +54,7 @@ function init(){
         ),
         8 =>	array(
             'text'		=> 	'Add a Profile',
-            'link'		=> 	base_url() . 'profile_form',
+            'link'		=> 	base_url() . 'profiles/add',
             'show_condition'=>	1,
             'parent'	=>	6
         ),
@@ -63,6 +63,12 @@ function init(){
             'link'		=> 	base_url() . 'contact',
             'show_condition'=>	1,
             'parent'	=>	0
+        ),
+		10 =>	array(
+            'text'		=> 	'View Profiles',
+            'link'		=> 	base_url() . 'profiles',
+            'show_condition'=>	1,
+            'parent'	=>	6
         )
     );//end $menuOne
 

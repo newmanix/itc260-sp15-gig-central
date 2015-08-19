@@ -43,11 +43,11 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
 
         <?php
         $attributes = array('class' => '', 'id' => '');
-        echo form_open('Profile_form', $attributes);
+        echo form_open('Profile', $attributes);
         ?>
 
         <div class="form-group">
-          <legend><h2><strong>Profile Form</strong></h2></legend>
+          <legend><h2><strong>Add a Profile</strong></h2></legend>
         </div>
 
         <div class="form-group">
