@@ -91,13 +91,23 @@ CREATE TABLE sc_VenueType(
 CREATE TABLE sc_Venue(
     VenueKey INT UNSIGNED NOT Null AUTO_INCREMENT,
     VenueName VARCHAR(50) DEFAULT '',
-    VenueTypeKey INT UNSIGNED DEFAULT 0,
+    /*VenueTypeKey INT UNSIGNED DEFAULT 0, problem with foreign key constraint*/
     VenueAddress VARCHAR(255) DEFAULT '',
+    City VARCHAR(255) DEFAULT '',
+    State VARCHAR(50) DEFAULT '',
+    ZipCode VARCHAR(10) DEFAULT '',
     VenuePhone VARCHAR(10) DEFAULT '',
     VenueWebsite VARCHAR(50) DEFAULT '',
     VenueHours VARCHAR(50) DEFAULT '',
+    Food VARCHAR(50) DEFAULT '',
+    Outlets VARCHAR(50) DEFAULT '',
+    Bar VARCHAR(50) DEFAULT '',
+    WiFi VARCHAR(50) DEFAULT '',
+    Outdoor VARCHAR(50) DEFAULT '',
+    Wheelchair VARCHAR(50) DEFAULT '',
+    Parking VARCHAR(50) DEFAULT '',
     PRIMARY KEY (VenueKey),
-    FOREIGN KEY (VenueTypeKey) REFERENCES VenueType(VenueTypeKey) ON DELETE CASCADE,
+    /*FOREIGN KEY (VenueTypeKey) REFERENCES VenueType(VenueTypeKey) ON DELETE CASCADE,*/
     INDEX VenueKey_index(VenueKey)
 )ENGINE=INNODB;
 
@@ -105,10 +115,10 @@ CREATE TABLE sc_VenueAmenity(
     VenueAmenityKey INT UNSIGNED NOT Null AUTO_INCREMENT,
     VenueKey INT UNSIGNED DEFAULT 0,
     Cost VARCHAR(50) DEFAULT '',
-    Wifi BOOLEAN DEFAULT 0,
+    WiFi VARCHAR(50) DEFAULT '',
     NoiseLevel VARCHAR(1) DEFAULT '',
-    FoodAvailability BOOLEAN DEFAULT 0,
-    ElectricOutlets BOOLEAN DEFAULT 0,
+    FoodAvailability VARCHAR(50) DEFAULT '',
+    ElectricOutlets VARCHAR(50) DEFAULT '',
     PRIMARY KEY (VenueAmenityKey),
     FOREIGN KEY (VenueKey) REFERENCES sc_Venue(VenueKey) ON DELETE CASCADE
 )ENGINE=INNODB;
@@ -255,10 +265,13 @@ insert into test_Customers values (NULL,"Rules","Ann","ann@example.com");
 
 INSERT INTO sc_VenueType values (null, 'Coffee shop');
 INSERT INTO sc_VenueType values (null, 'Library');
+INSERT INTO sc_VenueType values (null, 'School');
+INSERT INTO sc_VenueType values (null, 'Community Center');
+INSERT INTO sc_VenueType values (null, 'Other');
 
-INSERT INTO sc_Venue values (null, "Elliott Bay Book Company", 1, "1521 10th Ave, Seattle, WA  98122", "2066246600", "http://www.elliottbaybook.com", "M-Th 10am-10pm, F-S 10am-11pm, Sun"); 
-INSERT INTO sc_Venue values (null, "Caffe Vita", 1, "1005 E Pike St, Seattle, WA  98122", "2067094440", "http://www.caffevita.com/locations/wa/capitol-hill", "M-F 6am-11pm, S-Sun 7am-11pm");
-INSERT INTO sc_Venue values (null, "Seattle Public Library - Capitol Hill Branch", 2, "425 Harvard Ave E, Seattle, WA  98102", "2066844715", "http://www.spl.org/locations/capitol-hill-branch", "M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm");
+INSERT INTO sc_Venue values (null, "Elliott Bay Book Company", "1521 10th Ave", "Seattle", "WA",  "98122", "2066246600", "http://www.elliottbaybook.com", "M-Th 10am-10pm, F-S 10am-11pm, Sun", "Yes", "Yes", "No", "Yes", "No", "Yes", "No"); 
+INSERT INTO sc_Venue values (null, "Caffe Vita", "1005 E Pike St", "Seattle", "WA",  "98122", "2067094440", "http://www.caffevita.com/locations/wa/capitol-hill", "M-F 6am-11pm, S-Sun 7am-11pm", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No");
+INSERT INTO sc_Venue values (null, "Seattle Public Library - Capitol Hill Branch", "425 Harvard Ave E", "Seattle", "WA",  "98102", "2066844715", "http://www.spl.org/locations/capitol-hill-branch", "M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm", "No", "Yes", "No", "Yes", "No", "Yes", "Yes");
 
 INSERT INTO sc_VenueAmenity values (null, 1, "$", 1, "L", 1, 1);
 INSERT INTO sc_VenueAmenity values (null, 2, "$", 1, "H", 0, 1);
