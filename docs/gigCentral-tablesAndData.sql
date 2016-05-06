@@ -91,7 +91,7 @@ CREATE TABLE sc_VenueType(
 CREATE TABLE sc_Venue(
     VenueKey INT UNSIGNED NOT Null AUTO_INCREMENT,
     VenueName VARCHAR(50) DEFAULT '',
-    /*VenueTypeKey INT UNSIGNED DEFAULT 0, problem with foreign key constraint*/
+    VenueTypeKey INT UNSIGNED DEFAULT 0,
     VenueAddress VARCHAR(255) DEFAULT '',
     City VARCHAR(255) DEFAULT '',
     State VARCHAR(50) DEFAULT '',
@@ -107,7 +107,7 @@ CREATE TABLE sc_Venue(
     Wheelchair VARCHAR(50) DEFAULT '',
     Parking VARCHAR(50) DEFAULT '',
     PRIMARY KEY (VenueKey),
-    /*FOREIGN KEY (VenueTypeKey) REFERENCES VenueType(VenueTypeKey) ON DELETE CASCADE,*/
+    FOREIGN KEY (VenueTypeKey) REFERENCES sc_VenueType(VenueTypeKey) ON DELETE CASCADE,
     INDEX VenueKey_index(VenueKey)
 )ENGINE=INNODB;
 
@@ -269,9 +269,9 @@ INSERT INTO sc_VenueType values (null, 'School');
 INSERT INTO sc_VenueType values (null, 'Community Center');
 INSERT INTO sc_VenueType values (null, 'Other');
 
-INSERT INTO sc_Venue values (null, "Elliott Bay Book Company", "1521 10th Ave", "Seattle", "WA",  "98122", "2066246600", "http://www.elliottbaybook.com", "M-Th 10am-10pm, F-S 10am-11pm, Sun", "Yes", "Yes", "No", "Yes", "No", "Yes", "No"); 
-INSERT INTO sc_Venue values (null, "Caffe Vita", "1005 E Pike St", "Seattle", "WA",  "98122", "2067094440", "http://www.caffevita.com/locations/wa/capitol-hill", "M-F 6am-11pm, S-Sun 7am-11pm", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No");
-INSERT INTO sc_Venue values (null, "Seattle Public Library - Capitol Hill Branch", "425 Harvard Ave E", "Seattle", "WA",  "98102", "2066844715", "http://www.spl.org/locations/capitol-hill-branch", "M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm", "No", "Yes", "No", "Yes", "No", "Yes", "Yes");
+INSERT INTO sc_Venue values (null, "Elliott Bay Book Company", 1, "1521 10th Ave", "Seattle", "WA",  "98122", "2066246600", "http://www.elliottbaybook.com", "M-Th 10am-10pm, F-S 10am-11pm, Sun", "Yes", "Yes", "No", "Yes", "No", "Yes", "No"); 
+INSERT INTO sc_Venue values (null, "Caffe Vita", 2, "1005 E Pike St", "Seattle", "WA",  "98122", "2067094440", "http://www.caffevita.com/locations/wa/capitol-hill", "M-F 6am-11pm, S-Sun 7am-11pm", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No");
+INSERT INTO sc_Venue values (null, "Seattle Public Library - Capitol Hill Branch", 3, "425 Harvard Ave E", "Seattle", "WA",  "98102", "2066844715", "http://www.spl.org/locations/capitol-hill-branch", "M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm", "No", "Yes", "No", "Yes", "No", "Yes", "Yes");
 
 INSERT INTO sc_VenueAmenity values (null, 1, "$", 1, "L", 1, 1);
 INSERT INTO sc_VenueAmenity values (null, 2, "$", 1, "H", 0, 1);
