@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS test_Customers;
 DROP TABLE IF EXISTS sc_VenueReview;
 DROP TABLE IF EXISTS sc_VenuePromotion;
 DROP TABLE IF EXISTS sc_VenueAmenity;
+DROP TABLE IF EXISTS sc_Amenity;
 DROP TABLE IF EXISTS sc_VenueType;
 DROP TABLE IF EXISTS sc_Venue;
 DROP TABLE IF EXISTS sc_Markers;
@@ -88,40 +89,38 @@ CREATE TABLE sc_VenueType(
     INDEX VenueTypeKey_index(VenueTypeKey)
 )ENGINE=INNODB;
 
-CREATE TABLE sc_Venue(
-    VenueKey INT UNSIGNED NOT Null AUTO_INCREMENT,
-    VenueName VARCHAR(50) DEFAULT '',
-    VenueTypeKey INT UNSIGNED DEFAULT 0,
-    VenueAddress VARCHAR(255) DEFAULT '',
-    City VARCHAR(255) DEFAULT '',
-    State VARCHAR(50) DEFAULT '',
-    ZipCode VARCHAR(10) DEFAULT '',
-    VenuePhone VARCHAR(10) DEFAULT '',
-    VenueWebsite VARCHAR(50) DEFAULT '',
-    VenueHours VARCHAR(50) DEFAULT '',
-    Food VARCHAR(50) DEFAULT '',
-    Outlets VARCHAR(50) DEFAULT '',
-    Bar VARCHAR(50) DEFAULT '',
-    WiFi VARCHAR(50) DEFAULT '',
-    Outdoor VARCHAR(50) DEFAULT '',
-    Wheelchair VARCHAR(50) DEFAULT '',
-    Parking VARCHAR(50) DEFAULT '',
-    PRIMARY KEY (VenueKey),
-    FOREIGN KEY (VenueTypeKey) REFERENCES sc_VenueType(VenueTypeKey) ON DELETE CASCADE,
-    INDEX VenueKey_index(VenueKey)
-)ENGINE=INNODB;
+CREATE TABLE `sc_Venue` (
+  `VenueKey` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `VenueName` varchar(50) DEFAULT '',
+  `VenueTypeKey` int(10) unsigned DEFAULT '0',
+  `VenueAddress` varchar(255) DEFAULT '',
+  `City` varchar(255) DEFAULT '',
+  `State` varchar(50) DEFAULT '',
+  `ZipCode` varchar(10) DEFAULT '',
+  `VenuePhone` varchar(10) DEFAULT '',
+  `VenueWebsite` varchar(50) DEFAULT '',
+  `VenueHours` varchar(50) DEFAULT '',
+  PRIMARY KEY (`VenueKey`),
+  KEY `VenueTypeKey` (`VenueTypeKey`),
+  KEY `VenueKey_index` (`VenueKey`),
+  CONSTRAINT `sc_Venue_ibfk_1` FOREIGN KEY (`VenueTypeKey`) REFERENCES `sc_VenueType` (`VenueTypeKey`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE sc_VenueAmenity(
-    VenueAmenityKey INT UNSIGNED NOT Null AUTO_INCREMENT,
-    VenueKey INT UNSIGNED DEFAULT 0,
-    Cost VARCHAR(50) DEFAULT '',
-    WiFi VARCHAR(50) DEFAULT '',
-    NoiseLevel VARCHAR(1) DEFAULT '',
-    FoodAvailability VARCHAR(50) DEFAULT '',
-    ElectricOutlets VARCHAR(50) DEFAULT '',
-    PRIMARY KEY (VenueAmenityKey),
-    FOREIGN KEY (VenueKey) REFERENCES sc_Venue(VenueKey) ON DELETE CASCADE
-)ENGINE=INNODB;
+CREATE TABLE sc_Amenity
+(
+AmenityKey INT PRIMARY KEY AUTO_INCREMENT,
+AmenityName VARCHAR(128) NOT NULL
+);
+
+CREATE TABLE sc_VenueAmenity
+(
+VenueAmenityKey INT PRIMARY KEY AUTO_INCREMENT,
+AmenityKey INT NOT NULL,
+VenueKey INT UNSIGNED NOT NULL,
+
+FOREIGN KEY (AmenityKey) REFERENCES sc_Amenity(AmenityKey),
+FOREIGN KEY (VenueKey) REFERENCES sc_Venue(VenueKey)
+);
 
 CREATE TABLE sc_VenuePromotion(
     VenuePromotionKey INT UNSIGNED NOT Null AUTO_INCREMENT,
@@ -259,7 +258,7 @@ PRIMARY KEY (GigID)
 INSERT INTO contact (`id`, `name`, `email`, `subject`, `message`) VALUES (1, 'Victoria', 'viktoriacool@mail.ru', 'General', 'Hello world');
 
 insert into test_Customers values (NULL,"Smith","Bob","bob@example.com");
-insert into test_Customers values (NULL,"Jones","Bill","bill@example.com");
+insert into test_Customers values (NULL,"Jones","Bll","bill@example.com");
 insert into test_Customers values (NULL,"Doe","John","john@example.com");
 insert into test_Customers values (NULL,"Rules","Ann","ann@example.com");
 
@@ -269,13 +268,27 @@ INSERT INTO sc_VenueType values (null, 'School');
 INSERT INTO sc_VenueType values (null, 'Community Center');
 INSERT INTO sc_VenueType values (null, 'Other');
 
-INSERT INTO sc_Venue values (null, "Elliott Bay Book Company", 1, "1521 10th Ave", "Seattle", "WA",  "98122", "2066246600", "http://www.elliottbaybook.com", "M-Th 10am-10pm, F-S 10am-11pm, Sun", "Yes", "Yes", "No", "Yes", "No", "Yes", "No"); 
-INSERT INTO sc_Venue values (null, "Caffe Vita", 2, "1005 E Pike St", "Seattle", "WA",  "98122", "2067094440", "http://www.caffevita.com/locations/wa/capitol-hill", "M-F 6am-11pm, S-Sun 7am-11pm", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No");
-INSERT INTO sc_Venue values (null, "Seattle Public Library - Capitol Hill Branch", 3, "425 Harvard Ave E", "Seattle", "WA",  "98102", "2066844715", "http://www.spl.org/locations/capitol-hill-branch", "M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm", "No", "Yes", "No", "Yes", "No", "Yes", "Yes");
 
-INSERT INTO sc_VenueAmenity values (null, 1, "$", 1, "L", 1, 1);
-INSERT INTO sc_VenueAmenity values (null, 2, "$", 1, "H", 0, 1);
-INSERT INTO sc_VenueAmenity values(null, 3, "Free", 1, "L", 0, 1);
+INSERT INTO `sc_Venue` (`VenueKey`, `VenueName`, `VenueTypeKey`, `VenueAddress`, `City`, `State`, `ZipCode`, `VenuePhone`, `VenueWebsite`, `VenueHours`) VALUES
+(1,	'Elliott Bay Book Company',	1,	'1521 10th Ave',	'Seattle',	'WA',	'98122',	'2066246600',	'http://www.elliottbaybook.com',	'M-Th 10am-10pm, F-S 10am-11pm, Sun'),
+(2,	'Caffe Vita',	2,	'1005 E Pike St',	'Seattle',	'WA',	'98122',	'2067094440',	'http://www.caffevita.com/locations/wa/capitol-hill',	'M-F 6am-11pm, S-Sun 7am-11pm'),
+(3,	'Seattle Public Library - Capitol Hill Branch',	3,	'425 Harvard Ave E',	'Seattle',	'WA',	'98102',	'2066844715',	'http://www.spl.org/locations/capitol-hill-branch',	'M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm');
+
+INSERT INTO sc_Amenity VALUES
+(1,"Wi-Fi"), (2,"Food"), (3, "Bar"), (4, "Outlets"), (5, "Food"), (6, "Outdoor Seating"), (7, "Parking"), (8, "Wheelchair Accessable");
+
+-- -------------------------------------------------------------------------------------
+-- To show the venues and the amenities they offer, run or adapt this SQL:
+-- SELECT VenueName, AmenityName FROM sc_Venue
+-- INNER JOIN sc_VenueAmenity ON sc_Venue.VenueKey = sc_VenueAmenity.VenueKey
+-- INNER JOIN sc_Amenity ON sc_VenueAmenity.AmenityKey = sc_Amenity.AmenityKey
+-- ORDER BY VenueName ASC, AmenityName ASC;
+-- -------------------------------------------------------------------------------------
+
+INSERT INTO sc_VenueAmenity VALUES
+(null,1,1), (null,2,1), (null,4,1),
+(null,1,2), (null,4,2),
+(null,1,3), (null,4,3);
 
 INSERT INTO sc_VenueReview values (null, 1, 1, 3, "It's noisy and their WiFi drops continuously", 20150526);
 
@@ -283,4 +296,4 @@ INSERT INTO sc_Markers VALUES (null, '1', '47.608941', '-122.340145');
 
 INSERT INTO startups (`id`, `title`, `slug`, `text`) VALUES (1, 'Startup1', 'startup1', 'Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I\'m in a transitional period so I don\'t wanna kill you, I wanna help you. But I can\'t give you this case, it don\'t belong to me. Besides, I\'ve already been through too much shit this morning over this case to hand it over to your dumb ass.\r\n'), (2, 'Startup2', 'startup2', 'You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don\'t know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I\'m breaking now. We said we\'d say it was the snow that killed the other two, but it wasn\'t. Nature is lethal but it doesn\'t hold a candle to man.');
 
-SET foreign_key_checks = 0; #turn off constraints temporarily
+SET foreign_key_checks = 1; #turn contraints back on
