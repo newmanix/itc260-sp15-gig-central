@@ -194,29 +194,6 @@ CREATE TABLE Profile (
 ) ENGINE=INNODB;
 
 /**
-* sc_Startup.sql
-*
-* Use to store data from profile form
-*
-* @package small piece of program
-* @subpackage Profile_form
-* @author Evan Smyth <evsmyth@yahoo.com>
-* @version 1.0 2015/05/21
-* @link http://www.example.com/
-* @license http://www.apache.org/licenses/LICENSE-2.0
-* @see Startup_model.php
-* @see Startups.php
-* @todo none
-*/
-CREATE TABLE `startups` (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  title varchar(128) NOT NULL,
-  slug varchar(128) NOT NULL,
-  `text` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-/**
 * gig.sql
 *
 * Use to store data from gig form
