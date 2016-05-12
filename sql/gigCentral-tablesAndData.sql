@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS sc_Markers;
 DROP TABLE IF EXISTS Profile;
 DROP TABLE IF EXISTS startups;
 DROP TABLE IF EXISTS Gigs;
+DROP TABLE IF EXISTS Company;
 
 /**
 * contact.sql
