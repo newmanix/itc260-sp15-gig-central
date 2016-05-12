@@ -295,7 +295,7 @@ INSERT INTO sc_VenueType values (null, 'Community Center');
 INSERT INTO sc_VenueType values (null, 'Other');
 
 
-INSERT INTO `sc_Venue` (`VenueKey`, `VenueName`, `VenueTypeKey`, `VenueAddress`, `City`, `State`, `ZipCode`, `VenuePhone`, `VenueWebsite`, `VenueHours`) VALUES
+INSERT INTO sc_Venue (`VenueKey`, `VenueName`, `VenueTypeKey`, `VenueAddress`, `City`, `State`, `ZipCode`, `VenuePhone`, `VenueWebsite`, `VenueHours`) VALUES
 (1,	'Elliott Bay Book Company',	1,	'1521 10th Ave',	'Seattle',	'WA',	'98122',	'2066246600',	'http://www.elliottbaybook.com',	'M-Th 10am-10pm, F-S 10am-11pm, Sun'),
 (2,	'Caffe Vita',	2,	'1005 E Pike St',	'Seattle',	'WA',	'98122',	'2067094440',	'http://www.caffevita.com/locations/wa/capitol-hill',	'M-F 6am-11pm, S-Sun 7am-11pm'),
 (3,	'Seattle Public Library - Capitol Hill Branch',	3,	'425 Harvard Ave E',	'Seattle',	'WA',	'98102',	'2066844715',	'http://www.spl.org/locations/capitol-hill-branch',	'M-Th 10am-8pm, F-S 10am-6pm, Sun 1pm-5pm');
