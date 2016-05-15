@@ -17,58 +17,64 @@ function init(){
             'parent'	=>	0
         ),
         2 => 	array(
-            'text'		=> 	'Find a Gig',
+            'text'		=> 	'Gigs',
             'link'		=> 	base_url() . 'gig',
             'show_condition'=> 1,
             'parent'	=>	0
         ),
-        3 =>	array(
+        3 => 	array(
+            'text'		=> 	'Find a Gig',
+            'link'		=> 	base_url() . 'gig',
+            'show_condition'=> 1,
+            'parent'	=>	2
+        ),
+        4 =>	array(
             'text'		=> 	'Post a Gig',
             'link'		=> 	base_url() . 'gig/add',
             'show_condition'=>	1,
-            'parent'	=>	0
+            'parent'	=>	2
         ),
-        4 =>	array(
-            'text'		=> 	'Find a Venue',
+        5 =>	array(
+            'text'		=> 	'Venues',
             'link'		=> 	base_url() . 'venues',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        5 =>	array(
+        6 =>	array(
+            'text'		=> 	'Find a Venue',
+            'link'		=> 	base_url() . 'venues',
+            'show_condition'=>	1,
+            'parent'	=>	5
+        ),
+        7 =>	array(
             'text'		=> 	'Post a Venue',
             'link'		=> 	base_url() . 'venues/add',
             'show_condition'=>	1,
-            'parent'	=>	0
+            'parent'	=>	5
         ),
-        6 =>	array(
+        8 =>	array(
             'text'		=> 	'Profiles',
             'link'		=> 	base_url() . 'profiles',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        7 =>	array(
-            'text'		=> 	'FAQ',
-            'link'		=> 	base_url() . 'pages/faq',
-            'show_condition'=>	1,
-            'parent'	=>	1
-        ),
-        8 =>	array(
+        10 =>	array(
             'text'		=> 	'Add a Profile',
             'link'		=> 	base_url() . 'profiles/add',
             'show_condition'=>	1,
-            'parent'	=>	6
+            'parent'	=>	8
         ),
-        9 =>	array(
-            'text'		=> 	'Contact us!',
+        11 =>	array(
+            'text'		=> 	'Contact Us',
             'link'		=> 	base_url() . 'contact',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-		10 =>	array(
+		12 =>	array(
             'text'		=> 	'View Profiles',
             'link'		=> 	base_url() . 'profiles',
             'show_condition'=>	1,
-            'parent'	=>	6
+            'parent'	=>	8
         )
     );//end $menuOne
 
@@ -76,32 +82,26 @@ function init(){
     $menuTwo = array
     (
         1 => 	array(
-            'text'		=> 	'Startup Central',
-            'link'		=> 	base_url(),
-            'show_condition'=>	1,
-            'parent'	=>	0
-        ),
-        2 => 	array(
             'text'		=> 	'About',
             'link'		=> 	base_url() . 'pages/about',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        3 =>	array(
-            'text'		=> 	'Contact',
-            'link'		=> 	base_url() . 'contact',
+        2 => 	array(
+            'text'		=> 	'FAQ',
+            'link'		=> 	base_url() . 'pages/faq',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        4 =>	array(
+        3 =>	array(
             'text'		=> 	'Disclaimer',
             'link'		=> 	base_url() . 'pages/disclaimer',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        5 =>	array(
-            'text'		=> 	'RSS',
-            'link'		=> 	base_url() . 'rss',
+        4 =>	array(
+            'text'		=> 	'Contact Us',
+            'link'		=> 	base_url() . 'contact',
             'show_condition'=>	1,
             'parent'	=>	0
         )
