@@ -41,6 +41,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('gig_model');
 		$data['gigs'] = $this->gig_model->get_gigs();
+        $data['title'] = 'Gig Central';
 		
 		$this->load->view('welcome_page', $data);
 
