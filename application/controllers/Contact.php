@@ -28,7 +28,7 @@ class Contact extends CI_Controller {
 	public function index()
 	{     $this->load->helper('form');
         $this->load->library('form_validation');
-
+        $data['title'] = 'Contact Us';
         $data['name'] = 'Contact';
         $data['contact'] = $this->contact_model->get_emails();
 
