@@ -5,7 +5,7 @@ $this->load->view($this->config->item('theme').'header');
 <h1>Gig FAQ</h1>
 
  <div class="jumbotron">
-        <h2>Here are FAQs</h2>
+        
         <p>
 		<div class="accordion" id="accordion2">
 		<div class="accordion-group">
