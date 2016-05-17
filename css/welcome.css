@@ -308,3 +308,8 @@ body{
 #pl-img-4::after{
     background-image: url('http://gigcentral.kateleeseattle.com/img/panel-image-4.jpg');
 }
+
+/** FAQ **/
+.faq .accordion-inner {
+    margin-left: 3%;
+}
