@@ -12,3 +12,4 @@
  $config['theme'] = 'themes/bootswatch/';
  $config['banner-href'] = './';
  $config['banner-img'] = 'img/Gig-logo.png';
+ $config['favicon-img'] = 'favicon.ico';

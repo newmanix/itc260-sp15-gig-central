@@ -18,63 +18,69 @@ function init(){
         ),
         2 => 	array(
             'text'		=> 	'Gigs',
-            'link'		=> 	base_url() . 'gig',
+            'link'		=> 	base_url() . 'gigs',
             'show_condition'=> 1,
             'parent'	=>	0
         ),
-        3 => 	array(
-            'text'		=> 	'Find a Gig',
-            'link'		=> 	base_url() . 'gig',
-            'show_condition'=> 1,
-            'parent'	=>	2
-        ),
-        4 =>	array(
-            'text'		=> 	'Post a Gig',
-            'link'		=> 	base_url() . 'gig/add',
-            'show_condition'=>	1,
-            'parent'	=>	2
-        ),
-        5 =>	array(
+        3 =>	array(
             'text'		=> 	'Venues',
             'link'		=> 	base_url() . 'venues',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        6 =>	array(
-            'text'		=> 	'Find a Venue',
-            'link'		=> 	base_url() . 'venues',
-            'show_condition'=>	1,
-            'parent'	=>	5
-        ),
-        7 =>	array(
-            'text'		=> 	'Post a Venue',
-            'link'		=> 	base_url() . 'venues/add',
-            'show_condition'=>	1,
-            'parent'	=>	5
-        ),
-        8 =>	array(
+        4 =>	array(
             'text'		=> 	'Profiles',
             'link'		=> 	base_url() . 'profiles',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        10 =>	array(
-            'text'		=> 	'Add a Profile',
-            'link'		=> 	base_url() . 'profiles/add',
+        5 =>	array(
+            'text'		=> 	'FAQ',
+            'link'		=> 	base_url() . 'pages/faq',
             'show_condition'=>	1,
-            'parent'	=>	8
+            'parent'	=>	1
         ),
-        11 =>	array(
-            'text'		=> 	'Contact Us',
+        6 =>	array(
+            'text'		=> 	'Contact us!',
             'link'		=> 	base_url() . 'contact',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-		12 =>	array(
+		7 =>	array(
             'text'		=> 	'View Profiles',
             'link'		=> 	base_url() . 'profiles',
             'show_condition'=>	1,
-            'parent'	=>	8
+            'parent'	=>	4
+        ),
+        8 =>	array(
+            'text'		=> 	'Add a Profile',
+            'link'		=> 	base_url() . 'profiles/add',
+            'show_condition'=>	1,
+            'parent'	=>	4
+        ),
+		9 =>	array(
+            'text'		=> 	'View Gigs',
+            'link'		=> 	base_url() . 'gig',
+            'show_condition'=>	1,
+            'parent'	=>	2
+        ),
+		10 =>	array(
+            'text'		=> 	'Add a Gig',
+            'link'		=> 	base_url() . 'gig/add',
+            'show_condition'=>	1,
+            'parent'	=>	2
+        ),
+		11 =>	array(
+            'text'		=> 	'View Venues',
+            'link'		=> 	base_url() . 'venues',
+            'show_condition'=>	1,
+            'parent'	=>	3
+        ),
+		12 =>	array(
+            'text'		=> 	'Add a Venue',
+            'link'		=> 	base_url() . 'venues/add',
+            'show_condition'=>	1,
+            'parent'	=>	3
         )
     );//end $menuOne
 
@@ -82,26 +88,32 @@ function init(){
     $menuTwo = array
     (
         1 => 	array(
+            'text'		=> 	'Startup Central',
+            'link'		=> 	base_url(),
+            'show_condition'=>	1,
+            'parent'	=>	0
+        ),
+        2 => 	array(
             'text'		=> 	'About',
             'link'		=> 	base_url() . 'pages/about',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        2 => 	array(
-            'text'		=> 	'FAQ',
-            'link'		=> 	base_url() . 'pages/faq',
+        3 =>	array(
+            'text'		=> 	'Contact',
+            'link'		=> 	base_url() . 'contact',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        3 =>	array(
+        4 =>	array(
             'text'		=> 	'Disclaimer',
             'link'		=> 	base_url() . 'pages/disclaimer',
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-        4 =>	array(
-            'text'		=> 	'Contact Us',
-            'link'		=> 	base_url() . 'contact',
+        5 =>	array(
+            'text'		=> 	'RSS',
+            'link'		=> 	base_url() . 'rss',
             'show_condition'=>	1,
             'parent'	=>	0
         )

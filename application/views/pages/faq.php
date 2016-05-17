@@ -152,7 +152,7 @@ $this->load->view($this->config->item('theme').'header');
 		</div>
 		</div>						
 		</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Let's get start!!</a></p>
+       
  </div>
 
 

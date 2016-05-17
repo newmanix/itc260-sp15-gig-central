@@ -1,5 +1,6 @@
 <?php
 //views/welcome_page.php
+$this->load->view($this->config->item('theme') . 'header');
 ?>
 
 <div class="row">
@@ -44,7 +45,7 @@
             <h1><i class="fa fa-share-alt"></i></h1>
             <h3>Share a venue</h3>
             <div class="bar"></div>
-            <p>Do you know a good place for starups? Please share.</p>
+            <p>Do you know a good place for startups? Please share.</p>
             </div></div>
     </a>
     
