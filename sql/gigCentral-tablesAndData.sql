@@ -193,6 +193,9 @@ CREATE TABLE Profile (
  PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
+INSERT INTO Profile VALUES (1, 'Student', 'Jay', 'Smith', 'jsmith@mail.com', 'php');
+INSERT INTO Profile VALUES (2, 'Alumni', 'Christine', 'Gomez', 'cgo@mail.com', 'javascript');
+
 /**
 * gig.sql
 *
