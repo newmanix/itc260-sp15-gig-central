@@ -61,7 +61,10 @@ $route['translate_uri_dashes'] = FALSE;
 // $route['rss/(:any)'] = 'rss/$1';
 // $route['rss'] = 'rss';
 
-
+//admin routes
+$route['admin'] = 'admin/index';
+$route['admin/login'] = 'admin/login';
+$route['admin/(:any)'] = 'admin/view/$1';
 //gig routes
 $route['gig'] = 'gig/index';
 $route['gig/add'] = 'gig/add';
