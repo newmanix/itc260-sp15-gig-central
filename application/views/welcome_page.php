@@ -71,7 +71,7 @@ $this->load->view($this->config->item('theme') . 'header');
     <div class="column col-lg-4 col-sm-12 col-xs-12">
         <div class="inner-column">
              <h2>Startup Venues near you</h2>
-            <p><a href=""> View More &raquo;</a> </p>
+            <p><a href="<?=base_url()?>venues"> View More &raquo;</a> </p>
             <div id="map" style="width: 100%; height: 300px"  onload="load()"></div>
         </div>
     </div>
