@@ -12,7 +12,7 @@ $this->load->view($this->config->item('theme') . 'header');
         </div>
 <p>
 <?php
-    echo anchor('index.php/profile/' . $profile['id'],'View Profile');
+    echo anchor('/profile/' . $profile['id'],'View Profile');
 ?>
 </p>
 

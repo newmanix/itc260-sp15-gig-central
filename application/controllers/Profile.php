@@ -48,7 +48,8 @@ class Profile extends CI_Controller {
 			{
 					show_404();
 			}
-
+            
+            $data['title'] = 'Profile';
 			$data['first_name'] = $data['profile']['first_name'];
 			$this->load->view('profiles/view', $data);
 
