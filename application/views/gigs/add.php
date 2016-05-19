@@ -19,12 +19,14 @@
 
 <div class="container">
   <div class="col-lg-10">
-    <h1>Gigs Form</h1>
+    <h1><strong>Gigs Form</strong></h1>
       <?php echo validation_errors(); ?>
         <form class="form-horizontal" role="form" method="post" action="add">
         <fieldset>
+
             <div class="form-group">
-                <legend><h2 align="center"><strong>Company Information</strong></h2></legend>
+                <legend><h3><strong>Company Information</strong></h3></legend>
+
             </div>
             <div class="form-group">
                 <label for="CompanyName" class="col-lg-3 control-label"><em>Company Name</em></label>
