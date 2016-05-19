@@ -4,23 +4,23 @@ $this->load->view($this->config->item('theme') . 'header');
 ?>
 <article id="text">
 <section class="contact">
-<h2>Contact Us</h2>
+<h1>Contact Us</h1>
 
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('contact') ?>
 
-  <label for="name">Name:</label>
+  <label for="name">Name*</label>
   <div class="controls">
 
     <input name="name" type="text">
 </div>
-<label for="email">Email:</label>
+<label for="email">Email*</label>
 
 <div class="controls">
     <input name="email" type="email">
 </div>
-  <label for="subject">Subject:</label>
+  <label for="subject">Subject*</label>
 
 <div class="controls">
 
@@ -35,7 +35,7 @@ $this->load->view($this->config->item('theme') . 'header');
         <option value="Stoopid Inquiry">Advertising</option>
     </select>
 </div>
-<label for="message">Message:</label>
+<label for="message">Message*</label>
 <div class="controls">
   <textarea name="message" cols="40" rows="5" required></textarea>
 </div>
