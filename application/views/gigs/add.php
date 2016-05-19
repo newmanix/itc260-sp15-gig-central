@@ -4,7 +4,7 @@
 *
 * views/gigs/add.php
 *
-* @package ITC 260 Gig Central CodeIgnitor
+* @package ITC 260 Gig Central CodeInitor
 * @subpackage Gig Controller
 * @author Patricia Barker <pbarke01@seattlecentral.edu>
 * @version 2.1 2015/06/11
