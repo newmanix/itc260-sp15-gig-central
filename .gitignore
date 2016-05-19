@@ -6,3 +6,4 @@
 */cache/!.htaccess
 docs/startupcentral-tables.sql
 application/config/database.php
+.DS_Store
