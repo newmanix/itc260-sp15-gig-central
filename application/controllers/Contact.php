@@ -21,8 +21,6 @@ class Contact extends CI_Controller {
     {//everything here is global to all methods in the controller
          parent::__construct();
          $this->load->model('contact_model');
-         $this->config->set_item('banner','Global Startup Banner');
-         $this->config->set_item("banner-img", "img/Startup-logo.png");
     }#end constructor()
 
 	public function index()
@@ -52,25 +50,43 @@ class Contact extends CI_Controller {
             $subject = $this->input->post('subject');
             $message = $this->input->post('message');
 
+            $this->config->load('email');
+            $this->load->helper('url');
+		$this->load->library('email');
+
             //set to_email id to which you want to receive mails
-            $to_email = 'mdiediker@gmail.com';
+            $this->config->load('email');
             $this->load->helper('url');
 
 
             //send mail
-            $this->email->from($to_email, $name);
-            $this->email->to($email);
+            $this->email->from($email, $name);
+            $this->email->to( $this->config->item('email_contact_sendto') );
             $this->email->subject($subject);
             $this->email->message($message);
+            if ($this->email->send())
+            {
+                // mail sent
+                redirect('contact/success');
+            }
+            else
+            {
+                // an error occured
+                // XXX TODO In the event of an error, we need to redirect back to the submission form, and show an in-line error message (eg, using session variable)
+                // -- Turner Tackitt aka Hastwell, 19 May 2016
+                
+                //redirect('contact');
+                echo "Error!";
+                show_error( "<h1>Failed To Send Email</h1><p />Debug Details follow:<br />" . $this->email->print_debugger() );
+            }
+    	}
+    	}
 
-     if ($this->email->send())
-           $this->contact_model->send_email();
-            $this->load->view('contact/success');
-
-        }
-    }
-
-
+	/*
+	XXX I don't think this is even used. This is redundant with code in Contact::index(), and is a canidate for being removed.
+	-- Turner "Hastwell" Tackitt, 19 May 2016
+	
+	
         public function create()
         {
       $this->load->helper('form');
@@ -99,19 +115,19 @@ class Contact extends CI_Controller {
             $message = $this->input->post('message');
 
             //set to_email id to which you want to receive mails
-            $to_email = 'mdiediker@gmail.com';
+            $this->config->load('email');
             $this->load->helper('url');
 
 
             //send mail
-            $this->email->from($to_email, $name);
-            $this->email->to($email);
+            $this->email->from($email, $name);
+            $this->email->to( $this->config->item('email_contact_sendto') );
             $this->email->subject($subject);
             $this->email->message($message);
             if ($this->email->send())
             {
                 // mail sent
-                echo "its broken here";
+                redirect('contact/success');
             }
             else
             {
@@ -123,4 +139,5 @@ class Contact extends CI_Controller {
 
 
       }
+      */
   }

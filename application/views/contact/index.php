@@ -8,7 +8,7 @@ $this->load->view($this->config->item('theme') . 'header');
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('contact/index') ?>
+<?php echo form_open('contact') ?>
 
   <label for="name">Name:</label>
   <div class="controls">
