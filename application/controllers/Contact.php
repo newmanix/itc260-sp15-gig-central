@@ -67,7 +67,8 @@ class Contact extends CI_Controller {
             if ($this->email->send())
             {
                 // mail sent
-                redirect('contact/success');
+                //redirect('contact/success');
+                $this->load->view('contact/success', $data);
             }
             else
             {
