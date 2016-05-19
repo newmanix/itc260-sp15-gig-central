@@ -24,7 +24,7 @@
         <form class="form-horizontal" role="form" method="post" action="add">
         <fieldset>
             <div class="form-group">
-                <legend><h2><strong>Company Information</strong></h2></legend>
+                <legend><h2 align="center"><strong>Company Information</strong></h2></legend>
             </div>
             <div class="form-group">
                 <label for="CompanyName" class="col-lg-3 control-label"><em>Company Name</em></label>
