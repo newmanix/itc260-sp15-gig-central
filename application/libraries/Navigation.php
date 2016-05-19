@@ -58,6 +58,12 @@ function init(){
             'show_condition'=>	1,
             'parent'	=>	0
         ),
+		9 =>	array(
+			'text'		=> 	'View Profiles',
+			'link'		=> 	base_url() . 'profiles',
+			'show_condition'=>	1,
+			'parent'	=>	8
+		),
         10 =>	array(
             'text'		=> 	'Add a Profile',
             'link'		=> 	base_url() . 'profiles/add',
@@ -70,12 +76,7 @@ function init(){
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-		12 =>	array(
-            'text'		=> 	'View Profiles',
-            'link'		=> 	base_url() . 'profiles',
-            'show_condition'=>	1,
-            'parent'	=>	8
-        )
+		
     );//end $menuOne
 
     # FOOTER NAV

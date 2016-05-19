@@ -26,9 +26,13 @@ $this->load->view($this->config->item('theme') . 'header');
 
     <select name="subject">
 
-      <option value="General Inquiry" selected="selected">General Inquiry</option>
-      <option value="Specific Inquiry">Specific Inquiry</option>
-      <option value="Stoopid Inquiry">Sto0opid Inquiry</option>
+        <option value="General Inquiry" selected="selected">General Help & Feedback</option>
+        <option value="Specific Inquiry">Flag Inappropriate Content</option>
+        <option value="Stoopid Inquiry">Employer Support</option>
+        <option value="Stoopid Inquiry">Job Posting Support</option>
+        <option value="Stoopid Inquiry">Press Inquiry</option>
+        <option value="Stoopid Inquiry">Partnership Inquiry</option>
+        <option value="Stoopid Inquiry">Advertising</option>
     </select>
 </div>
 <label for="message">Message:</label>
