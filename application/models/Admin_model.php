@@ -7,35 +7,39 @@ class Admin_model extends CI_Model {
                 $this->load->database();
         }
         
-        public function get_infor($slug = FALSE)
+        public function get_infor($data)
         {
-            $res_pass = "";
-            if ($slug === FALSE)
-            {
-             $query = $this->db->get('Admin');
-             return $query->result_array();
-            }
-            $email = $this->input->post('Email');
-            $pwd = $this->input->post('Pwd');
-             $this->db->select('AdminPassword');
-             $this->db->from('Admin');
-             $this->db->where('AdminEmail',$email);
-            $res_pass = $this->db->get()->row()->AdminPassword;//here get the password
            
-            if ($res_pass != ""){
-                if($res_pass == $pwd){
-                    $msg = "The Password in correct!";    
-                }else{
-                    $msg = "Sorry The Password is not correct!";    
-                }
-            }else{
-                $msg = "Sorry The Password is not correct!";
+           if ($data == ""){
+            return FALSE;
             }
-            return $msg;
-            //$query = $this->db->get_where('Admin', array('AdminEmail'=> $slug));
-            //return $query->result();
-            
-        } 
+            $query = $this->db->get_where('Profile', array('email' => $data['email']));
+            $row = $query->row();
+
+            if (isset($row))
+            {
+              if(pass_decrypt($row->password) == $data['pass'])
+              {
+                  
+                 $newdata = array(
+                    'status'=> $row->i_am_a,
+                    'first_name'=> $row->first_name,
+                    'last_name'=> $row->last_name,
+                    'picture'=>picture, 
+                    'email'     => $row->email,
+                    'logged_in' => TRUE,
+                    'lang' => $row->languages
+                  );
+
+                    $this->session->set_userdata($newdata); 
+                    $this->load->view('admins/index');
+              }else{
+                $error = 'The password and email is not match';
+                return $error;
+                  
+              }
+            }
+        }
         
         
 }
