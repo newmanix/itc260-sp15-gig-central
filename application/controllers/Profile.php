@@ -58,74 +58,88 @@ class Profile extends CI_Controller {
     public function add()
     {
     
-    $this->form_validation->set_rules('i_am_a', 'I am a', 'required');
-    $this->form_validation->set_rules('first_name', 'First Name', 'required');
-    $this->form_validation->set_rules('last_name', 'Last Name', 'required');
-    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-    $this->form_validation->set_rules('password', 'Password', 'required');
-    $this->form_validation->set_rules('languages', 'Languages', 'required');
-    $this->form_validation->set_rules('userfile');
-    $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
-      
-    $data['title'] = 'Add a Profile';
-      
-    if ($this->form_validation->run() == FALSE) // validation hasn't been passed
-    {
-        
-        $this->load->view('profiles/add', $data);
+            
+            if (isset($_POST['Submit'])){
+                $this->form_validation->set_rules('i_am_a', 'I am a', 'required');
+                $this->form_validation->set_rules('first_name', 'First Name', 'required');
+                $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+                $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[Profile.email]',
+                array(
+                'is_unique'     => 'This %s already exists.'
+                ));
+                $this->form_validation->set_rules('password', 'password', 'required');
+                $this->form_validation->set_rules('re_password', 'Password Confirmation', 'required|matches[password]');
+                $this->form_validation->set_rules('languages', 'Languages', 'required');    
+
+                $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
+            
+            $data['title'] = 'Add a Profile';
+            
+            if ($this->form_validation->run() == FALSE) // validation hasn't been passed
+            { 
+                $this->load->view('profiles/add', $data);
+            }
+            else // passed validation proceed to post success logic
+            {
+            
+            //some config for upload photo
+            $config['upload_path']          = './img/';
+            $config['allowed_types']       = 'gif|jpg|png';
+            $config['max_size']            = 500000;
+            $config['max_width']           = 1024;
+            $config['max_height']          = 768;
+            $config['file_name']          = date('Ymdhis');
+            $this->load->library('upload', $config);
+            $pic_id ="picID.jpg";
+            // Alternately you can set preferences by calling the ``initialize()`` method. Useful if you auto-load the class:
+            
+            $this->upload->initialize($config);
+                //upload image files
+                if ($this->upload->do_upload('userfile'))
+                        {
+                                $data = array('upload_data' => $this->upload->data());
+                                $pic_id = $this->upload->data('file_name');
+                        }
+                
+                    
+            ;
+            // build array for the model
+            $form_data = array(
+                'i_am_a' => set_value('i_am_a'),
+                'first_name' => set_value('first_name'),
+                'last_name'  => set_value('last_name'),
+                'password'   => set_value('password'),
+                'picture'    => $pic_id,
+                'email'      => set_value('email'),
+                'languages'  => set_value('languages')
+                
+            );
+            //encrypt password here
+            $form_data['password'] = pass_encrypt($form_data['password']);
+            
+            
+            
+            // run insert model to write data to db
+            
+            if ($this->profile_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
+            {
+                $this->load->view('profiles/success');   // or whatever logic needs to occur
+            }
+            else
+            {
+                echo 'An error occurred saving your information. Please try again later';
+                // Or whatever error handling is necessary
+            }
+            
+           }
+       }else{//if the form not submit
+            $this->load->view('profiles/add');   
+       }
     }
-    else // passed validation proceed to post success logic
-    {
+    
+    public function duplicat(){
         
-       //some config for upload photo
-       $config['upload_path']          = './img/';
-       $config['allowed_types']       = 'gif|jpg|png';
-       $config['max_size']            = 500000;
-       $config['max_width']           = 1024;
-       $config['max_height']          = 768;
-       $config['file_name']          = date('Ymdhis');
-      $this->load->library('upload', $config);
-      // Alternately you can set preferences by calling the ``initialize()`` method. Useful if you auto-load the class:
-      $this->upload->initialize($config);
-       //$this->profile->add($img_upload);
-        
-        if (!$this->upload->do_upload('userfile'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-                        echo '<pre>';
-                        var_dump($error);
-                        echo '</pre>';
-                }
-                else
-                {
-                        $data = array('upload_data' => $this->upload->data());
-                        $pic_id = $this->upload->data('file_name');
-                }
-       //encrypt password here
-      $pass = pass_encrypt('password');
-      // build array for the model
-      $form_data = array(
-        'i_am_a' => set_value('i_am_a'),
-        'first_name' => set_value('first_name'),
-        'last_name' => set_value('last_name'),
-        'password' => $pass,
-        'picture' => $pic_id,
-        'email' => set_value('email'),
-        'languages' => set_value('languages')
-        
-      );
-      
-      // run insert model to write data to db
-      if ($this->profile_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
-      {
-        $this->load->view('profiles/success');   // or whatever logic needs to occur
-      }
-      else
-      {
-        echo 'An error occurred saving your information. Please try again later';
-        // Or whatever error handling is necessary
-      }
-     
+        $data['double']=$this->profile_model->check_duplicate("rattana.neak@gmail.com");
+        $this->load->view('profiles/success',$data);
     }
-  }
 }
