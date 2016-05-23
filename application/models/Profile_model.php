@@ -55,6 +55,7 @@ class Profile_model extends CI_Model
         return $this->db->insert('Profile', $data);
     }//end set_profiles method
 	
+    
 	function SaveForm($form_data)
 	{
 		$this->db->insert('Profile', $form_data);

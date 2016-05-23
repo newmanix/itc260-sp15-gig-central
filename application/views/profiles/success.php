@@ -31,17 +31,9 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
 -->
 
 <div class="container">
-
-
-
-
-
 <?php
-
 echo 'this form has been successfully submitted with all validation being passed.';
-
 ?>
-
 </div>
 
 

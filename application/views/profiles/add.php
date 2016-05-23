@@ -35,12 +35,8 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
   <div class="col-lg-10">
 
 
-
-    <form class="form-horizontal" role="form" method="post">
-
+    <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
       <fieldset>
-
-
         <?php
         $attributes = array('class' => '', 'id' => '');
         echo form_open('Profile', $attributes);
@@ -49,17 +45,33 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
         <div class="form-group">
           <legend><h2><strong>Add a Profile</strong></h2></legend>
         </div>
-
         <div class="form-group">
-          <label for="i_am_a" class="btn btn-default dropdown-toggle" >I am a <span class="required">*</span></label>
+            <label for="i_am_a" class="col-lg-3 control-label">
+                    
+            </label>
+            <div class="col-lg-6">
+                <img src="<?=base_url()?>img/picID.jpg" alt="Picture ID" id="pic_id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="i_am_a" class="col-lg-3 control-label">
+                    
+            </label>
+            
+          <div class="col-lg-6">
+            <input type="file" class="form-control"  name="userfile" id="userfile">
+          </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="i_am_a" class="col-lg-3 control-label">I am <span class="required">*</span></label>
             <?php echo form_error('i_am_a'); ?>
-            <?php $options = array(
-              ''  => 'Please Select',
-              'Student'    => 'Student',
-              'Alumni'    => 'Alumni',
-              'Staff'    => 'Staff'
-            ); ?>
-          <br /><?php echo form_dropdown('i_am_a', $options, set_value('i_am_a'))?>
+          <div class="col-lg-6">
+            <select name="i_am_a" id="i_am_a" class="form-control">
+              <option value="employee">Employee</option>
+              <option value="employer">Employer</option>
+            </select>
+          </div>
         </div>
 
         <div class="form-group">
@@ -85,7 +97,21 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
             <input id="email" class="form-control" type="text" name="email"  value="<?php echo set_value('email'); ?>">
           </div>
         </div>
-
+        <div class="form-group">
+          <label for="password" class="col-lg-3 control-label">Password <span class="required">*</span></label>
+            <?php echo form_error('password'); ?>
+          <div class="col-lg-6">
+            <input id="password" class="form-control" type="password" name="password"  value="<?php echo set_value('password'); ?>">
+          </div>
+        </div>
+        <!--Will add it later with the password validate
+        <div class="form-group">
+          <label for="re_password" class="col-lg-3 control-label">Retype Password <span class="required">*</span></label>
+            <?php //echo form_error('password'); ?>
+          <div class="col-lg-6">
+            <input id="re_password" class="form-control" type="password" name="re_password"  >
+          </div>
+        </div> -->
         <div class="form-group">
           <label for="languages" class="col-lg-3 control-label">Languages<span class="required">*</span></label>
           <?php echo form_error('languages'); ?>
@@ -96,7 +122,7 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
         </div>
         <br />
 
-        <?php echo form_submit('loginSubmit', 'Login',"class='btn btn-danger'"); ?>
+        <?php echo form_submit('loginSubmit', 'Add',"class='btn btn-danger'"); ?>
 
         <?php echo form_close(); ?>
 
