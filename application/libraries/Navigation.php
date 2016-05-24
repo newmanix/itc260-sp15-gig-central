@@ -1,4 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Navigation {
 
 var $headerMenu = array();  //The array holding all header navigation elements
@@ -78,7 +79,45 @@ function init(){
         ),
 		
     );//end $menuOne
-
+    #Admin menu
+   $CI =& get_instance();
+   $CI->load->library("session");
+   if ($CI->session->logged_in == TRUE){
+   $adProfile = array(
+            'text'		=> 	'Edit Profile',
+            'link'		=> 	base_url() . 'profiles/edit',
+            'show_condition'=>	1,
+            'parent'	=>	8
+        );
+    $adVenues = array(
+            'text'		=> 	'Edit Venues',
+            'link'		=> 	base_url() . 'venues/edit',
+            'show_condition'=>	1,
+            'parent'	=>	5
+        );
+   $adGig = array(
+            'text'		=> 	'Edit Gig',
+            'link'		=> 	base_url() . 'gig/edit',
+            'show_condition'=>	1,
+            'parent'	=>	2
+        );
+   array_push($menuOne,$adProfile,$adVenues,$adGig);
+   $login = array(
+            'text'		=> 	'Logout',
+            'link'		=> 	base_url() . 'admin/logout',
+            'show_condition'=>	1,
+            'parent'	=>	0
+        );
+   }else{
+    $login = array(
+            'text'		=> 	'Login',
+            'link'		=> 	base_url() . 'admin/login',
+            'show_condition'=>	1,
+            'parent'	=>	0
+        );
+   }
+    
+    
     # FOOTER NAV
     $menuTwo = array
     (
@@ -105,9 +144,11 @@ function init(){
             'link'		=> 	base_url() . 'contact',
             'show_condition'=>	1,
             'parent'	=>	0
-        )
+        ),
+        
     );//end $menuTwo
-
+    array_push($menuTwo,$login);
+    
     $this->setHeaderMenu($menuOne);
     $this->setFooterMenu($menuTwo);
 
