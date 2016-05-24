@@ -183,18 +183,17 @@ CREATE TABLE sc_Markers(
 * @see profile_form/index.php
 * @todo none
 */
-CREATE TABLE Profile (
- id INT UNSIGNED NOT NULL AUTO_INCREMENT,
- i_am_a TEXT DEFAULT '',
- first_name TEXT DEFAULT '',
- last_name TEXT DEFAULT '',
- email TEXT DEFAULT '',
- languages TEXT DEFAULT '',
- PRIMARY KEY (id)
-) ENGINE=INNODB;
-
-INSERT INTO Profile VALUES (1, 'Student', 'Jay', 'Smith', 'jsmith@mail.com', 'php');
-INSERT INTO Profile VALUES (2, 'Alumni', 'Christine', 'Gomez', 'cgo@mail.com', 'javascript');
+CREATE TABLE IF NOT EXISTS `Profile` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` text,
+  `first_name` text,
+  `last_name` text,
+  `email` text,
+  `password` text NOT NULL,
+  `picture` varchar(24) DEFAULT NULL,
+  `bio` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 /**
 * gig.sql
