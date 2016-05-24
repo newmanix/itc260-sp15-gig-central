@@ -34,9 +34,13 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
 
   <div class="col-lg-10">
 
-    <?php echo validation_errors(); ?>
-    <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+
+
+    <form class="form-horizontal" role="form" method="post">
+
       <fieldset>
+
+
         <?php
         $attributes = array('class' => '', 'id' => '');
         echo form_open('Profile', $attributes);
@@ -45,92 +49,54 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
         <div class="form-group">
           <legend><h2><strong>Add a Profile</strong></h2></legend>
         </div>
+
         <div class="form-group">
-            <label for="i_am_a" class="col-lg-3 control-label">
-                    
-            </label>
-            <div class="col-lg-6">
-                <img src="<?=base_url()?>img/picID.jpg" alt="Picture ID" id="pic_id">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="i_am_a" class="col-lg-3 control-label">
-                    
-            </label>
-            
-          <div class="col-lg-6">
-            <input type="file" class="form-control"  name="userfile" id="userfile">
-          </div>
-        </div>
-        
-        <div class="form-group">
-            <label for="i_am_a" class="col-lg-3 control-label">I am <span class="required">*</span></label>
-            <?php echo form_error('i_am_a'); ?>
-          <div class="col-lg-6">
-            <select name="i_am_a" id="i_am_a" class="form-control">
-              <option value="employee">Employee</option>
-              <option value="employer">Employer</option>
-            </select>
-          </div>
+          <label for="title" class="btn btn-default dropdown-toggle" >I am a <span class="required">*</span></label>
+            <?php echo form_error('title'); ?>
+            <?php $options = array(
+              ''  => 'Please Select',
+              'Student'    => 'Student',
+              'Alumni'    => 'Alumni',
+              'Staff'    => 'Staff'
+            ); ?>
+          <br /><?php echo form_dropdown('title', $options, set_value('title'))?>
         </div>
 
         <div class="form-group">
           <label for="first_name" class="col-lg-3 control-label">First Name <span class="required">*</span></label>
-            
+            <?php echo form_error('first_name'); ?>
           <div class="col-lg-6">
             <input id="first_name" class="form-control" type="text" name="first_name"  value="<?php echo set_value('first_name'); ?>">
           </div>
-          <?php echo form_error('first_name'); ?>
         </div>
 
         <div class="form-group">
           <label for="last_name" class="col-lg-3 control-label">Last Name <span class="required">*</span></label>
-            
+            <?php echo form_error('last_name'); ?>
           <div class="col-lg-6">
             <input id="last_name" class="form-control" type="text" name="last_name"  value="<?php echo set_value('last_name'); ?>">
           </div>
-          <?php echo form_error('last_name'); ?>
         </div>
 
         <div class="form-group">
           <label for="email" class="col-lg-3 control-label">Email <span class="required">*</span></label>
-            
+            <?php echo form_error('email'); ?>
           <div class="col-lg-6">
             <input id="email" class="form-control" type="text" name="email"  value="<?php echo set_value('email'); ?>">
           </div>
-          <?php echo form_error('email'); ?>
         </div>
+
         <div class="form-group">
-          <label for="password" class="col-lg-3 control-label">Password <span class="required">*</span></label>
-            
+          <label for="bio" class="col-lg-3 control-label">Bio<span class="required">*</span></label>
+          <?php echo form_error('bio'); ?>
+
           <div class="col-lg-6">
-            <input id="password" class="form-control" type="password" name="password"  value="<?php echo set_value('password'); ?>">
+            <?php echo form_textarea( array( 'name' => 'bio', 'rows' => '5', 'cols' => '80', 'value' => set_value('bio') ) )?>
           </div>
-          <div class="col-lg-3">
-          <?php echo form_error('password'); ?>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="re_password" class="col-lg-3 control-label">Retype Password <span class="required">*</span></label>
-          <div class="col-lg-6">
-            <input id="re_password" class="form-control" type="password" name="re_password">
-          </div>
-          <div class="col-lg-3">
-          <?php echo form_error('re_password'); ?>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="languages" class="col-lg-3 control-label">Languages<span class="required">*</span></label>
-          <div class="col-lg-6">
-            <?php echo form_textarea( array( 'name' => 'languages', 'rows' => '5', 'cols' => '80', 'value' => set_value('languages') ) )?>
-          </div>
-          <?php echo form_error('languages'); ?>
         </div>
         <br />
 
-        <?php echo form_submit('Submit', 'Add',"class='btn btn-success'"); ?>
+        <?php echo form_submit('loginSubmit', 'Login',"class='btn btn-danger'"); ?>
 
         <?php echo form_close(); ?>
 
