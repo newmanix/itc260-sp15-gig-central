@@ -19,12 +19,12 @@
 
 <div class="container">
   <div class="col-lg-10">
-    <h1><strong>Gigs Form</strong></h1>
       <?php echo validation_errors(); ?>
         <form class="form-horizontal" role="form" method="post" action="add">
         <fieldset>
-
+            
             <div class="form-group">
+                <h1><strong>Add a Gig</strong></h1><br />
                 <legend><h3><strong>Company Information</strong></h3></legend>
 
             </div>

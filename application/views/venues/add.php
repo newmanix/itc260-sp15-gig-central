@@ -20,11 +20,15 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
 
 <div class="container">
   <div class="col-lg-10">
-    <h1>Add a Startup Venue</h1>
       <?php echo form_open('venues/add', $attributes); ?>
         <!--<form class="form-horizontal" role="form" method="post">-->
 
             <fieldset>
+                <div class="form-group">
+                <h1><strong>Add a Startup Venue</strong></h1><br />
+                <legend><h3><strong>Venue Information</strong></h3></legend>
+
+            </div>
             <div class="form-group">
                 <label for="VenueName" class="col-lg-3 control-label" required><em>Venue Name*</em></label>
                     <div class="col-md-6">
