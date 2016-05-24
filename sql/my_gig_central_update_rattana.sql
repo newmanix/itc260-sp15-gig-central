@@ -115,13 +115,13 @@ CREATE TABLE IF NOT EXISTS `gigs` (
 
 CREATE TABLE IF NOT EXISTS `Profile` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `i_am_a` text,
+  `title` text,
   `first_name` text,
   `last_name` text,
   `email` text,
   `password` text NOT NULL,
   `picture` varchar(24) DEFAULT NULL,
-  `languages` text,
+  `bio` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
