@@ -127,7 +127,9 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
           <br />
 
           <fieldset>
-          <button type="submit" class="btn btn-default">Submit</button>
+              <div class="col-xs-12 col-md-6 col-lg-9">
+                <button type="submit" class="btn btn-default pull-right">Submit</button>
+              </div>
           </fieldset>
         </form>
     </div>
