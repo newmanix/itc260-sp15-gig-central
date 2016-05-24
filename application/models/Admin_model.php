@@ -12,32 +12,32 @@ class Admin_model extends CI_Model {
            
            if ($data == ""){
             return FALSE;
-            }
+            }else{
             $query = $this->db->get_where('Profile', array('email' => $data['email']));
-            $row = $query->row();
+            $row = $query->row();    
+                if (isset($row))
+                {
+                if(pass_decrypt($row->password) == $data['pass'])
+                {
+                    
+                    $newdata = array(
+                        'status'=> $row->i_am_a,
+                        'first_name'=> $row->first_name,
+                        'last_name'=> $row->last_name,
+                        'picture'=> $row->picture, 
+                        'email'     => $row->email,
+                        'logged_in' => TRUE,
+                        'lang' => $row->languages
+                    );
 
-            if (isset($row))
-            {
-              if(pass_decrypt($row->password) == $data['pass'])
-              {
-                  
-                 $newdata = array(
-                    'status'=> $row->i_am_a,
-                    'first_name'=> $row->first_name,
-                    'last_name'=> $row->last_name,
-                    'picture'=>picture, 
-                    'email'     => $row->email,
-                    'logged_in' => TRUE,
-                    'lang' => $row->languages
-                  );
-
-                    $this->session->set_userdata($newdata); 
-                    $this->load->view('admins/index');
-              }else{
-                $error = 'The password and email is not match';
-                return $error;
-                  
-              }
+                        $this->session->set_userdata($newdata); 
+                        redirect('admin/');
+                }else{
+                    $error = 'The password and email is not match';
+                    return $error;
+                    
+                }
+                }
             }
         }
         

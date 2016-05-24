@@ -64,7 +64,7 @@ $route['translate_uri_dashes'] = FALSE;
 //admin routes
 $route['admin'] = 'admin/index';
 $route['admin/login'] = 'admin/login';
-$route['admin/(:any)'] = 'admin/view/$1';
+$route['admin/logout'] = 'admin/logout';
 //gig routes
 $route['gig'] = 'gig/index';
 $route['gig/add'] = 'gig/add';
@@ -80,11 +80,14 @@ $route['venues/(:any)'] = 'venues/view/$1';
 $route['customer'] = 'customer';
 $route['customers'] = 'customer';
 $route['startups'] = 'startups';
+//profiles route
 $route['profile/add'] = 'profile/add';
 $route['profiles/add'] = 'profile/add';
 $route['profiles'] = 'profile';
 $route['profile'] = 'profile';
 $route['profile/success'] = 'profile/success';
+$route['profile/duplicat'] = 'profile/duplicat';
+
 $route['contact/view'] = 'contact/view';
 $route['contact/create'] = 'contact/create';
 $route['contact/(:any)'] = 'contact/view/$1';
