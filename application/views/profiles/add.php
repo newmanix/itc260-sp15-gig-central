@@ -43,7 +43,7 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
         ?>
 
         <div class="form-group">
-          <legend><h2><strong>Add a Profile</strong></h2></legend>
+          <legend><h2><strong>Add Profile</strong></h2></legend>
         </div>
         <div class="form-group">
             <label for="i_am_a" class="col-lg-3 control-label">
@@ -122,16 +122,20 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
         </div>
         
         <div class="form-group">
-          <label for="languages" class="col-lg-3 control-label">Languages<span class="required">*</span></label>
-          <div class="col-lg-6">
-            <?php echo form_textarea( array( 'name' => 'languages', 'rows' => '5', 'cols' => '80', 'value' => set_value('languages') ) )?>
+          <label for="languages" class="col-lg-3 control-label">Bio<span class="required">*</span></label>
+          <div class="col-lg-3">
+            <?php echo form_textarea( array( 'name' => 'bio', 'rows' => '5', 'cols' => '53', 'value' => set_value('bio') ) )?>
           </div>
-          <?php echo form_error('languages'); ?>
+          <?php echo form_error('bio'); ?>
         </div>
-        <br />
-
-        <?php echo form_submit('Submit', 'Add',"class='btn btn-success'"); ?>
-
+        
+        <div class="form-group text-right">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+            <?php echo form_submit('Submit', 'Add',"class='btn btn-success'"); ?>
+            </div>
+        </div>
         <?php echo form_close(); ?>
 
       </fieldset>

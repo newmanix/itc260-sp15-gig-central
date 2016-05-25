@@ -55,17 +55,6 @@ class Profile_model extends CI_Model
         return $this->db->insert('Profile', $data);
     }//end set_profiles method
 	
-    function check_duplicate($email){
-        if ($email == ""){
-            return FALSE;
-        }
-        $query = $this->db->get_where('Profile', array('email' => $email));
-        if ($query->num_rows() > 0){
-            return FALSE;
-        }else{
-            return TRUE;
-        }
-    }
     
 	function SaveForm($form_data)
 	{ 

@@ -58,7 +58,7 @@ class Profile extends CI_Controller {
     public function add()
     {
     
-            
+            $data['title'] = 'Add Profile';
             if (isset($_POST['Submit'])){
                 $this->form_validation->set_rules('i_am_a', 'I am a', 'required');
                 $this->form_validation->set_rules('first_name', 'First Name', 'required');
@@ -69,11 +69,11 @@ class Profile extends CI_Controller {
                 ));
                 $this->form_validation->set_rules('password', 'password', 'required');
                 $this->form_validation->set_rules('re_password', 'Password Confirmation', 'required|matches[password]');
-                $this->form_validation->set_rules('languages', 'Languages', 'required');    
+                $this->form_validation->set_rules('bio', 'bio', 'required');    
 
                 $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
             
-            $data['title'] = 'Add a Profile';
+            
             
             if ($this->form_validation->run() == FALSE) // validation hasn't been passed
             { 
@@ -111,7 +111,7 @@ class Profile extends CI_Controller {
                 'password'   => set_value('password'),
                 'picture'    => $pic_id,
                 'email'      => set_value('email'),
-                'languages'  => set_value('languages')
+                'bio'  => set_value('bio')
                 
             );
             //encrypt password here
@@ -130,7 +130,7 @@ class Profile extends CI_Controller {
             
            }
        }else{//if the form not submit
-            $this->load->view('profiles/add');   
+            $this->load->view('profiles/add',$data);   
        }
     }
     
