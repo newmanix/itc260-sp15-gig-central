@@ -26,6 +26,8 @@ class Contact extends CI_Controller {
 	public function index()
 	{     $this->load->helper('form');
         $this->load->library('form_validation');
+     	$this->load->library('recaptcha');
+
         $data['title'] = 'Contact Us';
         $data['name'] = 'Contact';
         $data['contact'] = $this->contact_model->get_emails();
@@ -36,11 +38,20 @@ class Contact extends CI_Controller {
 
         if ($this->form_validation->run() === FALSE)
         {//no data yet, show form!
+        
+
             $this->load->view('contact/index', $data);
 
         }
         else
         {//process data, send email!
+
+	// Catch the user's answer
+	$captcha_answer = $this->input->post('g-recaptcha-response');
+
+	// Verify user's answer
+	$captcha_googleresponse = $this->recaptcha->verifyResponse($captcha_answer);
+	if( !$captcha_googleresponse['success'] ) { echo "Validation Failure"; return; }
 
           $this->contact_model->set_emails();
 

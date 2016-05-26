@@ -40,6 +40,7 @@ $this->load->view($this->config->item('theme') . 'header');
   <textarea name="message" cols="40" rows="5" required></textarea>
 </div>
 <div class="controls">
+  <?php echo $this->recaptcha->render(); ?>
   <input name="submit" class="btn btn-primary" type="submit" value="Submit Message" />
 </div>
 </form>
