@@ -43,7 +43,7 @@ $this->load->view($this->config->item('theme') . 'header');
         <div id="post-gig" class="main-box col-lg-3 col-sm-6 col-xs-12">
         <div class="inner-box">
             <h1><i class="fa fa-share-alt"></i></h1>
-            <h3>Share a venue</h3>
+            <h3>Post a venue</h3>
             <div class="bar"></div>
             <p>Do you know a good place for startups? Please share.</p>
             </div></div>
