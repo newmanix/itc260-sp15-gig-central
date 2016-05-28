@@ -22,7 +22,7 @@ $this->load->view($this->config->item('theme').'header');
     <h1>Success!</h1>
     <p>You have successfully created a gig!</p>
     
-    <p><?php echo anchor('gigs/', 'Back to Gigs List'); ?></p>
+    <p><?php echo anchor('gig/', 'Back to Gigs List'); ?></p>
     
 </div>
 
