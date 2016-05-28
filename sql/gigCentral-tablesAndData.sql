@@ -274,6 +274,25 @@ INSERT INTO sc_VenueType values (null, 'School');
 INSERT INTO sc_VenueType values (null, 'Community Center');
 INSERT INTO sc_VenueType values (null, 'Other');
 
+INSERT INTO Company(CompanyID, Name, Address, CompanyCity, State, ZipCode, CompanyPhone, Website, FirstName, LastName, Email, Phone) VALUES
+( 1, 'Amazon', '440 Terry Ave N', 'Seattle', 'WA', '98109', '(206) 266-1000', 'https://amazon.com', 'Jeff', 'Bezos', 'jeff.bezos@amazon.com', '(206) 266-1000');
+
+INSERT INTO Gigs(GigID, CompanyID, GigQualify, EmploymentType, GigOutline, SpInstructions, PayRate, GigPosted, LastUpdated) VALUES
+( 1, 1, 'HTML/CSS', 'Web Developer', 'Web maintenance', 'Email me your resume', 'None', now(), now());
+
+
+INSERT INTO Company(CompanyID, Name, Address, CompanyCity, State, ZipCode, CompanyPhone, Website, FirstName, LastName, Email, Phone) VALUES
+( 2, 'Microsoft', 'Microsoft Headquarters One Microsoft Way', 'Redmond', 'WA', '98052', '(206) 123-4567', 'https://microsoft.com', 'Satya', 'Nadella', 'satya.nadella@microsoft.com', '(206) 123-4567');
+
+INSERT INTO Gigs(GigID, CompanyID, GigQualify, EmploymentType, GigOutline, SpInstructions, PayRate, GigPosted, LastUpdated) VALUES
+( 2, 2, 'C#/.NET', 'Computer Engineer', 'Development of web apps', 'Email me your resume', 'None', now(), now());
+
+
+INSERT INTO Company(CompanyID, Name, Address, CompanyCity, State, ZipCode, CompanyPhone, Website, FirstName, LastName, Email, Phone) VALUES
+( 3, 'Google', '601 N 34th St', 'Seattle', 'WA', '98103', '(206) 123-1000', 'https://google.com', 'Sundar', 'Pichai', 'sundar.pichai@amazon.com', '(206) 123-1000');
+
+INSERT INTO Gigs(GigID, CompanyID, GigQualify, EmploymentType, GigOutline, SpInstructions, PayRate, GigPosted, LastUpdated) VALUES
+( 3, 3, 'Photoshop', 'Graphic Designer', 'Designing site mockups', 'Email me your resume', 'None', now(), now());
 
 INSERT INTO sc_Venue (`VenueKey`, `VenueName`, `VenueTypeKey`, `VenueAddress`, `City`, `State`, `ZipCode`, `VenuePhone`, `VenueWebsite`, `VenueHours`) VALUES
 (1,	'Elliott Bay Book Company',	1,	'1521 10th Ave',	'Seattle',	'WA',	'98122',	'2066246600',	'http://www.elliottbaybook.com',	'M-Th 10am-10pm, F-S 10am-11pm, Sun'),
@@ -299,7 +318,5 @@ INSERT INTO sc_VenueAmenity VALUES
 INSERT INTO sc_VenueReview values (null, 1, 1, 3, "It's noisy and their WiFi drops continuously", 20150526);
 
 INSERT INTO sc_Markers VALUES (null, '1', '47.608941', '-122.340145');
-
-INSERT INTO startups (`id`, `title`, `slug`, `text`) VALUES (1, 'Startup1', 'startup1', 'Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I\'m in a transitional period so I don\'t wanna kill you, I wanna help you. But I can\'t give you this case, it don\'t belong to me. Besides, I\'ve already been through too much shit this morning over this case to hand it over to your dumb ass.\r\n'), (2, 'Startup2', 'startup2', 'You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don\'t know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I\'m breaking now. We said we\'d say it was the snow that killed the other two, but it wasn\'t. Nature is lethal but it doesn\'t hold a candle to man.');
 
 SET foreign_key_checks = 1; #turn contraints back on
