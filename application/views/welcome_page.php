@@ -59,9 +59,9 @@ $this->load->view($this->config->item('theme') . 'header');
          <div class="inner-column">
              <h2>Recent Gig Posts</h2>
              <div class="post">
-                <?php foreach ($gigs as $gig): ?>
-				<h3><?php echo $gig['CompanyName'] ?></h3>
-			    <p><?php echo $gig['City'] ?></p>
+                <?php foreach (array_slice($gigs, 0, 3) as $gig): ?>
+				<h3><?php echo $gig['Name'] ?></h3>
+			    <p><?php echo $gig['CompanyCity'] . ", " . $gig['State']?></p>
 				<p><?php echo $gig['GigOutline'] ?></p>
 				<p><?php echo anchor('gig/'.$gig['GigID'] , 'Read More');?></p>
 				<?php endforeach ?>

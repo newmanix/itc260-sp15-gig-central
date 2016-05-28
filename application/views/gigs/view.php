@@ -18,11 +18,11 @@
 <?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
 <div class="container">
-    <h2><?php echo $gig['CompanyName']; ?></h2>
-    <p><b>Company Address:</b><?php echo $gig['CompanyAddress']; ?></p>
-    <p><b>City: </b><?php echo $gig['City']; ?></p>
-    <p><b>State: </b><?php echo $gig['CompanyState']; ?></p>
-    <p><b>Website: </b><?php echo $gig['CompanyWebsite']; ?></p>
+    <h2><?php echo $gig['Name']; ?></h2>
+    <p><b>Company Address:</b><?php echo $gig['Address']; ?></p>
+    <p><b>City: </b><?php echo $gig['CompanyCity']; ?></p>
+    <p><b>State: </b><?php echo $gig['State']; ?></p>
+    <p><b>Website: </b><?php echo $gig['Website']; ?></p>
     <p><b>Contact Name: </b><?php echo $gig['FirstName'] . " " . $gig['LastName']; ?></p>
     <p><b>Email: </b><?php echo $gig['Email']; ?></p>
     <p><b>Phone: </b><?php echo $gig['Phone']; ?></p>

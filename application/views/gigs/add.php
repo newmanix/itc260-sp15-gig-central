@@ -29,9 +29,9 @@
 
             </div>
             <div class="form-group">
-                <label for="CompanyName" class="col-lg-3 control-label"><em>Company Name</em></label>
+                <label for="Name" class="col-lg-3 control-label"><em>Company Name</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="CompanyName" name="CompanyName" placeholder="Company Name">
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Company Name">
                     </div>
             </div>
             <div class="form-group">
@@ -41,9 +41,9 @@
                     </div>
             </div>
             <div class="form-group">
-                <label for="City" class="col-lg-3 control-label"><em>City</em></label>
+                <label for="CompanyCity" class="col-lg-3 control-label"><em>City</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="City" name="City" placeholder="City">
+                        <input type="text" class="form-control" id="CompanyCity" name="CompanyCity" placeholder="City">
                     </div>
             </div>
             <div class="form-group">

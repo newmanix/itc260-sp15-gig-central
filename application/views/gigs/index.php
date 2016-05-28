@@ -18,12 +18,11 @@
 
 <?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
-<h1>Gigs List</h1>
-<h2><strong>Gig Opportunity</strong></h2>
+<h2>Gigs List</h2>
 
 <?php foreach ($gigs as $gig): ?>
-<h3><?php echo $gig['CompanyName'] ?></h3>
-<p><?php echo $gig['City'] ?></p>
+<h3><?php echo $gig['Name'] ?></h3>
+<p><?php echo $gig['CompanyCity'] . ", " . $gig['State'] ?></p>
 <p><?php echo $gig['GigOutline'] ?></p>
 <p><?php echo anchor('gig/'.$gig['GigID'] , 'Read More');?></p>
 

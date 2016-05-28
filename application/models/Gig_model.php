@@ -40,11 +40,17 @@ class Gig_model extends CI_Model {
     {
         if ($slug === FALSE)
         {
-             $query = $this->db->get('Gigs');
+             $this->db->select('*');
+             $this->db->from('Company');
+             $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
+             $query = $this->db->get();
              return $query->result_array();
         }
 
-        $query = $this->db->get_where('Gigs', array('GigID'=> $slug));
+        $this->db->select('*');
+        $this->db->from('Company');
+        $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
+        $query = $this->db->get_where('',array('GigID'=> $slug));
         return $query->row_array();
     }#end get_gigs()
     
@@ -54,27 +60,32 @@ class Gig_model extends CI_Model {
         $this->load->helper('url');
 
         $data = array(
-        'CompanyName' => $this->input->post('CompanyName'),
-        'CompanyAddress' => $this->input->post('CompanyAddress'),
-        'City' => $this->input->post('City'),
-        'CompanyState' => $this->input->post('CompanyState'),
+        'Name' => $this->input->post('Name'),
+        'Address' => $this->input->post('Address'),
+        'CompanyCity' => $this->input->post('CompanyCity'),
+        'State' => $this->input->post('State'),
         'ZipCode' => $this->input->post('ZipCode'),
         'CompanyPhone' => $this->input->post('CompanyPhone'),
-        'CompanyWebsite' => $this->input->post('CompanyWebsite'),
+        'Website' => $this->input->post('Website'),
         'FirstName' => $this->input->post('FirstName'),
         'LastName' => $this->input->post('LastName'),
         'Email' => $this->input->post('Email'),
-        'Phone' => $this->input->post('Phone'),
+        'Phone' => $this->input->post('Phone')
+        );
+        
+        return $this->db->insert('Company', $data);
+        
+        $data2 = array(
         'GigQualify' => $this->input->post('GigQualify'),
         'EmploymentType' => $this->input->post('EmploymentType'),
         'GigOutline' => $this->input->post('GigOutline'),
         'SpInstructions' => $this->input->post('SpInstructions'),
         'PayRate' => $this->input->post('PayRate'),
         'GigPosted' => $this->input->post('GigPosted'),//What is this field for?
-        'LastUpdated' => $this->input->post('LastUpdated'),//Change this to current time
+        'LastUpdated' => $this->input->post('LastUpdated')//Change this to current time
         );
         
-        return $this->db->insert('Gigs', $data);
+        return $this->db->insert('Gigs', $data2);
 
     }
 
