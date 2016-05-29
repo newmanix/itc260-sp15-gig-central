@@ -1,5 +1,20 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
 
+/**
+ * Navigation.php creates navigation links for header & footer
+ *
+ * Contains a PHP class called Navigation that contains functions to dynamically     * create naviagation links in the header menu and footer menu based on users       * location in the app and permissions privilege (admin).
+ *
+ * @package ITC 260 Gig Central CodeIgnitor
+ * @author     
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @version 2.0 2015/05/20
+ * @link
+ * @todo none
+ */
+
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+ 
 class Navigation {
 
 var $headerMenu = array();  //The array holding all header navigation elements
