@@ -8,20 +8,10 @@
                 <label for="Email">Email address:</label>
                 <input type="email" class="form-control" id="Email" name="email">
             </div>
+            <?php echo $this->recaptcha->render(); ?>
             <?php echo form_error('email'); ?>
-            <div class="form-group">
-                <label for="Pass">Password:</label>
-                <input type="password" class="form-control" id="Pass" name="pass">
-            </div>
-            <?php echo form_error('pass'); ?>
-            <?php echo $error; ?>
-            <div class="checkbox">
-               <!-- <label><input type="checkbox"> Remember me</label> -->
-            </div>
             <button type="submit" class="btn btn-default" name="Submit">Submit</button>
-            
         </form>
-        <a type="submit"  href="reset">forget your password?</a>
     </div><!-- end row form -->
 </div><!-- end .container -->
 <?php $this->load->view($this->config->item('theme').'footer'); ?>

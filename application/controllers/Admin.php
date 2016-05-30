@@ -11,6 +11,7 @@ class Admin extends CI_Controller {
 		    $this->load->helper('form');
 		    $this->load->helper('email');
             $this->load->library('session');
+            $this->load->library('recaptcha');
         }#end constructor
         
         public function index(){
@@ -61,10 +62,35 @@ class Admin extends CI_Controller {
             }
             
         }
+        public function reset()
+        {
+            $data['title'] = "Reset Password";
+            $data['error']='';
+            if(!isset($_POST['Submit']))
+            {
+                $this->load->view('admins/reset',$data);    
+            }else{
+                $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+                if ($this->form_validation->run() == FALSE) // validation hasn't been passed
+                { 
+                    $this->load->view('admins/reset',$data);
+                    
+                }else{
+                    $email = set_value('email');
+                    
+                    $data['error'] = $this->admin_model->reset($email);
+                    $this->load->view('admins/success',$data);
+                }
+            }
+            
+            
+            
+                
+        }
         
         public function view($slug = NULL)
         {
-            $data['admins'] = $this->admin_model->get_infor($slug);
+            
             $this->load->view('admins/view', $data);
         }
         

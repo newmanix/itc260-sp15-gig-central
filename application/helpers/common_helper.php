@@ -110,9 +110,10 @@ if(!function_exists('bootswatchFeedback'))
 
 
 ////encrypt and decrypt pass///
-function pass_encrypt($string)
+//$key is a string that need to encrypt or decrypt the password
+function pass_encrypt($string,$key)
 {
-    $key = "123456";
+    
     $iv = mcrypt_create_iv(
     mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC),
     MCRYPT_DEV_URANDOM
@@ -131,9 +132,8 @@ $encrypted = base64_encode(
 return $encrypted;
 }
 ////decrypt password
-function pass_decrypt($encrypted)
+function pass_decrypt($encrypted,$key)
 {
-    $key = "123456";
     $data = base64_decode($encrypted);
 $iv = substr($data, 0, mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC));
 
@@ -149,3 +149,4 @@ $decrypted = rtrim(
 );
 return $decrypted;
 }
+
