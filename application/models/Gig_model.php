@@ -36,13 +36,14 @@ class Gig_model extends CI_Model {
 
        
     //public function get_gigs()
-    public function get_gigs($slug = FALSE)
+    public function get_gigs($slug = FALSE, $sinceDate = FALSE)
     {
         if ($slug === FALSE)
         {
              $this->db->select('*');
              $this->db->from('Company');
              $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
+             if($sinceDate !== FALSE) $this->db->where('GigPosted > ', date( 'Y-m-d H:i:s', $sinceDate ) );
              $query = $this->db->get();
              return $query->result_array();
         }

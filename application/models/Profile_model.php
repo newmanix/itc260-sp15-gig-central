@@ -29,7 +29,7 @@ class Profile_model extends CI_Model
     
     }//end constructor
 
-    public function get_profiles($slug = FALSE)
+    public function get_profiles($slug = FALSE, $subscribedOnly = FALSE)
     {
         if ($slug === FALSE)
         {
