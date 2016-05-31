@@ -84,4 +84,43 @@ class Gig extends CI_Controller
         }
     }#end function addForm()
 
+    public function sendnewsletter()
+    {
+    	// XXX TODO FIXME add authentication to this so not just anybody can spam everybody with newsletters
+
+        if( $this->input->method(/*capitalizeReturnValue=*/TRUE) === "POST" )
+        {
+            // this is an intentional request to mail out newsletter subscriptions; do so now.
+            $this->load->library('email');
+            $this->config->load('email');
+            $this->load->helper('url');
+
+            $message = 'Test Subscription Message';
+            $subject = 'GigCentral Daily Newsletter';
+            
+            // XXX TODO create a message with the latest available gigs
+
+            $this->load->model('profile_model');
+            foreach( $this->profile_model->get_profiles(/*slug=*/FALSE, /*subscribedOnly=*/TRUE) as $subscribedUser)
+            {
+                $this->email->from($email, $name);
+                $this->email->to(  $subscribedUser->email );
+                $this->email->subject($subject);
+
+                $this->email->message($message);
+
+                if(! $this->email->send())
+                {
+                    // XXX TODO: Log failure-to-sends; too many failures in a row may mean the email is no longer valid
+                }
+            }
+
+        }
+        else
+        {
+            $this->output->set_status_header('405');
+            $this->output->set_header("Allow: POST");
+            echo "Sorry, we don't allow random GET requests to kick off subscription emails; perhaps try a POST?";
+        }
+    }
 }#end Gigs class/controller
