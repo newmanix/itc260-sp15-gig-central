@@ -73,9 +73,18 @@ class Gig_model extends CI_Model {
         'Phone' => $this->input->post('Phone')
         );
         
-        return $this->db->insert('Company', $data);
+        $this->db->insert('Company', $data);
+        
+        $this->db->order_by("CompanyID", "desc");
+        $this->db->limit(0, 1);
+        $query = $this->db->get('Company');
+        $row = $query->row();
+        if(isset($row)) {
+            $companyid = $row->CompanyID;
+        }
         
         $data2 = array(
+        'CompanyID' => $companyid,    
         'GigQualify' => $this->input->post('GigQualify'),
         'EmploymentType' => $this->input->post('EmploymentType'),
         'GigOutline' => $this->input->post('GigOutline'),
