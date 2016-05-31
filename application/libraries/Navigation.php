@@ -14,6 +14,18 @@
  */
 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * -----Navigation class ----
+ * init() - creates arrays with elements for:
+ *      -text (link name)
+ *      -link URL
+ *      -show condition (hidden or shown)
+ *      -parent (does it belong in a dropdown menu for another element?)
+ * init() can create Header Nav ($menuOne), Footer Name ($menuTwo), or Admin ($adProfile)
+ *  _contruct builds init() when Naviagtion class is called
+ * 
+*/
  
 class Navigation {
 
