@@ -15,9 +15,8 @@
 */
 
 $this->load->view($this->config->item('theme').'header');
+
 ?>
-
-
 <div class="container">
     <h1>Success!</h1>
     <p>You have successfully created a gig!</p>

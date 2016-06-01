@@ -14,12 +14,18 @@
 * @see Gig.php
 * @todo none
 */
+//error messages for form validation
+
 ?>
+
+
 <?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
 <div class="container">
   <div class="col-lg-10">
-      <?php echo validation_errors(); ?>
+        <!--error messages for form validation -->
+      <div class="text-danger"><?php echo validation_errors(); ?></div>
+
         <form class="form-horizontal" role="form" method="post" action="add">
         <fieldset>
             

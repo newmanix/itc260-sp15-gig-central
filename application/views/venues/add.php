@@ -20,6 +20,10 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
 
 <div class="container">
   <div class="col-lg-10">
+      <!--error messages for form validation -->
+    
+      <div class="text-danger"><?php echo validation_errors(); ?></div>
+      
       <?php echo form_open('venues/add', $attributes); ?>
         <!--<form class="form-horizontal" role="form" method="post">-->
 
