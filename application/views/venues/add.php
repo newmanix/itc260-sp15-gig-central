@@ -97,45 +97,47 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
            <div class="form-group">
               <label for="Food" class="col-lg-3 control-label"><em>Venue Amenities</em></label>
                   <div class="col-md-6">
+                      <div class="border">
                         Food:<br />   
                         <input type="radio" name="Food" value="Yes">Yes<br />
                         <input type="radio" name="Food" value="No">No<br />
-                    
+                      </div>
+                      <div class="border">
                         Bar:<br />
                         <input type="radio" name="Bar" value="Yes">Yes<br />
-                        <input type="radio" name="Bar" value="No">No<br /> 
-                          
+                        <input type="radio" name="Bar" value="No">No<br />
+                      </div>
+                      <div class="border"> 
                         Electrical Outlets: <br />
                         <input type="radio" name="Outlets" value="Yes">Yes<br />
                         <input type="radio" name="Outlets" value="No">No<br />
-                    
+                      </div>
+                      <div class="border">
                         WiFi: <br />
                         <input type="radio" name="WiFi" value="Yes">Yes<br />
                         <input type="radio" name="WiFi" value="No">No<br />
-                        
+                      </div>
+                      <div class="border">
                         Outdoor Seating: <br />
                         <input type="radio" name="Outdoor" value="Yes">Yes<br />
                         <input type="radio" name="Outdoor" value="No">No<br />
-                        
+                      </div>
+                      <div class="border">
                         Wheelchair Access: <br />
                         <input type="radio" name="Wheelchair" value="Yes">Yes<br />
                         <input type="radio" name="Wheelchair" value="No">No<br />
-                      
+                      </div>
+                      <div class="border">
                         Parking: <br />
                         <input type="radio" name="Parking" value="Yes">Yes<br />
                         <input type="radio" name="Parking" value="No">No<br />
-                  </div>
-          </div>
-          
-          </fieldset>
-          <br />
-
-          <fieldset>
-              <div class="col-xs-12 col-md-6 col-lg-9">
-                <button type="submit" class="btn btn-default pull-right">Submit</button>
-              </div>
-          </fieldset>
-        </form>
+                      </div>
+                      <div class="border2">
+                      <button type="submit" class="btn btn-default">Submit</button>
+                      </div>
+               </div>
+            </div>          
+      </fieldset>
     </div>
 </div>
 
