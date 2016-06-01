@@ -7756,3 +7756,15 @@ body {
 form {
     padding: 10px 0;
 }
+
+.border{
+    width: 30%;
+    margin: 5%;
+    float: left;
+}
+
+.border2{
+    width: 90%;
+    margin: 5%;
+    float: left;
+}
