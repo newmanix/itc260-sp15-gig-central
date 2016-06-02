@@ -36,13 +36,17 @@ class Gig_model extends CI_Model {
 
        
     //public function get_gigs()
-    public function get_gigs($slug = FALSE)
+    public function get_gigs($slug = FALSE, $sinceDate = FALSE)
     {
         if ($slug === FALSE)
         {
              $this->db->select('*');
              $this->db->from('Company');
              $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
+             
+             // If sinceDate is specified, load it as a PHP timestamp and filter out all listings created BEFORE that date. Time portion of timestamp is ignored.
+             if($sinceDate !== FALSE) $this->db->where('GigPosted > ', date( 'Y-m-d 00:00:00', $sinceDate ) );
+             
              $query = $this->db->get();
              return $query->result_array();
         }

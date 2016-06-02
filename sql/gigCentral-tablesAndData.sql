@@ -192,6 +192,7 @@ CREATE TABLE IF NOT EXISTS `Profile` (
   `password` text NOT NULL,
   `picture` varchar(24) DEFAULT NULL,
   `bio` text,
+  `subscribed_to_newsletters` boolean NOT NULL DEFAULT FALSE,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 

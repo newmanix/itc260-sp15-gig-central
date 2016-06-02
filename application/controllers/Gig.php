@@ -84,4 +84,52 @@ class Gig extends CI_Controller
         }
     }#end function addForm()
 
+    public function sendnewsletter()
+    {
+    	// XXX TODO FIXME add authentication to this so not just anybody can spam everybody with newsletters
+    	
+    	// Ensure that the request is a POST. POST signifies an intentional action, as opposed to passively requesting information.
+        if( $this->input->method(/*capitalizeReturnValue=*/TRUE) === "POST" )
+        {        
+            // XXX TODO check for a "secret" post value to ensure that a GigCentral process authorized this. Random POST requests shouldn't trigger this            
+            $this->load->library('email');
+            $this->config->load('email');
+            $this->load->helper('url');
+
+            // XXX add config option for this
+            $email = $this->config->item('autoemail_from_address'); $name = $this->config->item('autoemail_from_name');
+            $subject = $this->config->item('autoemail_from_name');
+            
+            // time() will get a timestamp representing the current date/time. Used to filter the database for gigs posted today.
+            $data['gigs'] = $this->gig_model->get_gigs( /*slug=*/FALSE, /*sinceDate=*/time()  );
+            
+            ob_start(); // Begin capture of view output for email
+            $this->load->view('gigs/gignewsletter-email',$data);
+            $message = ob_get_contents();
+            ob_end_clean(); // discard the output buffer. it's contents are saved into $message, and we don't want to print it directly
+
+            $this->load->model('profile_model');
+            foreach( $this->profile_model->get_profiles(/*slug=*/FALSE, /*newsletterUsersOnly=*/TRUE) as $subscribedUser)
+            {
+                $this->email->from($email, $name);
+                $this->email->to( $subscribedUser['email'] );
+                $this->email->subject($subject);
+                $this->email->set_mailtype("html");
+
+                $this->email->message($message);
+
+                if(! $this->email->send())
+                {
+                    // XXX TODO: Log failure-to-sends; too many failures in a row may mean the email is no longer valid
+                }
+            }
+
+        }
+        else
+        {
+            $this->output->set_status_header('405');
+            $this->output->set_header("Allow: POST");
+            echo "Sorry, we don't allow random GET requests to kick off subscription emails; perhaps try a POST?";
+        }
+    }#end function sendnewsletter()
 }#end Gigs class/controller
