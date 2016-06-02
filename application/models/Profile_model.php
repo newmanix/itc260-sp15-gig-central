@@ -29,11 +29,16 @@ class Profile_model extends CI_Model
     
     }//end constructor
 
-    public function get_profiles($slug = FALSE, $subscribedOnly = FALSE)
+    public function get_profiles($slug = FALSE, $newsletterUsersOnly = FALSE)
     {
         if ($slug === FALSE)
         {
-            $query = $this->db->get('Profile');
+            $query = null;
+            
+            // If we only want users subscribed to the newsletter, filter for these users
+            if($newsletterUsersOnly) $query = $this->db->get_where('Profile', array('subscribed_to_newsletters' => 1));
+            else $query = $this->db->get('Profile');
+            
             return $query->result_array();
         }
         $query = $this->db->get_where('Profile', array('id' => $slug));
