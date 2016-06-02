@@ -95,10 +95,12 @@ class Gig extends CI_Controller
             $this->config->load('email');
             $this->load->helper('url');
 
-            $message = 'Test Subscription Message';
-            $subject = 'GigCentral Daily Newsletter';
+            // XXX add config option for this
+            $email = 'noreply@gigcentral.com'; $name = "GigCentral Newsletter";
             
             // XXX TODO create a message with the latest available gigs
+            $subject = 'GigCentral Daily Newsletter';
+            $message = 'Test Subscription Message';
 
             $this->load->model('profile_model');
             foreach( $this->profile_model->get_profiles(/*slug=*/FALSE, /*subscribedOnly=*/TRUE) as $subscribedUser)
