@@ -59,7 +59,7 @@ $this->load->view($this->config->item('theme') . 'header');
          <div class="inner-column">
              <h2>Recent Gig Posts</h2>
              <div class="post">
-                <?php foreach (array_slice($gigs, 0, 3) as $gig): ?>
+                <?php foreach (array_slice($gigs, -3, 3) as $gig): ?>
 				<h3><?php echo $gig['Name'] ?></h3>
 			    <p><?php echo $gig['CompanyCity'] . ", " . $gig['State']?></p>
 				<p><?php echo $gig['GigOutline'] ?></p>

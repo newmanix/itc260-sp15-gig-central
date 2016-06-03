@@ -79,7 +79,7 @@ class Gig extends CI_Controller
             $data['title']= 'Gigs';
             $this->gig_model->add_gig();
             
-           $this->load->view('gigs/success');
+           $this->load->view('gigs/success', $data);
 
         }
     }#end function addForm()
