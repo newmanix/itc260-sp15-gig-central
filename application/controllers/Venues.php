@@ -35,11 +35,12 @@ class Venues extends CI_Controller {
         */
        public function __construct()
        {
-               //everything here is global to all methods in the controller
-               parent::__construct();
-               $this->load->model('Venues_model');
-               $this->config->set_item("banner", "Global Customer Banner");
-               $this->load->helper('form');
+            //everything here is global to all methods in the controller
+            parent::__construct();
+            $this->load->model('Venues_model');
+            $this->config->set_item("banner", "Global Customer Banner");
+            $this->load->helper('form');
+            $this->config->set_item('nav-active', 'Venues');//sets active class on all Venues children
        }
     
        /**

@@ -27,6 +27,7 @@ class Profile extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('email');
 		$this->load->helper('url');
+        $this->config->set_item('nav-active', 'Profiles');//sets active class on all profile children
 
 
   }//end constructor

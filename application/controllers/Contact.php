@@ -21,6 +21,7 @@ class Contact extends CI_Controller {
     {//everything here is global to all methods in the controller
          parent::__construct();
          $this->load->model('contact_model');
+        $this->config->set_item('nav-active', 'Contact Us');//sets active class on current nav item
     }#end constructor()
 
 	public function index()
