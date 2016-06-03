@@ -31,7 +31,7 @@
 
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
-      <?= $this->navigation->loadHeader(); ?>
+      <?=$this->navigation->loadHeader($this->config->item('nav-active')); //tells the browser which nav item is Active?>
     </div>
   </div>
 </div>
