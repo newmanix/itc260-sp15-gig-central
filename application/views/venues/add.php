@@ -101,40 +101,82 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
            <div class="form-group">
               <label for="Food" class="col-lg-3 control-label"><em>Venue Amenities</em></label>
                   <div class="col-md-6">
-                      <div class="border">
-                        Food:<br />   
-                        <input type="radio" name="Food" value="Yes">Yes<br />
-                        <input type="radio" name="Food" value="No">No<br />
-                      </div>
-                      <div class="border">
-                        Bar:<br />
-                        <input type="radio" name="Bar" value="Yes">Yes<br />
+                      <div class="form-group">
+                          <label class="radio-inline">
+                            <strong>Food:</strong>
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="Food" value="Yes">Yes
+                           </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="Food" value="No">No
+                          </label>
+                        </div>
+                      <div class="form-group">
+                        <label class="radio-inline">
+                                <strong>Bar:</strong>
+                            </label>
+                         <label class="radio-inline">
+                                <input type="radio" name="Bar" value="Yes">Yes
+                          </label>
+                          <label class="radio-inline">
                         <input type="radio" name="Bar" value="No">No<br />
+                          </label>
                       </div>
-                      <div class="border"> 
-                        Electrical Outlets: <br />
-                        <input type="radio" name="Outlets" value="Yes">Yes<br />
-                        <input type="radio" name="Outlets" value="No">No<br />
+                      <div class="form-group">
+                        <label class="radio-inline">
+                            <strong>Electrical Outlets:</strong>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Outlets" value="Yes">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Outlets" value="No">No
+                        </label>
                       </div>
-                      <div class="border">
-                        WiFi: <br />
-                        <input type="radio" name="WiFi" value="Yes">Yes<br />
-                        <input type="radio" name="WiFi" value="No">No<br />
+                      <div class="form-group">
+                        <label class="radio-inline">
+                            <strong>WiFi:</strong>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="WiFi" value="Yes">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="WiFi" value="No">No
+                        </label>
                       </div>
-                      <div class="border">
-                        Outdoor Seating: <br />
-                        <input type="radio" name="Outdoor" value="Yes">Yes<br />
-                        <input type="radio" name="Outdoor" value="No">No<br />
+                      <div class="form-group">
+                        <label class="radio-inline">
+                            <strong>Outdoor Seating:</strong>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Outdoor" value="Yes">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Outdoor" value="No">No
+                        </label>
                       </div>
-                      <div class="border">
-                        Wheelchair Access: <br />
-                        <input type="radio" name="Wheelchair" value="Yes">Yes<br />
-                        <input type="radio" name="Wheelchair" value="No">No<br />
+                      <div class="form-group">
+                        <label class="radio-inline">
+                            <strong>Wheelchair Access:</strong>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Wheelchair" value="Yes">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Wheelchair" value="No">No
+                        </label>
                       </div>
-                      <div class="border">
-                        Parking: <br />
-                        <input type="radio" name="Parking" value="Yes">Yes<br />
-                        <input type="radio" name="Parking" value="No">No<br />
+                      <div class="form-group">
+                        <label class="radio-inline">
+                            <strong>Parking:</strong>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Parking" value="Yes">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Parking" value="No">No
+                        </label>
                       </div>
                       <div class="border2">
                       <button type="submit" class="btn btn-default">Submit</button>

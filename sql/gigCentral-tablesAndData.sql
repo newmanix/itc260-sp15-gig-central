@@ -101,6 +101,13 @@ CREATE TABLE `sc_Venue` (
   `VenuePhone` varchar(10) DEFAULT '',
   `VenueWebsite` varchar(50) DEFAULT '',
   `VenueHours` varchar(50) DEFAULT '',
+  `Food` varchar(5) DEFAULT '',
+  `Bar` varchar(5) DEFAULT '',
+  `Outlets` varchar(10) DEFAULT '', 
+  `WiFi` varchar(10) DEFAULT '',
+  `Outdoor` varchar(10) DEFAULT '',
+  `Wheelchair` varchar(10) DEFAULT '',
+   `Parking` varchar(10) DEFAULT '',
   PRIMARY KEY (`VenueKey`),
   KEY `VenueTypeKey` (`VenueTypeKey`),
   KEY `VenueKey_index` (`VenueKey`),
@@ -113,11 +120,11 @@ AmenityKey INT PRIMARY KEY AUTO_INCREMENT,
 AmenityName VARCHAR(128) NOT NULL
 );
 
-CREATE TABLE sc_VenueAmenity
-(
-VenueAmenityKey INT PRIMARY KEY AUTO_INCREMENT,
-AmenityKey INT NOT NULL,
-VenueKey INT UNSIGNED NOT NULL,
+CREATE TABLE sc_VenueAmenity(
+    VenueAmenityKey INT PRIMARY KEY AUTO_INCREMENT,
+    AmenityKey INT NOT NULL,
+    VenueKey INT UNSIGNED NOT NULL,
+
 
 FOREIGN KEY (AmenityKey) REFERENCES sc_Amenity(AmenityKey),
 FOREIGN KEY (VenueKey) REFERENCES sc_Venue(VenueKey)
