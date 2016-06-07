@@ -35,7 +35,11 @@ class Welcome extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	
+	public function __construct()
+    {//everything here is global to all methods in the controller
+        parent::__construct();
+        $this->config->set_item('nav-active', 'Home');//sets active class on Home in the nav
+  }//end constructor
 	
 	public function index()
 	{
