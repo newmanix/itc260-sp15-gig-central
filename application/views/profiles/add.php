@@ -34,7 +34,7 @@ $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch t
 
   <div class="col-lg-10">
 
-    <?php echo validation_errors(); ?>
+
     <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
       <fieldset>
         <?php

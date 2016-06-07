@@ -26,19 +26,15 @@ class Profile_model extends CI_Model
     public function __construct()
     {
         $this->load->database();
+        $this->load->library('session');
     
     }//end constructor
 
-    public function get_profiles($slug = FALSE, $newsletterUsersOnly = FALSE)
+    public function get_profiles($slug = FALSE)
     {
         if ($slug === FALSE)
         {
-            $query = null;
-            
-            // If we only want users subscribed to the newsletter, filter for these users
-            if($newsletterUsersOnly) $query = $this->db->get_where('Profile', array('subscribed_to_newsletters' => 1));
-            else $query = $this->db->get('Profile');
-            
+            $query = $this->db->get('Profile');
             return $query->result_array();
         }
         $query = $this->db->get_where('Profile', array('id' => $slug));
@@ -71,4 +67,43 @@ class Profile_model extends CI_Model
 
 		return FALSE;
 	}//end function SaveForm
+    function get_pass($id,$pass){
+        $query = $this->db->get_where('Profile', array('id'=>$this->session->id));
+         $row = $query->row();    
+        if (isset($row))
+        {
+            if(pass_decrypt($row->password,KEY_ENCRYPT) == $pass)
+            {
+                return TRUE;
+            }
+        }
+        return FALSE;
+        
+    }//end get_pass function
+    
+    function update_profile($form_data)
+    {
+        $this->db->where('id',$this->session->id);
+        $this->db->update('Profile',$form_data);
+        $query = $this->db->get_where('Profile', array('id'=>$this->session->id));
+        $row = $query->row();    
+                if (isset($row))
+                {
+                
+                    
+                    $newdata = array(
+                        'email' => $row->email,
+                        'id' => $row->id,
+                        'status'=> $row->i_am_a,
+                        'first_name'=> $row->first_name,
+                        'last_name'=> $row->last_name,
+                        'picture'=> $row->picture, 
+                        'bio'     => $row->bio
+                    );
+                        $this->session->set_userdata($newdata); 
+                 return TRUE;    
+                }
+                return FALSE;
+    }//end function
+    
 }//end class

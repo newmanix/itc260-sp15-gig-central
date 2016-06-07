@@ -1,6 +1,15 @@
 <?php
 //Admin_model.php
-
+function randomPassword() {
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+}
 class Admin_model extends CI_Model {
        public function __construct()
         {
@@ -21,12 +30,15 @@ class Admin_model extends CI_Model {
                     {
                     
                     $newdata = array(
+                        'email' => $row->email,
+                        'id' => $row->id,
                         'status'=> $row->i_am_a,
                         'first_name'=> $row->first_name,
                         'last_name'=> $row->last_name,
                         'picture'=> $row->picture, 
                         'logged_in' => TRUE,
-                        'bio'     => $row->bio
+                        'bio'     => $row->bio,
+                        'pass' => $row->password
                     );
 
                         $this->session->set_userdata($newdata); 
@@ -50,6 +62,13 @@ class Admin_model extends CI_Model {
             $row = $query->row();
                 if (isset($row))
                 {
+                    
+                    //echo $tmp_pass = substr( md5( time( ) ) ,1 );//chr( mt_rand( 97 ,122 ) ) 
+                    echo randomPassword();
+                    echo '</br>';
+                    
+                    die;
+                    /*
                     $message = "This is your password :". pass_decrypt($row->password,KEY_ENCRYPT);
                     //send mail
                     $this->email->from('admin@rattananeak.com', 'Admin');
@@ -62,6 +81,7 @@ class Admin_model extends CI_Model {
                     }else{
                     $error = "<h1>Failed To Send Email</h1><p />Debug Details follow:<br />" . $this->email->print_debugger() ;    
                     }
+                    */
                 }else{
                     $error = "The email doesn't exist on our database";
                         
