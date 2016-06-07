@@ -192,7 +192,7 @@ CREATE TABLE sc_Markers(
 */
 CREATE TABLE IF NOT EXISTS `Profile` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` text,
+  `i_am_a` text,
   `first_name` text,
   `last_name` text,
   `email` text,
