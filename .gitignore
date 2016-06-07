@@ -6,4 +6,6 @@
 */cache/!.htaccess
 docs/startupcentral-tables.sql
 application/config/database.php
+application/config/recaptcha.php
+application/config/email.php
 .DS_Store
