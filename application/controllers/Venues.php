@@ -86,6 +86,7 @@ class Venues extends CI_Controller {
         $this->form_validation->set_rules('State', 'State', 'required');
         $this->form_validation->set_rules('ZipCode', 'Zip Code', 'required');
         $this->form_validation->set_rules('VenuePhone', 'Venue Phone', 'required');
+       
 
         if ($this->form_validation->run() === FALSE)
         {
