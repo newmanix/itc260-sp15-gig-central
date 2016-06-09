@@ -1,7 +1,12 @@
 # itc260-sm15-gig-central
 ITC260 Summer 2015 Gig Central Project
 
-Update 8/13/2015
+Update 6/09/2016
+
+Here are our two main user stories:
+##As a business I need to post a gig so that I can fill a position
+##As a user I need to view a gig so that I can apply for a position
+
 I made the repo public so we could easily deploy to our development hosts
 
 This being the case, be sure no passwords, etc. are left here
