@@ -1,31 +1,28 @@
 <?php 
 
 /**
- * Navigation.php creates navigation links for header & footer
+ * Gig.php manages all gig data
  *
- * Contains a PHP class called Navigation that contains functions to dynamically     * create naviagation links in the header menu and footer menu based on users       * location in the app and permissions privilege (admin).
- *
- * @package ITC 260 Gig Central CodeIgnitor
- * @author     
+ * @package GIG_CENTRAL
+ * @subpackage GIG
+ * @author Alexandre Daniels <adanie04@seattlecentral.edu>
+ * @version 1.0 2016/06/09 
+ * @link http://newmanix.com/ 
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @version 2.0 2015/05/20
- * @link
+ * @see application/views/themes/bootswatch/header.php
+ * @see application/views/themes/bootswatch/footer.php
  * @todo none
  */
 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');//prevents a webpage from accesing this file: DO NOT REMOVE THIS!!!
 
 /**
- * -----Navigation class ----
- * init() - creates arrays with elements for:
- *      -text (link name)
- *      -link URL
- *      -show condition (hidden or shown)
- *      -parent (does it belong in a dropdown menu for another element?)
- * init() can create Header Nav ($menuOne), Footer Name ($menuTwo), or Admin ($adProfile)
- *  _contruct builds init() when Naviagtion class is called
- * 
-*/
+ * Navigation.php holds all of the data for what goes into the header nav and the footer nav
+ *
+ * @see application/views/themes/bootswatch/header.php
+ * @see application/views/themes/bootswatch/footer.php
+ * @todo none
+ */
  
 class Navigation {
 
@@ -33,7 +30,13 @@ var $headerMenu = array();  //The array holding all header navigation elements
 var $footerMenu = array();  //The array holding all footer navigation elements
 var $out; // The HTML string to be returned
 
-#set up navs:
+/**
+ * contains the data for the navs but does not create it
+ *
+ * @param none
+ * @return none
+ * @todo none
+ */
 function init(){
     # HEADER NAV
     $menuOne = array
@@ -182,28 +185,49 @@ function init(){
 }// end function init
 
 
-
+/**
+ * Constructor for Navigation file. 
+ *
+ * @param none
+ * @return void 
+ * @todo none
+ */
 function __construct(){
     $this->init();
 }//end construct()
 
+/**
+ * I dont know what this is
+ *
+ * @param none
+ * @return void 
+ * @todo none
+ */
 function setHeaderMenu($myMenu){
     $CI =& get_instance();
     $this->headerMenu = $myMenu;
 }//end setHeaderMenu()
 
-
+/**
+ * I dont know what this is
+ *
+ * @param none
+ * @return void 
+ * @todo none
+ */
 function setFooterMenu($myMenu){
     $CI =& get_instance();
     $this->footerMenu = $myMenu;
 }// end setFooterMenu()
 
-    
-
-	/*
-	 * loadHeader - Return HTML navigation string
-	 */
-	public function loadHeader($selected = null)
+/**
+ * this will create the header nav
+ *
+ * @param none
+ * @return all of the html for the header nav 
+ * @todo none
+ */
+public function loadHeader($selected = null)
 	{
 		$out = '<ul class="nav navbar-nav">';
 		foreach ( $this->headerMenu as $i=>$arr )
@@ -250,7 +274,15 @@ function setFooterMenu($myMenu){
 		return $out;
 	}// end public function loadHeader()
 
-	private function hasChildren($menu_id)
+    
+/**
+ * this checks to see if one of the header nav items is supposed to have a subnav
+ *
+ * @param whatever menu item happens to be going through the loop
+ * @return boolean 
+ * @todo none
+ */
+private function hasChildren($menu_id)
 	{
 		foreach ( $this->headerMenu as $i=>$arr )
         {
@@ -263,18 +295,15 @@ function setFooterMenu($myMenu){
 
 		return FALSE;
 	}// end public function hasChildren()
-    
-    
-	/**
-	 *
-	 * getChildren - build an html string of the menu children
-	 *
-	 * @access private
-	 *
-	 * @return HTML or boolean
-	 *
-	 */
-	private function getChildren ( $el_id )
+
+/**
+ * this will create the dropdowns of the header nav
+ *
+ * @param the id of the nav item that has children
+ * @return adds a class of dropdown-menu to the nav item 
+ * @todo none
+ */
+private function getChildren ( $el_id )
 	{
 		$has_subcats = FALSE;
 		$out = '';
@@ -295,11 +324,14 @@ function setFooterMenu($myMenu){
 		return ( $has_subcats ) ? $out : FALSE;
 	}// end function getChildren()
 
-
-	/*
-	 * loadFooter - Return HTML navigation string
-	 */
-	public function loadFooter($selected = null)
+/**
+ * this will create the footer nav
+ *
+ * @param none
+ * @return all of the html for the footer nav 
+ * @todo none
+ */
+public function loadFooter($selected = null)
 	{
 		$out = '<ul class="nav navbar-nav">';
 		foreach ( $this->footerMenu as $i=>$arr )
@@ -348,9 +380,14 @@ function setFooterMenu($myMenu){
 		return $out;
 	}// end function loadFooter()
 
-    
-    
-	private function hasChildrenFooter($menu_id)
+/**
+ * this checks to see if one of the footer nav items is supposed to have a subnav
+ *
+ * @param whatever menu item happens to be going through the loop
+ * @return boolean 
+ * @todo none
+ */
+private function hasChildrenFooter($menu_id)
 	{
 		foreach ( $this->footerMenu as $i=>$arr )
         {
@@ -365,16 +402,14 @@ function setFooterMenu($myMenu){
 	}// end function hasChildrenFooter
     
     
-	/**
-	 *
-	 * getChildren - build an html string of the menu children
-	 *
-	 * @access private
-	 *
-	 * @return HTML or boolean
-	 *
-	 */
-	private function getChildrenFooter ( $el_id )
+/**
+ * this will create the dropdowns of the footer nav
+ *
+ * @param the id of the nav item that has children
+ * @return adds a class of dropdown-menu to the nav item 
+ * @todo none
+ */
+private function getChildrenFooter ( $el_id )
 	{
 		$has_subcats = FALSE;
 		$out = '';
