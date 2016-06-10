@@ -1,34 +1,25 @@
 <?php
 /**
-* index.php view page for generic profile_form controller
+* edit.php view page for generic profile controller
 *
 *
-*view/profile_form/index.php
+*view/profiles/edit.php
 *
-* @package MediumLARGE_PIECE_OF_PROGRAM
-* @subpackage Profile_form
-* @author Evan Smyth <evsmyth@yahoo.com>
-* @version 1.0 2015/05/21
-* @link http://www.example.com/
+* @package itc260-sp15-gig-central
+* @subpackage application/views/profiles
+* @author Rattana Neak
+* @version 1.0 2016/06/05
+* @link 
 * @license http://www.apache.org/licenses/LICENSE-2.0
-* @see Profile_form_model.php
-* @see Profile_form.php
+* @see Profile_model.php
+* @see Profile.php
 * @todo none
 */
 
 $this->load->view($this->config->item('theme') . 'header'); //Loads Bootswatch theme and header
 ?>
 
-<!--
-/**
-* Form that accepts data
-*
-*
-* @param none
-* @return void
-* @todo none
-*/
--->
+
 
 <div class="container">
 
