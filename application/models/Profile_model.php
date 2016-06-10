@@ -1,34 +1,66 @@
 <?php
 /**
- * models/Profile_List_model.php
- * controller for a generic Profile_List
- * used to show how to do CRUD in CodeIgniter
+ * models/Profile_model.php
+ * model for a generic Profile_List
+ * used to interact with database .
  *
- * @package ITC260
- * @subpackage Profile_List
+ * @package itc260-sp15-gig-central
+ * @subpackage application/models
  * @author
  * @version 1.0 2015/5/14
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @see Profile_list.php
- * @see index.php
+ * @see Profile.php
+ * @see views/profiles/
  * @todo none
  */
+
+
 /**
- * Profile_List model for our CRUD demo
+ * Profile_model Class retrieves data info for an individual profile.
  *
- * @see controllers/Profile.php
+ * The constructor an instance of the Profile_model class loads the database.
+ * 
+ *
+ * A Profile_model object (an instance of the Profile_modedl class) can be created in this manner:
+ *
+ *<code>
+ *$myProfileModel = new Profile_model();
+ *</code>
+ *
+ * The get_profiles($slug) method of the Profile_model object created will return the profile of that $slug or all profiles if $slug=false
+ * 
+ * The set_profile() method of the Profile_model object created will fill the array with data
+ * 
+ * The saveForm($form_data) method of the Profile_model object created will save the $form_data
+ * 
+ * The update_profile($form_data) method of the Profile_model object will update the form of the profile.
+ *
  * @todo none
  */
  
 class Profile_model extends CI_Model
 {
+	/**
+	 * Constructor for Profile_model class. 
+	 *
+	 * @return void 
+	 * @todo none
+	 */ 
     public function __construct()
     {
         $this->load->database();
         $this->load->library('session');
     
     }//end constructor
+    
+    /**
+	 * get_profiles method for Profile_model class. 
+	 *
+	 * @param string $slug 
+	 * @return void 
+	 * @todo none
+	 */ 
 
     public function get_profiles($slug = FALSE)
     {
@@ -41,6 +73,14 @@ class Profile_model extends CI_Model
         return $query->row_array();
      
     }//end get_profiles method
+    
+    
+    /**
+	 * get_profiles method for Profile_model class. 
+	 * 
+	 * @return void 
+	 * @todo none
+	 */ 
     
     public function set_profiles()
     {
@@ -57,6 +97,13 @@ class Profile_model extends CI_Model
     }//end set_profiles method
 	
     
+    /**
+	 * saveForm method for Profile_model class. 
+	 *
+	 * @param array $form_data
+	 * @return void 
+	 * @todo none
+	 */ 
 	function SaveForm($form_data)
 	{ 
 		$this->db->insert('Profile', $form_data);
@@ -67,6 +114,15 @@ class Profile_model extends CI_Model
 
 		return FALSE;
 	}//end function SaveForm
+	
+	/**
+	 * get_pass method for Profile_model class. 
+	 *
+	 * @param string $id
+	 * @param string $pass
+	 * @return void 
+	 * @todo none
+	 */ 
     function get_pass($id,$pass){
         $query = $this->db->get_where('Profile', array('id'=>$this->session->id));
          $row = $query->row();    
@@ -81,6 +137,13 @@ class Profile_model extends CI_Model
         
     }//end get_pass function
     
+    /**
+	 * update_profile method for Profile_model class. 
+	 *
+	 * @param array $form_data 
+	 * @return void 
+	 * @todo none
+	 */ 
     function update_profile($form_data)
     {
         $this->db->where('id',$this->session->id);
