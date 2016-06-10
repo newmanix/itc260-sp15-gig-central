@@ -1,6 +1,6 @@
 ######Welcome to:
 
-###ITC260 Summer 2015 Gig Central Project :neckbeard:
+###ITC260 Summer 2016 Gig Central Project :neckbeard:
 
 ######Update 6/09/2016
 
