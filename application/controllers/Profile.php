@@ -3,20 +3,56 @@
 /**
  * controllers/Profile.php
  * 
- * Profile list page for Gig Central
+ * Profile controller for Gig Central
  *
  * @package ITC260
  * @subpackage Profile_list
- * @author Doug Doner
+ * @author Doug Doner ,Souha Amor, Rattana Neak
  * @version 1.0 2015/05/14
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see Profile_model.php
- * @todo 
+ * @see views/profiles/
+ * @todo none
  */
+
+
+
+/**
+ * Profile Class extends the CI_Controller class
+ *
+ * The constructor an instance of the  Profile Class creates multiple instances of the
+ * Profile class to store data from the DB.
+ *
+ * A profile object (an instance of the Profile class) can be created in this manner:
+ *
+ *<code>
+ *$myProfile = new Profile();
+ *</code>
+ *
+ *
+ * The index() method of the profile object created will get all the data from Profile_model and load them into the view profiles/index
+ *
+ * The view($slug) method of the profile object created will get  the data of that slug from Profile_model and load them into the view profiles/view
+ * 
+ * The add() method of the profile object created will load a form , validate it and add profiles.
+ * 
+ * The edit method  of the profile object created will edit  forms,only if we are logged in as an admin.
+ * 
+ * @see Profile_model
+ * @todo none
+ */
+
+
 
 class Profile extends CI_Controller {
 
+/**
+	 * Constructor for Profile class. 
+	 *
+	 * @return void 
+	 * @todo none
+	 */ 
     public function __construct()
     {//everything here is global to all methods in the controller
         parent::__construct();
@@ -33,6 +69,13 @@ class Profile extends CI_Controller {
 
   }//end constructor
   
+  
+  /**
+	 * index method for Answer class. 
+	 *
+	 * @return void 
+	 * @todo none
+	 */ 
 	public function index()
 	{
 		/*echo "test";
@@ -41,6 +84,15 @@ class Profile extends CI_Controller {
 			$data['title'] = 'Profiles';
 			$this->load->view('profiles/index', $data);
 	}#end index()	
+	
+	
+	/**
+	 * view method for Answer class. 
+	 *
+	 * @param string $slug , to get the view of it
+	 * @return void 
+	 * @todo none
+	 */ 
 
 	public function view($slug = NULL)
 	{
@@ -56,6 +108,13 @@ class Profile extends CI_Controller {
 
 	}#end view()
     
+    
+    /**
+	 * add method for Answer class. 
+	 *
+	 * @return void 
+	 * @todo none
+	 */ 
     
     public function add()
     {
@@ -135,6 +194,13 @@ class Profile extends CI_Controller {
             $this->load->view('profiles/add',$data);   
        }
     }
+    
+    /**
+	 * edit method for Answer class. 
+	 * 
+	 * @return void 
+	 * @todo none
+	 */ 
     
     public function edit(){
          $data['title'] = 'Edit Profile';
