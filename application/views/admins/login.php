@@ -1,3 +1,26 @@
+
+<?php
+/**
+* login.php is the login admins page for Admin controller
+*
+* views/admins/login.php
+*
+* @package itc-260-sp15-gig-central
+* @subpackage Admin Controller
+* @author Rattana Neak 
+* @version 1.0 2016/05/22
+* @link 
+* @license http://www.apache.org/licenses/LICENSE-2.0
+* @see Admin_model.php
+* @see Admin.php
+* @todo none
+*/
+?>
+
+
+
+
+
 <?php $this->load->view($this->config->item('theme').'header'); ?>
 
 <div class="container">
