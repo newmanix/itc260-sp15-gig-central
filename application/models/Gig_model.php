@@ -4,7 +4,7 @@
 *
 * @package ITC 260 CodeIgnitor - Gig Central
 * @subpackage Gig Controller
-* @author Patricia Barker <patriciabethbarker@gmail.com>
+* @author Patricia Barker <patriciabethbarker@gmail.com>, Turner Tackitt <turner8193@gmail.com>
 * @version 2.1 2015/06/11
 * @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/
 * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -35,7 +35,14 @@ class Gig_model extends CI_Model {
     }#end constructor
 
        
-    //public function get_gigs()
+     /**
+     * Retreive a list of available gigs from the DB.
+     *
+     * @param $slug string Retreives data about a specific gig by slug. If $sinceDate is specified, this parameter must be explicitly given a value of FALSE. Can be omitted to retreive a list of all gigs posted.
+     * @param $sinceDate int (timestamp from eg, time() function) If specified, this function will only return gigs posted since the specified date. The time portion of this timestamp is ignored. Timestamp is based off the number of seconds elapsed since the Unix Epoch (January 1 1970 00:00:00 GMT), and can be retreived using a function like time(). 
+     * @return array() of array(GigID, CompanyID, GigQualify, EmploymentType, GigOutline, SpInstructions, PayRate, GigPosted, LastUpdated, Name, Address, CompanyCity, State, ZipCode, CompanyPhone, Website, FirstName, LastName, Email, Phone). This is a join between the Gig and Company tables.
+     * @todo none
+     */
     public function get_gigs($slug = FALSE, $sinceDate = FALSE)
     {
         if ($slug === FALSE)
@@ -58,7 +65,12 @@ class Gig_model extends CI_Model {
         return $query->row_array();
     }#end get_gigs()
     
-    
+    /**
+     * Add a new gig to the DB using POST parameters.
+     *
+     * @return void
+     * @todo Refactor functino so POST parameters are replaced with function parameters, allowing bulk-imports of new gigs.
+     */
     public function add_gig()
     {
         $this->load->helper('url');
