@@ -5,7 +5,7 @@
 * @package ITC 260 CodeIgnitor - Gig Central
 * @subpackage Gig Controller
 * @author Patricia Barker <patriciabethbarker@gmail.com>, Turner Tackitt <turner8193@gmail.com>
-* @version 2.1 2015/06/11
+* @version 2.2 2016/06/14
 * @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/
 * @license http://www.apache.org/licenses/LICENSE-2.0
 * @see controllers/Gig.php
