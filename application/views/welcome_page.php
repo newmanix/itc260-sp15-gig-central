@@ -1,12 +1,22 @@
 <?php
-//views/welcome_page.php
+/**
+ *Welcome page for Gig Central
+ *
+ * @package GIG_CENTRAL
+ * @subpackage GIG
+ * @author Alexandre Daniels <adanie04@seattlecentral.edu>
+ * @version 1.0 2016/06/09 
+ * @link http://newmanix.com/ 
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @todo none
+ */
 $this->load->view($this->config->item('theme') . 'header');
 ?>
 
 <div class="row">
     <div class="box col " style="background-color: red"> </div>
 </div>
-
+<!-- the 4 clickable boxes at the top of the page -->
 <div id="instruction" class="main-box-container">
     
     <a href="<?php echo base_url().'gig'; ?>">
@@ -53,7 +63,7 @@ $this->load->view($this->config->item('theme') . 'header');
 
 <div class="clear-both"></div>
 
-    
+<!-- this is for the 'Recent Posts section on the page' -->
 <div id="data-example" class="main-box-container">
 <div class="column col-lg-8 col-sm-12 col-xs-12">
          <div class="inner-column">
@@ -68,6 +78,8 @@ $this->load->view($this->config->item('theme') . 'header');
             </div>
         </div>
     </div>
+    
+<!-- everything below this point is for the google map on the page -->
     <div class="column col-lg-4 col-sm-12 col-xs-12">
         <div class="inner-column">
              <h2>Startup Venues near you</h2>
@@ -79,45 +91,10 @@ $this->load->view($this->config->item('theme') . 'header');
 
 <div class="clear-both"></div>
 
-
-<!--Start Startup Map Script -->  
-<!--
-@See public/phpsqlajax_dbinfo.php
-@see public/phpsqlajax_genxml.php
--->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
-//<![CDATA[
-/*
-//custom Icons
-var customIcons = {
-  1: {
-    icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
-  },
-  2: {
-    icon: 'http://labs.google.com/ridefinder/images/mm_20_red.png'
-  }
-};
-*/
-/*
-//get user's geolocation
-if (navigator.geolocation) {
-    var location_timeout = setTimeout("geolocFail()", 10000);
-    navigator.geolocation.getCurrentPosition(function(position) {
-        clearTimeout(location_timeout);
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        geocodeLatLng(lat, lng);
-    }, function(error) {
-        clearTimeout(location_timeout);
-        geolocFail();
-    });
-} else {
-    // Fallback for no geolocation
-    geolocFail();
-} 
-*/
+
 $(document).ready(function() {
     
     var map = new google.maps.Map(document.getElementById("map"), {
@@ -171,6 +148,5 @@ function downloadUrl(url, callback) {
 }
     
 function doNothing() {}
-//]]>
+
 </script>
-<!-- End Startup Map Script --->
