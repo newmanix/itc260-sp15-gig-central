@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * Gig.php manages all gig data
+ * Navigation.php - manages all navs on the pages
  *
  * @package GIG_CENTRAL
  * @subpackage GIG
