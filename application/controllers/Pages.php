@@ -1,18 +1,18 @@
 <?php
 /**
- * controllers/Pages.php
- * 
  * Pages for Gig Central
- *
+ * @author ITC260 Seattle Central College
+ * @version 2.0 2016/06/14
+ * @link http://
  * @package ITC260
  * @subpackage Pages
- * @author Douglas Doner and Aleksandar Petrovic
- * @version 1.0 2015/05/14
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see
  * @todo 
  */
+ 
+
 
 
 class Pages extends CI_Controller {
