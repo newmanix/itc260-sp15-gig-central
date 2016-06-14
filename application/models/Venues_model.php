@@ -50,7 +50,7 @@ class Venues_model extends CI_Model {
     {
 
         
-        */
+        
         if ($slug === FALSE)
         {
             $this->db->select('*');
