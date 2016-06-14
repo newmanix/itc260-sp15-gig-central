@@ -8,9 +8,9 @@
  * @package ITC260
  * @subpackage Forms
 
- * @author Lydia King, Anna Atiagina, Jenny Crimp
-
- * @version 2.0 2015/08/11
+ * @author Lydia King, Anna Atiagina, Jenny Crimp 
+ * @author Alex, Spencer, Mith, Jeremiah
+ * @version 3.0 2016/06/14
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see Venues_model.php
