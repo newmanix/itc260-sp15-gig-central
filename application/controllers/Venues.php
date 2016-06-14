@@ -25,7 +25,7 @@
 class Venues extends CI_Controller {
 
        /**
-        * Loads default data into object
+        * Constructor Loads default data into object
         *
         * Added in v3 - Result object
         *
@@ -44,7 +44,7 @@ class Venues extends CI_Controller {
        }
     
        /**
-        * Shows initial Venues Database data
+        * index function loads venues data from Venues/Model and allows you to view in venues/index
         *
         * @param none
         * @return void
@@ -57,7 +57,13 @@ class Venues extends CI_Controller {
              $this->load->view('venues/index', $data);
        }//end index()
 
-    
+    /**
+     * view method allows you too view venues through venues/view.php
+     *
+     * @param none
+     * @return void
+     * @todo none
+     */
        public function view($slug = NULL)
 	   {
 			$data['venue'] = $this->Venues_model->get_venues($slug);
@@ -70,9 +76,15 @@ class Venues extends CI_Controller {
 			$data['title'] = $data['venue']['VenueName'];
 			$this->load->view('venues/view', $data);
 	   }//end view()
-    
 
 
+    /**
+     * Shows for through the add.php page
+     * Allows one to add info about venues
+     * @param none
+     * @return venues/success if form is validated correctly
+     * @todo none
+     */
     public function add()
     {
         $this->load->helper('form');

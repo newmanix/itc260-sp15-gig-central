@@ -20,25 +20,35 @@
 
 class Venues_model extends CI_Model {
 
+    /**
+     * Constructor for venues model class
+     *loads database
+     *
+     * @param none
+     * @return void
+     * @todo none
+     */
       public function __construct()
+
       {
         $this->load->database();
 
       }//end constructor
 
 
+
+
+    /**
+     * get_venues method retrieves added venues from database
+     *loads database
+     *
+     * @param none
+     * @return void
+     * @todo none
+     */
     public function get_venues($slug = FALSE)
     {
-        /*
-        $this->db->select('*');
-        $this->db->from('blogs');
-        $this->db->join('comments', 'comments.id = blogs.id');
 
-        $query = $this->db->get();
-
-        // Produces: 
-        // SELECT * FROM blogs
-        // JOIN comments ON comments.id = blogs.id
         
         */
         if ($slug === FALSE)
@@ -61,9 +71,16 @@ class Venues_model extends CI_Model {
         return $query->row_array();
 
     }//end get_venues method
-    
-    
 
+
+    /**
+     * add_venues loads CI base helper('url')
+     *
+     *
+     * @param none
+     * @return void
+     * @todo none
+     */
     public function add_venues()
     {
          $this->load->helper('url');
