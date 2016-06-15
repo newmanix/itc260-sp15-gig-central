@@ -4,35 +4,43 @@
 *
 * @package ITC 260 Gig Central CodeIgnitor
 * @subpackage Gig Controller
-* @author Patricia Barker <patriciabethbarker@gmail.com>
-* @version 2.2 2015/06/12
-* @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/
+* @author Patricia Barker, Mitchell Thompson
+* @version 2.3 2016/06/14
 * @license http://www.apache.org/licenses/LICENSE-2.0
 * @see Gig_model.php
 * @see view/gigs/index.php
 * @see view/gigs/view.php
 * @see view/gigs/add.php
+* @see view/gigs/success.php
 * @todo none
 */
 
-/**
- * Gigs_form controller
- *
- *
- * @see Gig_model.php
- * @todo none
- */
+
 class Gig extends CI_Controller
 {//begin controller
-
-   /**
-  * Loads default data into object
-  *
-  *
-  * @param none
-  * @return void
-  * @todo none
-  */
+/**
+ * Gig Class extends the CI_Controller class
+ *
+ * The constructor creates an instance of the Gig Class that loads Gig_model.php and sets
+ * the banner. 
+ *
+ * A profile object can be created in this manner:
+ *
+ * <code>
+ * $myGig = new Gig();
+ * </code>
+ *
+ * The index() method of the gig object created will get all the data from Gig_model and load them into the view gigs/index
+ *
+ * The view($slug) method of the gig object created will get  the data of that slug from Gig_model and load them into the view gigs/view
+ * 
+ * The add() method of the gig object created will load a form , validate it and add gigs.
+ * 
+ * 
+ * @see Gig_model
+ * @return void
+ * @todo none
+ */
     public function __construct()
     {//begin constructor
         parent::__construct();
@@ -59,7 +67,7 @@ class Gig extends CI_Controller
         $data['title']= 'Gig';
         
         $this->load->view('gigs/view', $data);
-    }#end function index
+    }#end function view
 
     public function add()
     {
@@ -83,7 +91,7 @@ class Gig extends CI_Controller
            $this->load->view('gigs/success', $data);
 
         }
-    }#end function addForm()
+    }#end function add()
 
     public function sendnewsletter()
     {
