@@ -4,11 +4,12 @@
  *
  * @package GIG_CENTRAL
  * @subpackage GIG
- * @author Alexandre Daniels <adanie04@seattlecentral.edu>
+ * @author Alexandre Daniels <adanie04@seattlecentral.edu>, Spencer Echon
  * @version 1.0 2016/06/09 
  * @link http://newmanix.com/ 
  * @license http://www.apache.org/licenses/LICENSE-2.0
- * @todo none
+ * @todo Make recent gigs display most recent on top
+ * @todo Get Google maps Api to connect with database for venues map
  */
 $this->load->view($this->config->item('theme') . 'header');
 ?>
@@ -69,7 +70,7 @@ $this->load->view($this->config->item('theme') . 'header');
          <div class="inner-column">
              <h2>Recent Gig Posts</h2>
              <div class="post">
-                <?php foreach (array_slice($gigs, -3, 3) as $gig): ?>
+                <?php foreach (array_slice($gigs, -3, 3) as $gig): //maybe use something other than array_slice?>
 				<h3><?php echo $gig['Name'] ?></h3>
 			    <p><?php echo $gig['CompanyCity'] . ", " . $gig['State']?></p>
 				<p><?php echo $gig['GigOutline'] ?></p>
