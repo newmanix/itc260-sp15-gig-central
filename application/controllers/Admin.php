@@ -1,6 +1,26 @@
 <?php
-//Admin.php
 
+/**
+ * controllers/Admin.php
+ *
+ * Admin controller for Gig Central
+ * 
+ * @package ITC260
+ * @subpackage Pages
+ * @author Rattana Neak
+ * @version 2.0 2016/06/14
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see models/admin_model.php
+ * @see view/admins/add.php
+ * @see view/admins/admin.php
+ * @see view/admins/index.php
+ * @see view/admins/login.php
+ * @see view/admins/reset.php
+ * @see view/admins/success.php
+ * @see view/admins/view.php
+ * @todo
+ */
+ 
 class Admin extends CI_Controller {
          public function __construct()
         {//begin constructor

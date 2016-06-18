@@ -4,14 +4,14 @@
 *
 * @package ITC 260 CodeIgnitor - Gig Central
 * @subpackage Gig Controller
-* @author Patricia Barker <patriciabethbarker@gmail.com>, Turner Tackitt <turner8193@gmail.com>
+* @author Patricia Barker <patriciabethbarker@gmail.com>, Turner Tackitt <turner8193@gmail.com>, Spencer Echon
 * @version 2.2 2016/06/14
 * @link http://www.tcbcommercialproperties.com/sandbox/codeignitor/
 * @license http://www.apache.org/licenses/LICENSE-2.0
 * @see controllers/Gig.php
 * @see views/gigs/add.php
 * @see add.php
-* @todo none
+* @todo fix Gigposted and Lastupdated to output actual time
 */
 
 /**
@@ -96,7 +96,7 @@ class Gig_model extends CI_Model {
         $query = $this->db->get('Company');
         $row = $query->row();
         if(isset($row)) {
-            $companyid = $row->CompanyID;
+            $companyid = $row->CompanyID;//Joins CompanyID for gig and company tables
         }
         
         $data2 = array(

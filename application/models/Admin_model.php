@@ -1,5 +1,26 @@
 <?php
-//Admin_model.php
+
+/**
+ * models/Admin_model.php
+ *
+ * Admin model for Gig Central
+ * 
+ * @package ITC260
+ * @subpackage Pages
+ * @author Rattana Neak
+ * @version 2.0 2016/06/14
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see controllers/Admin.php
+ * @see view/admins/add.php
+ * @see view/admins/admin.php
+ * @see view/admins/index.php
+ * @see view/admins/login.php
+ * @see view/admins/reset.php
+ * @see view/admins/success.php
+ * @see view/admins/view.php
+ * @todo
+ */
+ 
 function randomPassword() {
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
     $pass = array(); //remember to declare $pass as an array

@@ -1,4 +1,19 @@
 <?php
+
+/**
+ * views/contact/index.php
+ *
+ * Contact index for Gig Central
+ * 
+ * @package ITC260
+ * @subpackage Pages
+ * @author
+ * @version 2.0 2016/06/14
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see
+ * @todo
+ */
+ 
 //$this->load->view('themes/bootswatch/header');
 $this->load->view($this->config->item('theme') . 'header');
 ?>

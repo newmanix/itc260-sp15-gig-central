@@ -4,7 +4,7 @@
 *
 * @package ITC 260 Gig Central CodeIgnitor
 * @subpackage Gig Controller
-* @author Patricia Barker, Mitchell Thompson
+* @author Patricia Barker, Mitchell Thompson, Spencer Echon
 * @version 2.3 2016/06/14
 * @license http://www.apache.org/licenses/LICENSE-2.0
 * @see Gig_model.php
