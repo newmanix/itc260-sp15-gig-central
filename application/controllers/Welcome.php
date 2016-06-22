@@ -5,7 +5,7 @@
  *
  * @package GIG_CENTRAL
  * @subpackage GIG
- * @author Kate Lee, Alexandre Daniels <adanie04@seattlecentral.edu>
+ * @author Kate Lee, Alexandre Daniels
  * @version 1.0 2016/06/09 
  * @link http://newmanix.com/ 
  * @license http://www.apache.org/licenses/LICENSE-2.0
