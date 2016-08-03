@@ -75,8 +75,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'sandbox.sammchaney.com',
-	'username' => 'sammch1',
+	'hostname' => 'localhost',
+	'username' => 'root',
 	'password' => 'PotatoPie69',
 	'database' => 'seattlecentral_db',
 	'dbdriver' => 'mysqli',
