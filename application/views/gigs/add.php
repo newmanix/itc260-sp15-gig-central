@@ -37,81 +37,49 @@
             <div class="form-group">
                 <label for="Name" class="col-lg-3 control-label"><em>Company Name</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Company Name">
-=======
                         <input type="text" class="form-control" id="Name" name="Name" placeholder="Company Name" value="<?php echo set_value('Name'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="CompanyAddress" class="col-lg-3 control-label"><em>Company Address</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress" placeholder="Company Address">
-=======
                         <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress" placeholder="Company Address" value="<?php echo set_value('CompanyAddress'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="CompanyCity" class="col-lg-3 control-label"><em>City</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="CompanyCity" name="CompanyCity" placeholder="City">
-=======
                         <input type="text" class="form-control" id="CompanyCity" name="CompanyCity" placeholder="City" value="<?php echo set_value('CompanyCity'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="CompanyState" class="col-lg-3 control-label"><em>State</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="CompanyState" name="CompanyState" placeholder="State">
-=======
                         <input type="text" class="form-control" id="CompanyState" name="CompanyState" placeholder="State" value="<?php echo set_value('CompanyState'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="ZipCode" class="col-lg-3 control-label"><em>Zip Code</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="Zip Code">
-=======
                         <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="Zip Code" value="<?php echo set_value('ZipCode'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="CompanyPhone" class="col-lg-3 control-label"><em>Company Phone</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="CompanyPhone" name="CompanyPhone" placeholder="Phone Number">
-=======
                         <input type="text" class="form-control" id="CompanyPhone" name="CompanyPhone" placeholder="Phone Number" value="<?php echo set_value('CompanyPhone'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="CompanyWebsite" class="col-lg-3 control-label"><em>Company Website</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="CompanyWebsite" name="CompanyWebsite" placeholder="Company Website">
-=======
                         <input type="text" class="form-control" id="CompanyWebsite" name="CompanyWebsite" placeholder="Company Website" value="<?php echo set_value('CompanyWebsite'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="GigPosted" class="col-lg-3 control-label"><em>Gig Posting Date</em> <br> &nbsp(mm/dd/yyyy)</label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="date" class="form-control" id="GigPosted" name="GigPosted" placeholder="Date Gig Posted">
-=======
                         <input type="date" class="form-control" id="GigPosted" name="GigPosted" placeholder="Date Gig Posted" value="<?php echo set_value('GigPosted'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
         <br>
@@ -121,41 +89,25 @@
             <div class="form-group">
                 <label for="FirstName" class="col-lg-3 control-label"><em>First Name</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name">
-=======
                         <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name" value="<?php echo set_value('FirstName'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="LastName" class="col-lg-3 control-label"><em>Last Name</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name">
-=======
                         <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name" value="<?php echo set_value('LastName'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="Email" class="col-lg-3 control-label"><em>Email</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="Email" name="Email" placeholder="Gig Contact Email">
-=======
                         <input type="text" class="form-control" id="Email" name="Email" placeholder="Gig Contact Email" value="<?php echo set_value('Email'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
             <div class="form-group">
                 <label for="Phone" class="col-lg-3 control-label"><em>Phone</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Gig Contact Phone">
-=======
                         <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Gig Contact Phone" value="<?php echo set_value('Phone'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
                 </fieldset>
@@ -180,11 +132,7 @@
             <div class="form-group">
                 <label for="PayRate" class="col-lg-3 control-label"><em>Pay rate</em></label>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="PayRate" name="PayRate" placeholder="Pay rate">
-=======
                         <input type="text" class="form-control" id="PayRate" name="PayRate" placeholder="Pay rate" value="<?php echo set_value('PayRate'); ?>">
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
                 </fieldset>
@@ -195,11 +143,7 @@
             <div class="form-group">
                 <label for="GigOutline" class="col-lg-3 control-label hidden-label"><em>Gig Outline</em></label><br>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <textarea class="form-control" rows="15" cols="25" id="GigOutline" name="GigOutline" placeholder="Project/Gig Description"></textarea>
-=======
                         <textarea class="form-control" rows="15" cols="25" id="GigOutline" name="GigOutline" placeholder="Project/Gig Description"><?php echo set_value('GigOutline'); ?></textarea>
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
                 </fieldset>
@@ -210,11 +154,7 @@
             <div class="form-group">
                 <label for="GigQualify" class="col-lg-3 control-label hidden-label"><em>Qualifications</em></label><br>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <textarea  rows="15" cols="25" class="form-control" id="GigQualify" name="GigQualify" placeholder="Qualifications"></textarea>
-=======
                         <textarea  rows="15" cols="25" class="form-control" id="GigQualify" name="GigQualify" placeholder="Qualifications"><?php echo set_value('GigQualify'); ?></textarea>
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
                 </fieldset>
@@ -225,11 +165,7 @@
             <div class="form-group">
                 <label for="SpInstructions" class="col-lg-3 control-label hidden-label"><em>Special Instructions</em></label><br>
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        <textarea rows="15" cols="25" class="form-control" id="SpInstructions" name="SpInstructions" placeholder="Special Instructions"></textarea>
-=======
                         <textarea rows="15" cols="25" class="form-control" id="SpInstructions" name="SpInstructions" placeholder="Special Instructions"><?php echo set_value('SpInstructions'); ?></textarea>
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
                     </div>
             </div>
                 </fieldset>
