@@ -57,7 +57,6 @@ class Profile_model extends CI_Model
     /**
 	 * get_profiles method for Profile_model class. 
 	 *
-<<<<<<< HEAD
 	 * @param int $slug
      * @param boolean $subscribed 
 	 * @return array
@@ -71,32 +70,11 @@ class Profile_model extends CI_Model
             $query = $this->db->get_where('Profile',array('subscribed_to_newsletters'=>$subscribed));
         }
         $query = $this->db->get_where('Profile', array('id' => $slug,'subscribed_to_newsletters' => $subscribed));
-=======
-	 * @param string $slug 
-	 * @return void 
-	 * @todo none
-	 */ 
-
-    public function get_profiles($slug = FALSE)
-    {
-        if ($slug === FALSE)
-        {
-            $query = $this->db->get('Profile');
-            return $query->result_array();
-        }
-        $query = $this->db->get_where('Profile', array('id' => $slug));
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
-        return $query->row_array();
-     
-    }//end get_profiles method
-    
+    }
     
     /**
-<<<<<<< HEAD
 	 * set_profiles method for Profile_model class. 
-=======
 	 * get_profiles method for Profile_model class. 
->>>>>>> b9592866d96cc8adef613696eb7ec3d6af833f55
 	 * 
 	 * @return void 
 	 * @todo none
