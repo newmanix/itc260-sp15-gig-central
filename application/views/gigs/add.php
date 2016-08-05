@@ -118,11 +118,11 @@
                 <label for="EmploymentType" class="col-lg-3 control-label"><em>Employment Type</em></label>
                     <div class="col-md-6">
                         <select class="form-control" id="EmploymentType" name="EmploymentType">
-                            <option value="select">Select One</option>
-                            <option value="contract">Contract</option>
-                            <option value="intern">Intern</option>
-                            <option value="temporary">Temporary</option>
-                            <option value="permanent">Permanent</option>
+                            <option value="select" >Select One</option>
+                            <option value="contract" <?php echo  set_select('EmploymentType', 'contract', TRUE); ?>>Contract</option>
+                            <option value="intern" <?php echo  set_select('EmploymentType', 'intern', TRUE); ?>>Intern</option>
+                            <option value="temporary" <?php echo  set_select('EmploymentType', 'temporary', TRUE); ?>>Temporary</option>
+                            <option value="permanent" <?php echo  set_select('EmploymentType', 'permanent', TRUE); ?>>Permanent</option>
                         </select>
                     </div>
             </div>
