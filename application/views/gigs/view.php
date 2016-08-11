@@ -31,7 +31,7 @@
     <p><b>Special Instructions: </b><?php echo $gig['SpInstructions']; ?></p>
     <p><b>Pay Rate: </b><?php echo $gig['PayRate']; ?></p>
     <p><b>Date Posted: </b><?php echo $gig['GigPosted']; ?></p>
-    <p><b>Last Update: </b><?php echo $gig['LastUpdated']; ?></p>
+    <!--<p><b>Last Update: </b><?php //echo $gig['LastUpdated']; ?></p>
 </div>
 
 <?php $this->load->view($this->config->item('theme') . 'footer'); ?>
