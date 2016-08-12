@@ -101,10 +101,10 @@ class Gig_model extends CI_Model {
         
         $data2 = array(
         'CompanyID' => $companyid,    
-        'GigQualify' => $this->input->post('GigQualify'),
+        'GigQualify' => strip_tags($this->input->post('GigQualify'),'<p>'),
         'EmploymentType' => $this->input->post('EmploymentType'),
-        'GigOutline' => $this->input->post('GigOutline'),
-        'SpInstructions' => $this->input->post('SpInstructions'),
+        'GigOutline' => strip_tags($this->input->post('GigOutline'),'<p>'),
+        'SpInstructions' => strip_tags($this->input->post('SpInstructions'),'<p>'),
         'PayRate' => $this->input->post('PayRate'),
         'GigPosted' => $this->input->post('GigPosted'),//What is this field for?
         'LastUpdated' => $this->input->post('LastUpdated')//Change this to current time
