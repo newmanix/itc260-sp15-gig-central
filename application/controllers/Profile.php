@@ -172,7 +172,8 @@ class Profile extends CI_Controller {
                 'password'   => set_value('password'),
                 'picture'    => $pic_id,
                 'email'      => set_value('email'),
-                'bio'  => set_value('bio')
+                'bio'  => set_value('bio'),
+                'subscribed_to_newsletters' => set_value('subscribed_to_newsletters')
                 
             );
             //encrypt password here
@@ -302,7 +303,8 @@ class Profile extends CI_Controller {
                 'last_name'  => set_value('last_name'),
                 'picture' => $pic_id,
                 'email'      => set_value('email'),
-                'bio'  => set_value('bio')   
+                'bio'  => set_value('bio'),
+                'subscribed_to_newsletters' => set_value('subscribed_to_newsletters')
             );
             //update database
             if ($this->profile_model->update_profile($form_data) == TRUE) // the information has therefore been successfully saved in the db

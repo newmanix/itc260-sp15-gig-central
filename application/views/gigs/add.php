@@ -144,6 +144,7 @@
                 <label for="GigOutline" class="col-lg-3 control-label hidden-label"><em>Gig Outline</em></label><br>
                     <div class="col-md-6">
                         <textarea class="form-control" rows="15" cols="25" id="GigOutline" name="GigOutline" placeholder="Project/Gig Description"><?php echo set_value('GigOutline'); ?></textarea>
+
                     </div>
             </div>
                 </fieldset>
