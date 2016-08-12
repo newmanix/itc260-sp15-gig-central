@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 config.php
 database.php
 .htaccess
 
-=======
 # Code Igniter #
 ################
 */config/development
