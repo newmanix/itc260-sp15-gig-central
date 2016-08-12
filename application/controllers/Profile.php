@@ -177,7 +177,7 @@ class Profile extends CI_Controller {
                 
             );
             //encrypt password here
-            $form_data['password'] = pass_encrypt($form_data['password'],KEY_ENCRYPT);
+            $form_data['password'] = pass_encrypt($form_data['password'], 'KEY_ENCRYPT');
             // run insert model to write data to db
             
             if ($this->profile_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
