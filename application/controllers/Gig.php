@@ -76,7 +76,7 @@ class Gig extends CI_Controller
         $data['title'] = 'Add a new gig';
 
         $this->form_validation->set_rules('Name', 'Company Name', 'required');
-        $this->form_validation->set_rules('State', 'Company State', 'required');
+        $this->form_validation->set_rules('CompanyState', 'Company State', 'required');
         $this->form_validation->set_rules('Email', 'Email', 'required');
         
         if ($this->form_validation->run() === FALSE)
