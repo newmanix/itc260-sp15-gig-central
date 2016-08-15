@@ -86,11 +86,12 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
               <label for="VenueTypeKey" class="col-lg-3 control-label"><em>Venue Type</em></label>
                   <div class="col-md-6">
                       <select class="form-control" id="VenueTypeKey" name="VenueTypeKey">
-                          <option value="1" <?php echo  set_select('VenueTypeKey', '1', TRUE); ?>>Cafe/Coffee Shop</option>
-                          <option value="2" <?php echo  set_select('VenueTypeKey', '2', TRUE); ?>>Library</option>
-                          <option value="3" <?php echo  set_select('VenueTypeKey', '3', TRUE); ?>>School</option>
-                          <option value="4" <?php echo  set_select('VenueTypeKey', '4', TRUE); ?>>Community Center</option>
-                          <option value="5" <?php echo  set_select('VenueTypeKey', '5', TRUE); ?>>Other</option>
+                          <option value="select">Select One</option>
+                          <option value="1" <?php echo  set_select('VenueTypeKey', '1'); ?>>Cafe/Coffee Shop</option>
+                          <option value="2" <?php echo  set_select('VenueTypeKey', '2'); ?>>Library</option>
+                          <option value="3" <?php echo  set_select('VenueTypeKey', '3'); ?>>School</option>
+                          <option value="4" <?php echo  set_select('VenueTypeKey', '4'); ?>>Community Center</option>
+                          <option value="5" <?php echo  set_select('VenueTypeKey', '5'); ?>>Other</option>
                       </select>
                   </div>
                 </div>

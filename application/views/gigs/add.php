@@ -119,10 +119,10 @@
                     <div class="col-md-6">
                         <select class="form-control" id="EmploymentType" name="EmploymentType">
                             <option value="select">Select One</option>
-                            <option value="contract">Contract</option>
-                            <option value="intern">Intern</option>
-                            <option value="temporary">Temporary</option>
-                            <option value="permanent">Permanent</option>
+                            <option value="contract" <?php echo set_select('EmploymentType', 'contract'); ?>>Contract</option>
+                            <option value="intern" <?php echo set_select('EmploymentType', 'intern'); ?>>Intern</option>
+                            <option value="temporary" <?php echo set_select('EmploymentType', 'temporary'); ?>>Temporary</option>
+                            <option value="permanent" <?php echo set_select('EmploymentType', 'permanent',); ?>>Permanent</option>
                         </select>
                     </div>
             </div>
