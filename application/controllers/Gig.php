@@ -119,7 +119,7 @@ class Gig extends CI_Controller
             ob_end_clean(); // discard the output buffer. it's contents are saved into $message, and we don't want to print it directly
 
             $this->load->model('profile_model');
-            foreach( $this->profile_model->get_profiles(/*slug=*/FALSE, /*newsletterUsersOnly=*/TRUE) as $subscribedUser)
+            foreach( $this->profile_model->get_subscribed_profiles(/*slug=*/FALSE, /*newsletterUsersOnly=*/TRUE) as $subscribedUser)
             {
                 $this->email->from($email, $name);
                 $this->email->to( $subscribedUser['email'] );

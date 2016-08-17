@@ -3,7 +3,6 @@
 $this->load->view($this->config->item('theme') . 'header');
 ?>
 <h2><?php echo $title ?></h2>
-
 <?php foreach ($profiles as $profile): ?>
 <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="col-sm-4">
@@ -14,12 +13,12 @@ $this->load->view($this->config->item('theme') . 'header');
             <?php echo $profile['email'] ?>
             <p>
             <?php
-                  echo anchor('index.php/profile/' . $profile['id'],'View Profile');
+                  echo anchor('profile/view/' . $profile['id'],'View Profile');
             ?>
             </p>    
         </div>
 </div>
-<?php endforeach ?>        
+<?php endforeach; ?>
         
         
 

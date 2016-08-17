@@ -96,14 +96,15 @@ class Profile extends CI_Controller {
 
 	public function view($slug = NULL)
 	{
-			$data['profile'] = $this->profile_model->get_profiles($slug);
+			$data['profile'] = $this->profile_model->get_profiles($slug)[0];
 
 			if (empty($data['profile']))
 			{
 					show_404();
+					//echo "<p>This page is empty!</p>";
 			}
 
-			$data['first_name'] = $data['profile']['first_name'];
+			//$data['first_name'] = $data['profile']['first_name'];
 			$this->load->view('profiles/view', $data);
 
 	}#end view()

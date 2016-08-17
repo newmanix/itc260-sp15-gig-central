@@ -63,15 +63,28 @@ class Profile_model extends CI_Model
 	 * @todo none
 	 */ 
 
-    public function get_profiles($slug = FALSE, $subscribed = FALSE)
+    public function get_profiles($slug = FALSE)
+    {
+        if ($slug === FALSE)
+        {
+            $query = $this->db->get_where('Profile');
+            return $query->result_array();
+        }
+        $query = $this->db->get_where('Profile', array('id' => $slug));
+        return $query->result_array();       
+    }
+
+    /* get_subscribed_profiles method for Profile_model class. */
+    public function get_subscribed_profiles($slug = FALSE, $subscribed = FALSE)
     {
         if ($slug === FALSE)
         {
             $query = $this->db->get_where('Profile',array('subscribed_to_newsletters'=>$subscribed));
+            return $query->result_array();
         }
         $query = $this->db->get_where('Profile', array('id' => $slug,'subscribed_to_newsletters' => $subscribed));
-    }
-    
+        return $query->result_array();
+    }    
     /**
 	 * set_profiles method for Profile_model class. 
 	 * get_profiles method for Profile_model class. 

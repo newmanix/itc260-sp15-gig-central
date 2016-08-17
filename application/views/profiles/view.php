@@ -2,6 +2,10 @@
 //views/profiles/view.php
 $this->load->view($this->config->item('theme') . 'header');
 
+/*echo "<span>";
+var_dump ($profile);
+echo "</span>";*/
+
 echo '<h2>' . $profile['first_name'] . " " . $profile['last_name'] . '</h2>';
 echo $profile['email'];
 echo '<p>' . anchor('profile/', 'Back to Profiles List') . '</p>';
