@@ -76,12 +76,14 @@
                         <input type="text" class="form-control" id="CompanyWebsite" name="CompanyWebsite" placeholder="Company Website" value="<?php echo set_value('CompanyWebsite'); ?>">
                     </div>
             </div>
+            <!--
             <div class="form-group">
                 <label for="GigPosted" class="col-lg-3 control-label"><em>Gig Posting Date</em> <br> &nbsp(mm/dd/yyyy)</label>
                     <div class="col-md-6">
-                        <input type="date" class="form-control" id="GigPosted" name="GigPosted" placeholder="Date Gig Posted" value="<?php echo set_value('GigPosted'); ?>">
+                        <input type="date" class="form-control" id="GigPosted" name="GigPosted" placeholder="Date Gig Posted" value="<?php //echo set_value('GigPosted'); ?>">
                     </div>
             </div>
+            -->
         <br>
         <br>
                 <fieldset>
@@ -122,7 +124,7 @@
                             <option value="contract" <?php echo set_select('EmploymentType', 'contract'); ?>>Contract</option>
                             <option value="intern" <?php echo set_select('EmploymentType', 'intern'); ?>>Intern</option>
                             <option value="temporary" <?php echo set_select('EmploymentType', 'temporary'); ?>>Temporary</option>
-                            <option value="permanent" <?php echo set_select('EmploymentType', 'permanent',); ?>>Permanent</option>
+                            <option value="permanent" <?php echo set_select('EmploymentType', 'permanent'); ?>>Permanent</option>
                         </select>
                     </div>
             </div>
