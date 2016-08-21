@@ -21,8 +21,6 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
 <div class="container">
   <div class="col-lg-10">
       <!--error messages for form validation -->
-    
-      <div class="text-danger"><?php echo validation_errors(); ?></div>
       
       <?php echo form_open('venues/add', $attributes); ?>
         <!--<form class="form-horizontal" role="form" method="post">-->
@@ -34,40 +32,46 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
 
             </div>
             <div class="form-group">
-                <label for="VenueName" class="col-lg-3 control-label" required><em>Venue Name*</em></label>
+                <label for="VenueName" class="col-lg-3 control-label" required><em>Venue Name</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="VenueName" name="VenueName" placeholder="Venue Name" value="<?php echo set_value('VenueName'); ?>"><?php echo form_error('VenueName'); ?>
+                        <?php echo form_error('VenueName'); ?>
+                        <input type="text" class="form-control" id="VenueName" name="VenueName" placeholder="Venue Name" value="<?php echo set_value('VenueName'); ?>">
                     </div>
             </div>
 
             <div class="form-group">
-                <label for="VenueAddress" class="col-lg-3 control-label" required><em>Venue Address*</em></label>
+                <label for="VenueAddress" class="col-lg-3 control-label" required><em>Venue Address</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="VenueAddress" name="VenueAddress" placeholder="Venue Address" value="<?php echo set_value('VenueAddress'); ?>"><?php echo form_error('VenueAddress'); ?>
+                        <?php echo form_error('VenueAddress'); ?>
+                        <input type="text" class="form-control" id="VenueAddress" name="VenueAddress" placeholder="Venue Address" value="<?php echo set_value('VenueAddress'); ?>">
                     </div>
             </div>
             <div class="form-group">
-                <label for="City" class="col-lg-3 control-label"><em>City*</em></label>
+                <label for="City" class="col-lg-3 control-label"><em>City</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="City" name="City" placeholder="City" value="<?php echo set_value('City'); ?>"><?php echo form_error('City'); ?>
+                        <?php echo form_error('City'); ?>
+                        <input type="text" class="form-control" id="City" name="City" placeholder="City" value="<?php echo set_value('City'); ?>">
                     </div>
             </div>
             <div class="form-group">
-                <label for="State" class="col-lg-3 control-label"><em>State*</em></label>
+                <label for="State" class="col-lg-3 control-label"><em>State</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="State" name="State" placeholder="State" value="<?php echo set_value('State'); ?>"><?php echo form_error('State'); ?>
+                        <?php echo form_error('State'); ?>
+                        <input type="text" class="form-control" id="State" name="State" placeholder="State" value="<?php echo set_value('State'); ?>">
                     </div>
             </div>
             <div class="form-group">
-                <label for="ZipCode" class="col-lg-3 control-label"><em>Zip Code*</em></label>
+                <label for="ZipCode" class="col-lg-3 control-label"><em>Zip Code</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="Zip Code" value="<?php echo set_value('ZipCode'); ?>"><?php echo form_error('ZipCode'); ?>
+                        <?php echo form_error('ZipCode'); ?>
+                        <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="Zip Code" value="<?php echo set_value('ZipCode'); ?>">
                     </div>
             </div>
             <div class="form-group">
-                <label for="VenuePhone" class="col-lg-3 control-label"><em>Phone number*</em></label>
+                <label for="VenuePhone" class="col-lg-3 control-label"><em>Phone number</em></label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="VenuePhone" name="VenuePhone" placeholder="Venue Phone Number" value="<?php echo set_value('VenuePhone'); ?>"><?php echo form_error('VenuePhone'); ?>
+                        <?php echo form_error('VenuePhone'); ?>
+                        <input type="text" class="form-control" id="VenuePhone" name="VenuePhone" placeholder="Venue Phone Number" value="<?php echo set_value('VenuePhone'); ?>">
                     </div>
              </div>
             <div class="form-group">

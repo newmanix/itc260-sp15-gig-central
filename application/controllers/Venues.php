@@ -91,16 +91,8 @@ class Venues extends CI_Controller {
         $this->load->library('form_validation');
 
         $data['title'] = 'Add a new Venue';
-        $this->form_validation->set_rules('VenueName', 'Venue Name', 'required');
-        $this->form_validation->set_rules('VenueTypeKey', 'Venue Type', 'required');
-        $this->form_validation->set_rules('VenueAddress', 'Venue Address', 'required');
-        $this->form_validation->set_rules('City', 'City', 'required');
-        $this->form_validation->set_rules('State', 'State', 'required');
-        $this->form_validation->set_rules('ZipCode', 'Zip Code', 'required');
-        $this->form_validation->set_rules('VenuePhone', 'Venue Phone', 'required');
-       
 
-        if ($this->form_validation->run() === FALSE)
+        if ($this->form_validation->run() == FALSE)
         {
             $this->load->view('venues/add', $data);
 

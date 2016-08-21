@@ -121,21 +121,7 @@ class Profile extends CI_Controller {
     {
     
             $data['title'] = 'Add Profile';
-            if (isset($_POST['Submit'])){
-                $this->form_validation->set_rules('i_am_a', 'I am a', 'required');
-                $this->form_validation->set_rules('first_name', 'First Name', 'required');
-                $this->form_validation->set_rules('last_name', 'Last Name', 'required');
-                $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[Profile.email]',
-                array(
-                'is_unique'     => 'This %s already exists.'
-                ));
-                $this->form_validation->set_rules('password', 'password', 'required');
-                $this->form_validation->set_rules('re_password', 'Password Confirmation', 'required|matches[password]');
-                $this->form_validation->set_rules('bio', 'bio', 'required');    
-
-                $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
-            
-            
+            if (isset($_POST['Submit'])){  
             
             if ($this->form_validation->run() == FALSE) // validation hasn't been passed
             { 
@@ -229,8 +215,6 @@ class Profile extends CI_Controller {
                 $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
                 $this->form_validation->set_rules('userfile', 'userfile');
                 $this->form_validation->set_rules('bio', 'bio', 'required');    
-
-                $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
                   
             if ($this->form_validation->run() == FALSE) // validation hasn't been passed
             { 

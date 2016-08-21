@@ -74,12 +74,8 @@ class Gig extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $data['title'] = 'Add a new gig';
-
-        $this->form_validation->set_rules('Name', 'Company Name', 'required');
-        $this->form_validation->set_rules('CompanyState', 'Company State', 'required');
-        $this->form_validation->set_rules('Email', 'Email', 'required');
         
-        if ($this->form_validation->run() === FALSE)
+        if ($this->form_validation->run() == FALSE)
         {//create form to add gigs
             $this->load->view('gigs/add', $data); 
         }
@@ -88,8 +84,7 @@ class Gig extends CI_Controller
             $data['gigs'] = $this->gig_model->get_gigs();
             $data['title']= 'Gigs';
             $this->gig_model->add_gig();
-            
-           $this->load->view('gigs/success', $data);
+            $this->load->view('gigs/success', $data);
 
         }
     }#end function add()
