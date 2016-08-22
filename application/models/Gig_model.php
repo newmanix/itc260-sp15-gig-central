@@ -76,17 +76,17 @@ class Gig_model extends CI_Model {
         $this->load->helper('url');
 
         $data = array(
-        'Name' => $this->input->post('Name'),
-        'Address' => $this->input->post('Address'),
-        'CompanyCity' => $this->input->post('CompanyCity'),
-        'State' => $this->input->post('CompanyState'),
-        'ZipCode' => $this->input->post('ZipCode'),
-        'CompanyPhone' => $this->input->post('CompanyPhone'),
-        'Website' => $this->input->post('CompanyWebsite'),
-        'FirstName' => $this->input->post('FirstName'),
-        'LastName' => $this->input->post('LastName'),
-        'Email' => $this->input->post('Email'),
-        'Phone' => $this->input->post('Phone')
+            'Name' => $this->input->post('Name'),
+            'Address' => $this->input->post('CompanyAddress'),
+            'CompanyCity' => $this->input->post('CompanyCity'),
+            'State' => $this->input->post('CompanyState'),
+            'ZipCode' => $this->input->post('ZipCode'),
+            'CompanyPhone' => $this->input->post('CompanyPhone'),
+            'Website' => $this->input->post('CompanyWebsite'),
+            'FirstName' => $this->input->post('FirstName'),
+            'LastName' => $this->input->post('LastName'),
+            'Email' => $this->input->post('Email'),
+            'Phone' => $this->input->post('Phone')
         );
         
         $this->db->insert('Company', $data);
@@ -100,14 +100,14 @@ class Gig_model extends CI_Model {
         }
         
         $data2 = array(
-        'CompanyID' => $companyid,    
-        'GigQualify' => strip_tags($this->input->post('GigQualify'),'<p>'),
-        'EmploymentType' => $this->input->post('EmploymentType'),
-        'GigOutline' => strip_tags($this->input->post('GigOutline'),'<p>'),
-        'SpInstructions' => strip_tags($this->input->post('SpInstructions'),'<p>'),
-        'PayRate' => $this->input->post('PayRate'),
-        'GigPosted' => $this->input->post('GigPosted'),//What is this field for?
-        'LastUpdated' => $this->input->post('LastUpdated')//Change this to current time
+            'CompanyID' => $companyid,    
+            'GigQualify' => strip_tags($this->input->post('GigQualify'),'<p>'),
+            'EmploymentType' => $this->input->post('EmploymentType'),
+            'GigOutline' => strip_tags($this->input->post('GigOutline'),'<p>'),
+            'SpInstructions' => strip_tags($this->input->post('SpInstructions'),'<p>'),
+            'PayRate' => $this->input->post('PayRate'),
+            'GigPosted' => date("Y-m-d H:i:s"),
+            'LastUpdated' => date("Y-m-d H:i:s")
         );
         
         return $this->db->insert('Gigs', $data2);

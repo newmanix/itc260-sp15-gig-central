@@ -80,16 +80,8 @@
                         <input type="text" class="form-control" id="CompanyWebsite" name="CompanyWebsite" placeholder="Company Website" value="<?php echo set_value('CompanyWebsite'); ?>">
                     </div>
             </div>
-            <!--
-            <div class="form-group">
-                <label for="GigPosted" class="col-lg-3 control-label"><em>Gig Posting Date</em> <br> &nbsp(mm/dd/yyyy)</label>
-                    <div class="col-md-6">
-                        <input type="date" class="form-control" id="GigPosted" name="GigPosted" placeholder="Date Gig Posted" value="<?php //echo set_value('GigPosted'); ?>">
-                    </div>
-            </div>
-            -->
-        <br>
-        <br>
+            <br>
+            <br>
                 <fieldset>
                 <legend><h3><strong>Company Gig Contact</strong></h3></legend>
             <div class="form-group">
@@ -121,9 +113,7 @@
                     </div>
             </div>
                 </fieldset>
-        <br>
-        <br>
-                <fieldset>
+            <fieldset>
             <div class="form-group">
                 <label for="EmploymentType" class="col-lg-3 control-label"><em>Employment Type</em></label>
                     <div class="col-md-6">
@@ -138,7 +128,6 @@
                     </div>
             </div>
                 </fieldset>
-        <br>
                 <fieldset>
             <div class="form-group">
                 <label for="PayRate" class="col-lg-3 control-label"><em>Pay rate</em></label>
@@ -151,9 +140,9 @@
         <br>
         <br>
                  <fieldset>
-                <legend><h3><strong>Project/Gig Description</strong></h3></legend>
+                <legend><h3><strong>Gig Description</strong></h3></legend>
             <div class="form-group">
-                <label for="GigOutline" class="col-lg-3 control-label hidden-label"><em>Gig Outline</em></label><br>
+                <label for="GigOutline" class="col-lg-3 control-label hidden-label"><em>Gig Outline</em></label>
                     <div class="col-md-6">
                         <?php echo form_error('GigOutline'); ?>
                         <textarea class="form-control" rows="15" cols="25" id="GigOutline" name="GigOutline" placeholder="Project/Gig Description"><?php echo set_value('GigOutline'); ?></textarea>
@@ -161,8 +150,8 @@
                     </div>
             </div>
                 </fieldset>
-        <br>
-        <br>
+            <br>
+            <br>
                 <fieldset>
                 <legend><h3><strong>Gig Qualifications</strong></h3></legend>
             <div class="form-group">
@@ -176,7 +165,7 @@
         <br>
         <br>
                 <fieldset>
-                <legend><h3><strong>Gig Project Special Instructions</strong></h3></legend>
+                <legend><h3><strong>Gig Special Instructions</strong></h3></legend>
             <div class="form-group">
                 <label for="SpInstructions" class="col-lg-3 control-label hidden-label"><em>Special Instructions</em></label><br>
                     <div class="col-md-6">
