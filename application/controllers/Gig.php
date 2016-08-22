@@ -73,6 +73,7 @@ class Gig extends CI_Controller
     {
         $this->load->helper('form');
         $this->load->library('form_validation');
+        $this->form_validation->set_message('check_dropdown', 'You need to select an employment type.');
         $data['title'] = 'Add a new gig';
         
         if ($this->form_validation->run() == FALSE)
@@ -137,4 +138,8 @@ class Gig extends CI_Controller
             echo "Sorry, we don't allow random GET requests to kick off subscription emails; perhaps try a POST?";
         }
     }#end function sendnewsletter()
+
+    public function check_dropdown($post_dropdown){
+        return $post_dropdown == '0' ? FALSE : TRUE;
+    }
 }#end Gigs class/controller

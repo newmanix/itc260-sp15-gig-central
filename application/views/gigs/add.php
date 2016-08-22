@@ -112,14 +112,14 @@
                         <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Gig Contact Phone" value="<?php echo set_value('Phone'); ?>">
                     </div>
             </div>
-                </fieldset>
+            </fieldset>
             <fieldset>
             <div class="form-group">
                 <label for="EmploymentType" class="col-lg-3 control-label"><em>Employment Type</em></label>
                     <div class="col-md-6">
                         <?php echo form_error('EmploymentType'); ?>
                         <select class="form-control" id="EmploymentType" name="EmploymentType">
-                            <option value="select">Select One</option>
+                            <option value="0">Select One</option>
                             <option value="contract" <?php echo set_select('EmploymentType', 'contract'); ?>>Contract</option>
                             <option value="intern" <?php echo set_select('EmploymentType', 'intern'); ?>>Intern</option>
                             <option value="temporary" <?php echo set_select('EmploymentType', 'temporary'); ?>>Temporary</option>

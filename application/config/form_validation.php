@@ -13,9 +13,9 @@ $config = array(
         // Sets validation rules for the 'Add a Gig' form
         'gig/add' => array(
             array(
-                    'field' => 'Name',
-                    'label' => 'Company Name',
-                    'rules' => 'required'
+                'field' => 'Name',
+                'label' => 'Company Name',
+                'rules' => 'required'
             ),
             array(
                 'field' => 'CompanyAddress',
@@ -50,12 +50,17 @@ $config = array(
             array(
                 'field' => 'Email',
                 'label' => 'Contact email',
-                'rules' => 'required'
+                'rules' => 'required|valid_email'
             ),
             array(
                 'field' => 'GigOutline',
                 'label' => 'Gig description',
                 'rules' => 'required'
+            ),
+            array(
+                'field' => 'EmploymentType',
+                'label' => 'Employment type',
+                'rules' => 'required|callback_check_dropdown'
             )
         ),
         'venues/add' => array(
@@ -132,7 +137,8 @@ $config = array(
         )
 );
 
-// Sets custom delimeters for error messages on forms.
+// Sets custom delimeters for error messages on forms. 
 // These settings MAY not work if they are above custom validation rules.
 $config['error_prefix'] = '<div class="text-danger">';
 $config['error_suffix'] = '</div>';
+
