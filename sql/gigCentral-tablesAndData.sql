@@ -18,6 +18,40 @@ DROP TABLE IF EXISTS Gigs;
 DROP TABLE IF EXISTS Company;
 
 /**
+* gig.sql
+*
+* Use to store data from gig form
+*
+* @package ITC 260 Gig Central CodeIgnitor
+* @package small piece of program
+* @subpackage Gigs_form
+* @author Souha Amor <souha.amor@gmail.com>
+* @version 2.0 2015/06/11
+* @link http://www.example.com/
+* @license http://www.apache.org/licenses/LICENSE-2.0
+* @see add.php
+* @see gigs/add.php
+* @see views/gigs
+* @todo none
+*/
+CREATE TABLE Company(
+CompanyID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+Name varchar(100)  DEFAULT '',
+Address varchar(85)  DEFAULT '',
+CompanyCity varchar(40)  DEFAULT '',
+State varchar(25)  DEFAULT '' DEFAULT "WA",
+ZipCode varchar(25)  DEFAULT '',
+CompanyPhone varchar(25)  DEFAULT '',
+Website varchar(100)  DEFAULT '',
+FirstName varchar(30)  DEFAULT '',
+LastName varchar(30)  DEFAULT '',
+Email varchar(75) DEFAULT '',
+Phone varchar(25)  DEFAULT '',
+
+PRIMARY KEY (CompanyID)
+)ENGINE=INNODB; 
+
+/**
 * contact.sql
 *
 * Use to store data from profile form
@@ -235,39 +269,7 @@ PRIMARY KEY (GigID),
  FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID) ON DELETE CASCADE
 )ENGINE=INNODB; 
 
-/**
-* gig.sql
-*
-* Use to store data from gig form
-*
-* @package ITC 260 Gig Central CodeIgnitor
-* @package small piece of program
-* @subpackage Gigs_form
-* @author Souha Amor <souha.amor@gmail.com>
-* @version 2.0 2015/06/11
-* @link http://www.example.com/
-* @license http://www.apache.org/licenses/LICENSE-2.0
-* @see add.php
-* @see gigs/add.php
-* @see views/gigs
-* @todo none
-*/
-CREATE TABLE Company(
-CompanyID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-Name varchar(100)  DEFAULT '',
-Address varchar(85)  DEFAULT '',
-CompanyCity varchar(40)  DEFAULT '',
-State varchar(25)  DEFAULT '' DEFAULT "WA",
-ZipCode varchar(25)  DEFAULT '',
-CompanyPhone varchar(25)  DEFAULT '',
-Website varchar(100)  DEFAULT '',
-FirstName varchar(30)  DEFAULT '',
-LastName varchar(30)  DEFAULT '',
-Email varchar(75) DEFAULT '',
-Phone varchar(25)  DEFAULT '',
 
-PRIMARY KEY (CompanyID)
-)ENGINE=INNODB; 
 
 INSERT INTO contact (`id`, `name`, `email`, `subject`, `message`) VALUES (1, 'Victoria', 'viktoriacool@mail.ru', 'General', 'Hello world');
 

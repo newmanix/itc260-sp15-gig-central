@@ -6,8 +6,8 @@
  *
  * @package GigCentral
  * @subpackage StartupMap
- * @author Kate Lee
- * @version 1.0 2015/5/14
+ * @author Kate Lee, John Gilmer
+ * @version 2.0 2017/5/09
  * @link
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see public/phpsqlajax_dbinfo.php
@@ -15,9 +15,11 @@
  * 
  * @todo none
 */
-
+ 
 require('phpsqlajax_dbinfo.php');
 
+//parsing functions from google help page:
+//https://developers.google.com/maps/documentation/javascript/mysql-to-maps
 function parseToXML($htmlStr)
 {
 $xmlStr=str_replace('<','&lt;',$htmlStr);
@@ -28,44 +30,54 @@ $xmlStr=str_replace("&",'&amp;',$xmlStr);
 return $xmlStr;
 }
 
-// Opens a connection to a MySQL server
-$connection = mysql_connect ('mysql.kateleeseattle.com', $username, $password);
+//mysqli object
+$mysqli = new mysqli($host, $username, $password, $database);
 
-if (!$connection) {
-  die('Not connected : ' . mysql_error());
+/* check connection */
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
 }
 
-// Set the active MySQL database
-$db_selected = mysql_select_db($database, $connection);
-if (!$db_selected) {
-  die ('Can\'t use db : ' . mysql_error());
-}
-
-// Select all the rows in the markers table
+//join tables
 $query = "SELECT * FROM sc_Markers m, sc_Venue v WHERE m.VenueKey = v.VenueKey";
-$result = mysql_query($query);
-if (!$result) {
-  die('Invalid query: ' . mysql_error());
-}
 
-header("Content-type: text/xml");
+/* Select queries return a resultset */
+if ($result = $mysqli->query($query)) {
+    while($row = $result->fetch_assoc()){
+	    
+	header("Content-type: text/xml");
 
-// Start XML file, echo parent node
-echo '<markers>';
-// Iterate through the rows, printing XML nodes for each
-while ($row = @mysql_fetch_assoc($result)){
-  // ADD TO XML DOCUMENT NODE
-  echo '<marker ';
-  echo 'name="' . parseToXML($row['VenueName']) . '" ';
-  echo 'address="' . parseToXML($row['VenueAddress']) . '" ';
-  echo 'lat="' . $row['lat'] . '" ';
-  echo 'lng="' . $row['lng'] . '" ';
-  echo 'type="' . $row['VenueTypeKey'] . '" ';
-  echo '/>';
-}
+	// Start XML file, echo parent node
+	echo '<markers>';
+	// Iterate through the rows, printing XML nodes for each
+	//while ($row = @mysqli_fetch_assoc($result))
+	//{
+	  // ADD TO XML DOCUMENT NODE
+	  echo '<marker ';
+	  echo 'name="' . parseToXML($row['VenueName']) . '" ';
+	  echo 'address="' . parseToXML($row['VenueAddress']) . '" ';
+	  echo 'lat="' . $row['lat'] . '" ';
+	  echo 'lng="' . $row['lng'] . '" ';
+	  echo 'type="' . $row['VenueTypeKey'] . '" ';
+	  echo '/>';
+//}
 
 
 // End XML file
 echo '</markers>';
+	    
+    }
+
+    /* free result set */
+    $result->close();
+
+}
+
+else
+{
+  die('Not connected : ' . mysqli_connect_error() . PHP_EOL);
+	exit;
+}
 
 ?>
