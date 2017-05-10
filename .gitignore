@@ -17,6 +17,8 @@ application/config/email.php
 application/config/config.php
 system/
 
+public/phpsqlajax_dbinfo.php
+
 # OS generated files #
 ######################
 .DS_Store
