@@ -327,6 +327,9 @@ INSERT INTO sc_VenueAmenity VALUES
 
 INSERT INTO sc_VenueReview values (null, 1, 1, 3, "It's noisy and their WiFi drops continuously", 20150526);
 
-INSERT INTO sc_Markers VALUES (null, '1', '47.608941', '-122.340145');
+INSERT INTO sc_Markers VALUES (null, '1', '47.614662', '-122.322037');
+INSERT INTO sc_Markers VALUES (null, '2', '47.613953', '-122.321220');
+INSERT INTO sc_Markers VALUES (null, '1', '	47.604340', '-122.325890');
+
 
 SET foreign_key_checks = 1; #turn contraints back on

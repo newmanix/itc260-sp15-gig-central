@@ -44,12 +44,13 @@ $query = "SELECT * FROM sc_Markers m, sc_Venue v WHERE m.VenueKey = v.VenueKey";
 
 /* Select queries return a resultset */
 if ($result = $mysqli->query($query)) {
-    while($row = $result->fetch_assoc()){
+    
 	    
 	header("Content-type: text/xml");
 
 	// Start XML file, echo parent node
 	echo '<markers>';
+	while($row = $result->fetch_assoc()){
 	// Iterate through the rows, printing XML nodes for each
 	//while ($row = @mysqli_fetch_assoc($result))
 	//{
@@ -62,12 +63,12 @@ if ($result = $mysqli->query($query)) {
 	  echo 'type="' . $row['VenueTypeKey'] . '" ';
 	  echo '/>';
 //}
-
-
-// End XML file
-echo '</markers>';
-	    
+   
     }
+	
+	// End XML file
+	echo '</markers>';
+	
 
     /* free result set */
     $result->close();
