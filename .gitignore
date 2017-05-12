@@ -1,5 +1,3 @@
-config.php
-database.php
 .htaccess
 
 # Code Igniter #
@@ -18,6 +16,8 @@ application/config/recaptcha.php
 application/config/email.php
 application/config/config.php
 system/
+
+public/phpsqlajax_dbinfo.php
 
 # OS generated files #
 ######################
