@@ -18,40 +18,6 @@ DROP TABLE IF EXISTS Gigs;
 DROP TABLE IF EXISTS Company;
 
 /**
-* gig.sql
-*
-* Use to store data from gig form
-*
-* @package ITC 260 Gig Central CodeIgnitor
-* @package small piece of program
-* @subpackage Gigs_form
-* @author Souha Amor <souha.amor@gmail.com>
-* @version 2.0 2015/06/11
-* @link http://www.example.com/
-* @license http://www.apache.org/licenses/LICENSE-2.0
-* @see add.php
-* @see gigs/add.php
-* @see views/gigs
-* @todo none
-*/
-CREATE TABLE Company(
-CompanyID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-Name varchar(100)  DEFAULT '',
-Address varchar(85)  DEFAULT '',
-CompanyCity varchar(40)  DEFAULT '',
-State varchar(25)  DEFAULT '' DEFAULT "WA",
-ZipCode varchar(25)  DEFAULT '',
-CompanyPhone varchar(25)  DEFAULT '',
-Website varchar(100)  DEFAULT '',
-FirstName varchar(30)  DEFAULT '',
-LastName varchar(30)  DEFAULT '',
-Email varchar(75) DEFAULT '',
-Phone varchar(25)  DEFAULT '',
-
-PRIMARY KEY (CompanyID)
-)ENGINE=INNODB; 
-
-/**
 * contact.sql
 *
 * Use to store data from profile form
@@ -269,7 +235,39 @@ PRIMARY KEY (GigID),
  FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID) ON DELETE CASCADE
 )ENGINE=INNODB; 
 
+/**
+* gig.sql
+*
+* Use to store data from gig form
+*
+* @package ITC 260 Gig Central CodeIgnitor
+* @package small piece of program
+* @subpackage Gigs_form
+* @author Souha Amor <souha.amor@gmail.com>
+* @version 2.0 2015/06/11
+* @link http://www.example.com/
+* @license http://www.apache.org/licenses/LICENSE-2.0
+* @see add.php
+* @see gigs/add.php
+* @see views/gigs
+* @todo none
+*/
+CREATE TABLE Company(
+CompanyID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+Name varchar(100)  DEFAULT '',
+Address varchar(85)  DEFAULT '',
+CompanyCity varchar(40)  DEFAULT '',
+State varchar(25)  DEFAULT '' DEFAULT "WA",
+ZipCode varchar(25)  DEFAULT '',
+CompanyPhone varchar(25)  DEFAULT '',
+Website varchar(100)  DEFAULT '',
+FirstName varchar(30)  DEFAULT '',
+LastName varchar(30)  DEFAULT '',
+Email varchar(75) DEFAULT '',
+Phone varchar(25)  DEFAULT '',
 
+PRIMARY KEY (CompanyID)
+)ENGINE=INNODB; 
 
 INSERT INTO contact (`id`, `name`, `email`, `subject`, `message`) VALUES (1, 'Victoria', 'viktoriacool@mail.ru', 'General', 'Hello world');
 
@@ -327,9 +325,6 @@ INSERT INTO sc_VenueAmenity VALUES
 
 INSERT INTO sc_VenueReview values (null, 1, 1, 3, "It's noisy and their WiFi drops continuously", 20150526);
 
-INSERT INTO sc_Markers VALUES (null, '1', '47.614662', '-122.322037');
-INSERT INTO sc_Markers VALUES (null, '2', '47.613953', '-122.321220');
-INSERT INTO sc_Markers VALUES (null, '1', '	47.604340', '-122.325890');
-
+INSERT INTO sc_Markers VALUES (null, '1', '47.608941', '-122.340145');
 
 SET foreign_key_checks = 1; #turn contraints back on
