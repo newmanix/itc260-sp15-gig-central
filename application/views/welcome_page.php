@@ -13,7 +13,7 @@
  */
 $this->load->view($this->config->item('theme') . 'header');
 ?>
-
+ 
 <div class="row">
     <div class="box col " style="background-color: red"> </div>
 </div>
@@ -79,7 +79,7 @@ $this->load->view($this->config->item('theme') . 'header');
             </div>
         </div>
     </div>
-    
+  
 <!-- everything below this point is for the google map on the page -->
     <div class="column col-lg-4 col-sm-12 col-xs-12">
         <div class="inner-column">
@@ -163,5 +163,5 @@ function doNothing() {}
 
 <!--api below, after "key=" is from google on 2017/05/09. Limited use.-->
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9Nt4dC5Xzf0Upj5hWzBaqNnKFGmCRA0w&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api;?>&callback=initMap">
     </script>

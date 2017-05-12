@@ -14,3 +14,6 @@ $config['banner-href'] = './';
 $config['banner-img'] = 'img/Gig-logo.png';
 $config['favicon-img'] = 'favicon.ico';
 $config['nav-active'] = '';//will change in controller to add active class to navigation
+
+
+$config['map_api']='AIzaSyC9Nt4dC5Xzf0Upj5hWzBaqNnKFGmCRA0w';
