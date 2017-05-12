@@ -31,10 +31,6 @@ class Contact extends CI_Controller
 	 * @return void
 	 * @todo Add inline error message to form in the event of an email problem, instead of printing generic "An Error Happened" page.
 	 */
-	public function success(){
-		$this->load->helper('url');
-	}
-	
 	public function index()
 	{
 		$this->load->helper('form');
@@ -54,7 +50,7 @@ class Contact extends CI_Controller
 		    $this->load->view('contact/index', $data);
 		}
 		else
-		{ 
+		{
 			//process data, send email!
 
 			// Catch the user's answer
