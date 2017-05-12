@@ -15,11 +15,10 @@
  * 
  * @todo none
 */
- 
-require('phpsqlajax_dbinfo.php');
+define('BASEPATH', "placeholder");
 
-//parsing functions from google help page:
-//https://developers.google.com/maps/documentation/javascript/mysql-to-maps
+include_once('../application/config/database.php');
+
 function parseToXML($htmlStr)
 {
 $xmlStr=str_replace('<','&lt;',$htmlStr);
@@ -31,7 +30,8 @@ return $xmlStr;
 }
 
 //mysqli object
-$mysqli = new mysqli($host, $username, $password, $database);
+$db=$db['default'];
+$mysqli = new mysqli($db['hostname'], $db['username'], $db['password'], $db['database']);
 
 /* check connection */
 if ($mysqli->connect_errno) {
