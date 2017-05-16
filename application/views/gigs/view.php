@@ -19,6 +19,15 @@
 
 <div class="container">
     <h2><?php echo $gig['Name']; ?></h2>
+<<<<<<< HEAD
+    <p><b>Company Address: </b><?php echo $gig['Address']; ?></p>
+    <p><b>City: </b><?php echo $gig['CompanyCity']; ?></p>
+    <p><b>State: </b><?php echo $gig['State']; ?></p>
+    <p><b>Website: </b><?php echo '<a target = "blank" href="' . $gig['Website'] . '">' . $gig['Website'] . '</a>'; ?></p>
+    <p><b>Contact Name: </b><?php echo $gig['FirstName'] . " " . $gig['LastName']; ?></p>
+    <p><b>Email: </b><?php echo '<a href="mailto:' . $gig['Email'] . '">' . $gig['Email'] . '</a>'; ?></p>
+    <p><b>Phone: </b><?php echo '<a href="tel:' . $gig['Phone'] . '">' . $gig['Phone'] . '</a>'; ?></p>
+=======
     <p><b>Company Address:</b><?php echo $gig['Address']; ?></p>
     <p><b>City: </b><?php echo $gig['CompanyCity']; ?></p>
     <p><b>State: </b><?php echo $gig['State']; ?></p>
@@ -26,6 +35,7 @@
     <p><b>Contact Name: </b><?php echo $gig['FirstName'] . " " . $gig['LastName']; ?></p>
     <p><b>Email: </b><?php echo $gig['Email']; ?></p>
     <p><b>Phone: </b><?php echo $gig['Phone']; ?></p>
+>>>>>>> 4d111f63fe7cdefbea04762292cc321a9de84e7b
     <p><b>Employment Type: </b><?php echo $gig['EmploymentType']; ?></p>
     <p><b>Gig information: </b><?php echo $gig['GigOutline']; ?></p>
     <p><b>Special Instructions: </b><?php echo $gig['SpInstructions']; ?></p>
