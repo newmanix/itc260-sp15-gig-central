@@ -93,6 +93,7 @@ $this->load->view($this->config->item('theme') . 'header');
 <div class="clear-both"></div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- NOTE: Make sure to add $config['googleMapsKey'] = 'your api key goes here'; to your custom_config.php file!! -->
 <script src="https://maps.googleapis.com/maps/api/js?key=<?=$this->config->item('googleMapsKey');?>"></script>
 
 <script>
