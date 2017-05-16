@@ -28,7 +28,11 @@ $this->load->view($this->config->item('theme').'header');
     <p><b>City: </b><?php echo $venue['City']; ?></p>
     <p><b>State: </b><?php echo $venue['State']; ?></p>
     <p><b>Zip code: </b><?php echo $venue['ZipCode']; ?></p>
+<<<<<<< HEAD
+    <p><b>Website: </b><a target = "blank" href="<?php echo $venue['VenueWebsite']; ?>"><?php echo $venue['VenueWebsite']; ?></a></p>
+=======
     <p><b>Website: </b><a href="<?php echo $venue['VenueWebsite']; ?>"><?php echo $venue['VenueWebsite']; ?></a></p>
+>>>>>>> 4d111f63fe7cdefbea04762292cc321a9de84e7b
     <p><b>Phone: </b><?php echo $venue['VenuePhone']; ?></p>
     <p><b>Hours: </b><?php echo $venue['VenueHours']; ?></p>
     <h3>Amenities</h3>
