@@ -26,7 +26,13 @@ body{
     padding-bottom: 50%;
     position: relative;
 }
-
+.list-group-item-text {
+    list-style-type:none;
+}
+.list-group-item{
+    display: block;
+    margin: 0 auto;
+}
 @media (min-width: 580px){
     .main-box{
         padding-bottom: 35%;
