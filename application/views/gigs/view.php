@@ -22,7 +22,7 @@
     <p><b>Company Address:</b><?php echo $gig['Address']; ?></p>
     <p><b>City: </b><?php echo $gig['CompanyCity']; ?></p>
     <p><b>State: </b><?php echo $gig['State']; ?></p>
-    <p><b>Website: </b><?php echo $gig['Website']; ?></p>
+    <p><b>Website: </b><a href="<?php echo $gig['Website']; ?>"><?php echo $gig['Website']; ?></a></p>
     <p><b>Contact Name: </b><?php echo $gig['FirstName'] . " " . $gig['LastName']; ?></p>
     <p><b>Email: </b><?php echo $gig['Email']; ?></p>
     <p><b>Phone: </b><?php echo $gig['Phone']; ?></p>

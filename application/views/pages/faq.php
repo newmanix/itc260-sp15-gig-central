@@ -35,7 +35,7 @@ $this->load->view($this->config->item('theme').'header');
         Q: How will my personal information be used?
 		</a>
 		</div>
-		<div id="collapseTwo" class="accordion-body collapse">
+		<div id="collapseTwo" class="accordion-body collapse in">
 		<div class="accordion-inner">
         A: With your authorization we share some personal information with employers.  Otherwise all personal information will be kept private.  We do not sell personal information to other organizations. 
 		</div>
