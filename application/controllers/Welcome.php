@@ -11,7 +11,7 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @todo none
  */
-
+ 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -46,7 +46,9 @@ class Welcome extends CI_Controller {
 		$this->load->model('gig_model');
 		$data['gigs'] = $this->gig_model->get_gigs();
         $data['title'] = 'Gig Central';
-		
+		$data['api'] = $this->config->item('googleMapsKey');
+		//$data['db'] = $this->load->database();
+		//$this->load('http://www.dohmang.com/ITC260/gigcentral/public/phpsqlajax_genxml.php', $data);
 		$this->load->view('welcome_page', $data);
         $this->load->view($this->config->item('theme') . 'header');
         $this->load->view($this->config->item('theme') . 'footer');
