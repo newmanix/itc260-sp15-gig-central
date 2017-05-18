@@ -107,7 +107,12 @@ function init(){
             'show_condition'=>	1,
             'parent'	=>	0
         ),
-		
+		12 =>	array(
+            'text'		=> 	'Login',
+            'link'		=> 	base_url() . 'admin/login',
+            'show_condition'=>	1,
+            'parent'	=>	0
+        ),
     );//end $menuOne
     #Admin menu
    $CI =& get_instance();
