@@ -15,8 +15,10 @@
  * 
  * @todo none
 */
+define('BASEPATH', "placeholder");
 
-require('phpsqlajax_dbinfo.php');
+include_once('../application/config/database.php');
+
 
 function parseToXML($htmlStr)
 {
@@ -28,8 +30,10 @@ $xmlStr=str_replace("&",'&amp;',$xmlStr);
 return $xmlStr;
 }
 
-// Opens a connection to a MySQL server
-$connection = mysql_connect ('mysql.kateleeseattle.com', $username, $password);
+
+//mysqli object
+$db=$db['default'];
+$mysqli = new mysqli($db['hostname'], $db['username'], $db['password'], $db['database']);
 
 if (!$connection) {
   die('Not connected : ' . mysql_error());
