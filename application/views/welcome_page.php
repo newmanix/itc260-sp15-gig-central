@@ -4,12 +4,12 @@
  *
  * @package GIG_CENTRAL
  * @subpackage GIG
- * @author Alexandre Daniels <adanie04@seattlecentral.edu>, Spencer Echon
- * @version 1.0 2016/06/09 
+ * @author Alexandre Daniels, <adanie04@seattlecentral.edu>, Spencer Echon, John Gilmer
+ * @version 2.0 2017/05/09 
  * @link http://newmanix.com/ 
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @todo Make recent gigs display most recent on top
- * @todo Get Google maps Api to connect with database for venues map
+ * @todo Use database.php info to make mapsp request call, simpler pass, credentials not in public folder
  */
 $this->load->view($this->config->item('theme') . 'header');
 ?>
@@ -92,50 +92,57 @@ $this->load->view($this->config->item('theme') . 'header');
 
 <div class="clear-both"></div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- NOTE: Make sure to add $config['googleMapsKey'] = 'your api key goes here'; to your custom_config.php file!! -->
-<script src="https://maps.googleapis.com/maps/api/js?key=<?=$this->config->item('googleMapsKey');?>"></script>
-
+<!--begin Javascript-->
 <script>
 
-$(document).ready(function() {
-    
+	//pulled from:	//https://developers.google.com/maps/documentation/javascript/mysql-to-maps
+    function initMap(){
     var map = new google.maps.Map(document.getElementById("map"), {
     center: new google.maps.LatLng(47.6145, -122.3418),
     //center: new google.maps.LatLng(lat, lng),
-    zoom: 13,
-    mapTypeId: 'roadmap'
-    });
+    zoom: 13
+    }); 
     var infoWindow = new google.maps.InfoWindow;
-  // Change this depending on the name of your PHP file
-  downloadUrl("public/phpsqlajax_genxml.php", function(data) {
+  //base path
+	var base_url = "<?php echo base_url()?>";
+	var ajax = "public/phpsqlajax_genxml.php";
+	var url = base_url.concat(ajax);
+  downloadUrl(url , function(data) {
     var xml = data.responseXML;
     var markers = xml.documentElement.getElementsByTagName("marker");
-    for (var i = 0; i < markers.length; i++) {
-        var name = markers[i].getAttribute("name");
-        var address = markers[i].getAttribute("address");
-        var type = markers[i].getAttribute("type");
-        var point = new google.maps.LatLng(
-            parseFloat(markers[i].getAttribute("lat")),
-            parseFloat(markers[i].getAttribute("lng")));
-        var html = "<b>" + name + "</b> <br/>" + address;
-        //var icon = customIcons[type] || {};
-        var icon = {};
-        var marker = new google.maps.Marker({
-          map: map,
-          position: point,
-          icon: icon.icon
-      });
-      bindInfoWindow(marker, map, infoWindow, html);
-    }
-  });
-});
-function bindInfoWindow(marker, map, infoWindow, html) {
-  google.maps.event.addListener(marker, 'click', function() {
-    infoWindow.setContent(html);
+    Array.prototype.forEach.call(markers, function(markerElem) {
+         var name = 			markerElem.getAttribute('name');
+         var address = markerElem.getAttribute('address');
+         var type = markerElem.getAttribute('type');    
+	    var point = new google.maps.LatLng(
+                  parseFloat(markerElem.getAttribute('lat')),
+                  parseFloat(markerElem.getAttribute('lng')));
+	    
+	    var infowincontent = document.createElement('div');
+         var strong = document.createElement('strong');
+              strong.textContent = name
+              infowincontent.appendChild(strong);
+              infowincontent.appendChild(document.createElement('br'));
+
+         var text = document.createElement('text');
+              text.textContent = address
+              infowincontent.appendChild(text);
+	    
+	    var icon = {};
+              var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                label: icon.icon
+              });
+	   
+	marker.addListener(marker, 'click', function() {
+    infoWindow.setContent(infowincontent);
     infoWindow.open(map, marker);
   });
+});
+  });
 }
+	
 function downloadUrl(url, callback) {
   var request = window.ActiveXObject ?
       new ActiveXObject('Microsoft.XMLHTTP') :
@@ -152,5 +159,9 @@ function downloadUrl(url, callback) {
     
 function doNothing() {}
 
-<<<<<<< HEAD
 </script>
+
+<!--api below, after "key=" is from google on 2017/05/09. Limited use.-->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api;?>&callback=initMap">
+    </script>
