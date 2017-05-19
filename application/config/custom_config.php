@@ -15,3 +15,5 @@ $config['banner-img'] = 'img/Gig-logo.png';
 $config['favicon-img'] = 'favicon.ico';
 $config['nav-active'] = '';//will change in controller to add active class to navigation
 
+//Need to add
+//$config['googleMapsKey'] = 'Get a google maps api key for your site';

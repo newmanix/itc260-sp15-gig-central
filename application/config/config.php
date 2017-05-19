@@ -18,7 +18,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://www.dohmang.com/ITC260/gig-test/';
+//Your website basepath
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
