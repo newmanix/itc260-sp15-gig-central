@@ -1,5 +1,5 @@
 .htaccess
-.gitignore
+#.gitignore
 
 # Code Igniter #
 ################
@@ -13,9 +13,9 @@
 # Config #
 ##########
 application/config/database*
-application/config/recaptcha*
+#application/config/recaptcha*
 application/config/email*
-application/config/config*
+#application/config/config*
 application/config/custom_config*
 system/
 
