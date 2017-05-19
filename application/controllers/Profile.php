@@ -169,7 +169,8 @@ class Profile extends CI_Controller {
             
             if ($this->profile_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
             {
-                $this->load->view('profiles/success');   // or whatever logic needs to occur
+                $data['title'] = 'Success!';
+                $this->load->view('profiles/success', $data);   // or whatever logic needs to occur
             }
             else
             {

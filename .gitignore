@@ -1,6 +1,3 @@
-config.php
-custom_config.php
-database.php
 .htaccess
 
 # Code Igniter #
@@ -18,6 +15,7 @@ application/config/database.php
 application/config/recaptcha.php
 application/config/email.php
 application/config/config.php
+application/config/custom_config.php
 system/
 
 # OS generated files #
