@@ -11,11 +11,11 @@
 
 # Config #
 ##########
-application/config/database.php
-application/config/recaptcha.php
-application/config/email.php
-application/config/config.php
-application/config/custom_config.php
+application/config/database*
+application/config/recaptcha*
+application/config/email*
+application/config/config*
+application/config/custom*
 system/
 
 # OS generated files #
