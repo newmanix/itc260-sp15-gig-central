@@ -18,8 +18,20 @@
 
 ?>
 
-
 <?php $this->load->view($this->config->item('theme') . 'header'); ?>
+
+<!--javascript liabraries for the datepicker function in date closed--> 
+<script type="text/javascript" src="lib/moment.js"></script>
+
+<script type="text/javascript" src="lib/bootstrap.js"></script>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+
+ <script src ="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="container">
   <div class="col-lg-10">
@@ -137,14 +149,24 @@
                     </div>
             </div>
                 </fieldset>
-             <div class="form-group">
-                <label for="DateClosed" class="col-lg-3 control-label"><em>Date Closed</em></label>
+            <fieldset>
+                <div class="form-group">
+                     <label for="DateClosed" class="col-lg-3 control-label"><em>Date Closed</em></label>
                     <div class="col-md-6">
-                        <?php echo form_error('DateClosed'); ?>
-                        <input type="text" class="form-control" id="DateClosed" name="Date Closed" placeholder="Date Closed" value="<?php echo set_value('DateClosed'); ?>">
+                <div class='input-group date' id='datepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
                     </div>
-            </div>
-                </fieldset>
+               </div>
+                 <script type="text/javascript">
+            $(function () {
+                $('#datepicker1').datepicker();
+            });
+        </script>
+            </fieldset>
         <br>
         <br>
                  <fieldset>
