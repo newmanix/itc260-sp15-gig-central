@@ -18,8 +18,15 @@
 $this->load->view($this->config->item('theme').'header');
 //$this->load->library('passphraseclass');
 //$this->passphraseclass->passphrase();
-
 ?>
+
+
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li class="active">Venues</li>
+</ul>
+
+
 
 <h2><?php echo $title ?></h2>
 

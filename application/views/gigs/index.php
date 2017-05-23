@@ -18,6 +18,13 @@
 
 <?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
+
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li class="active">Gigs</li>
+</ul>
+
+
 <h2>Gigs List</h2>
 
 <form class="navbar-form navbar-left" role="search">
