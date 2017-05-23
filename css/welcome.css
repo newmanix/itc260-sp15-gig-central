@@ -17,6 +17,10 @@ body{
     padding-top: 80px !important;
 }
 
+#gigs {
+    margin-top:100px;
+}
+
 .main-box-container{
     overflow: visual;
 }
