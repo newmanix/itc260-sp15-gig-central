@@ -47,7 +47,8 @@ class Admin_model extends CI_Model {
             $row = $query->row();    
                 if (isset($row))
                 {
-                    if(pass_decrypt($row->password,KEY_ENCRYPT) == $data['pass'])
+                    //if(pass_decrypt($row->password,KEY_ENCRYPT) == $data['pass'])
+                        if(password_verify($data['pass'], $row->password))
                     {
                     
                     $newdata = array(
