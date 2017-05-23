@@ -54,8 +54,8 @@ class Venues_model extends CI_Model {
         if ($slug === FALSE)
         {
             $this->db->select('*');
-            $this->db->from('sc_Venue');
-            $this->db->join('sc_VenueType', 'sc_VenueType.VenueTypeKey = sc_Venue.VenueTypeKey');
+            $this->db->from('Venue');
+            $this->db->join('VenueType', 'VenueType.VenueTypeKey = Venue.VenueTypeKey');
 
             $query = $this->db->get();
             //$query = $this->db->get('sc_Venue');
@@ -64,8 +64,8 @@ class Venues_model extends CI_Model {
         }
 
         $this->db->select('*');
-        $this->db->from('sc_Venue');
-        $this->db->join('sc_VenueType', 'sc_VenueType.VenueTypeKey = sc_Venue.VenueTypeKey')->where(array('VenueKey' => $slug));
+        $this->db->from('Venue');
+        $this->db->join('VenueType', 'VenueType.VenueTypeKey = Venue.VenueTypeKey')->where(array('VenueKey' => $slug));
         
         $query = $this->db->get();
         return $query->row_array();
@@ -106,7 +106,7 @@ class Venues_model extends CI_Model {
 
          );
         
-        return $this->db->insert('sc_Venue', $data);
+        return $this->db->insert('Venue', $data);
 
 }//end add_venues method
 }//end class
