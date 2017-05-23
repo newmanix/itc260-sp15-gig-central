@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
+/**test
  * Recaptcha configuration settings
  * 
  * recaptcha_sitekey: Recaptcha site key to use in the widget
@@ -15,6 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author Damar Riyadi <damar@tahutek.net>
  */
  
-$config['recaptcha_sitekey'] = "6Lf5mxwUAAAAADBEZ1Y4FOrd_-B5Cl1lxs-BuDZc";
-$config['recaptcha_secretkey'] = "6Lf5mxwUAAAAAHPQS4ITbIqmCwBsV3LUvOzb6gv8";
-$config['lang'] = "en";
+$config['recaptcha_sitekey'] = "";
+$config['recaptcha_secretkey'] = "";
+$config['lang'] = ""; 
