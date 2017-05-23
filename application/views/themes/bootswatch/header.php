@@ -8,6 +8,7 @@
     <!--Bootstrap themes use style settings to change look and feel -->
     <link rel="stylesheet" href="<?=base_url()?>public/themes/bootswatch/css/<?=$this->config->item('style')?>" media="screen">
     <link rel="stylesheet" href="<?=base_url()?>public/themes/bootswatch/css/bootswatch.min.css">
+
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -16,6 +17,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- Homepage CSS Link -->
     <link rel="stylesheet" href="<?=base_url()?>css/welcome.css" media="screen">
+    <!--Custom styles-->
+    <link rel="stylesheet" href="<?=base_url()?>public/css/custom_styles.css" media="screen">
 </head>
   
 <body>

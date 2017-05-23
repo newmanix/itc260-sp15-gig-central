@@ -17,29 +17,35 @@
 //$this->load->view('themes/bootswatch/header');
 $this->load->view($this->config->item('theme') . 'header');
 ?>
-<article id="text">
-<section class="contact">
-<h1>Contact Us</h1>
+  <div class="container">
+    <div class="col-lg-10">
+      
+      <?php echo validation_errors(); ?>
+      <?php $attributes = array('class'=>'form-horizontal');
+ echo form_open('contact', $attributes) ?>
+ <div class="form-group">
+  <h1>Contact Us</h1>
+ </div>
+      <div class="form-group">
+        <label for="name" class="col-lg-3 control-label"><em>Name*</label>
+        <div class="col-md-6">
+          <input name="name" class="form-control" type="text">
+        </div>
+      </div>
 
-<?php echo validation_errors(); ?>
+      <div class="form-group">
+      <label for="email" class="col-lg-3 control-label">Email*</label>
 
-<?php echo form_open('contact') ?>
+      <div class="col-md-6">
+        <input name="email" class="form-control" type="email">
+      </div>
+      </div>
+      <div class="form-group">
+      <label for="subject" class="col-lg-3 control-label">Subject*</label>
 
-  <label for="name">Name*</label>
-  <div class="controls">
+      <div class="col-md-6">
 
-    <input name="name" type="text">
-</div>
-<label for="email">Email*</label>
-
-<div class="controls">
-    <input name="email" type="email">
-</div>
-  <label for="subject">Subject*</label>
-
-<div class="controls">
-
-    <select name="subject">
+        <select name="subject" class="form-control inputstl">
 
         <option value="General Inquiry" selected="selected">General Help & Feedback</option>
         <option value="Specific Inquiry">Flag Inappropriate Content</option>
@@ -49,19 +55,27 @@ $this->load->view($this->config->item('theme') . 'header');
         <option value="Stoopid Inquiry">Partnership Inquiry</option>
         <option value="Stoopid Inquiry">Advertising</option>
     </select>
-</div>
-<label for="message">Message*</label>
-<div class="controls">
-  <textarea name="message" cols="40" rows="5" required></textarea>
-</div>
-<div class="controls">
-  <?php echo $this->recaptcha->render(); ?>
-  <input name="submit" class="btn btn-primary" type="submit" value="Submit Message" />
-</div>
-</form>
+      </div>
+      </div>
+      <div class="form-group">
+      <label for="message" class="col-lg-3 control-label">Message*</label>
+      <div class="col-md-6">
+        <textarea name="message" class="form-control" cols="40" rows="5" required></textarea>
+      </div>
+      </div>
+      <div class="form-group">  
+        <?php echo $this->recaptcha->render(); ?>
+       </div>
+       <fieldset>
+         <div class="form-actions col-xs-12 col-md-6 col-lg-9">
+        <input name="submit" class="btn btn-default contact-btn" type="submit" value="Submit Message" />
+       </div>
+       </fieldset>
+       
+      </div>
+      </form>
 
-
-<?php
+      <?php
 //$this->load->view('themes/bootswatch/footer');
 $this->load->view($this->config->item('theme') . 'footer');
 

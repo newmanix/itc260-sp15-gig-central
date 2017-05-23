@@ -67,7 +67,7 @@ class ReCaptcha {
      * @return string embedded HTML
      */
     public function render() {
-        $return = '<div class="g-recaptcha" data-sitekey="' . $this->_sitekey . '"></div>
+        $return = '<div class="text-xs-center"><div class="g-recaptcha" data-sitekey="' . $this->_sitekey . '"></div></div>
             <script src="https://www.google.com/recaptcha/api.js?hl=' . $this->_lang . '" async defer></script>';
         return $return;
     }
