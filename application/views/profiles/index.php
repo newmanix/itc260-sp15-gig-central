@@ -1,7 +1,8 @@
 <?php
 //views/profiles/index.php
 $this->load->view($this->config->item('theme') . 'header');
-?>
+
+//php echo '<pre>' . var_dump($profiles) . '</pre>';?>
 <h2><?php echo $title ?></h2>
 <?php foreach ($profiles as $profile): ?>
 <div class="col-sm-12 col-md-6 col-lg-4">

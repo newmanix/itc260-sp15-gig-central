@@ -29,9 +29,9 @@ class Admin extends CI_Controller {
             $this->load->library('form_validation');
             $this->load->database();
 		    $this->load->helper('form');
-		    $this->load->helper('email');
+		    //$this->load->helper('email');
             $this->load->library('session');
-            $this->load->library('recaptcha');
+            //$this->load->library('recaptcha');
         }#end constructor
         
         public function index(){
