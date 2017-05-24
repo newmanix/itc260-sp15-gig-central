@@ -20,10 +20,4 @@
 ###_Steps to Repro the Issue, for bugs only:
 
 
-###_Other Notes, for bug/task/future request: 
-
-
-
-
-
-
+###_Other Notes, for bug/task/future requests: 

@@ -17,6 +17,12 @@
 ?>
 <?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Gigs</a></li>
+  <li class="active"><?php echo $gig['Name']; ?></li>
+</ul>
+
     <div class="container list-group">
         <div class="list-group-item">
             <h2 class="list-group-item-heading">
@@ -27,7 +33,7 @@
                     <?php echo "<b>Company Address:</b> " . $gig['Address'] . ", " . $gig['CompanyCity']  . ", " .  $gig['State']; ?>
                 </li>
                 <li>
-                    <b>Website: </b><a href="<?php echo $gig['Website']; ?>"><?php echo $gig['Website']; ?>
+                    <b>Website: </b><a href="<?php echo $gig['Website']; ?>"><?php echo $gig['Website']; ?></a>
                 </li>
             </ul>
         </div>
