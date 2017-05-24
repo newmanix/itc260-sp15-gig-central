@@ -47,8 +47,6 @@ class Welcome extends CI_Controller {
 		$data['gigs'] = $this->gig_model->get_gigs();
         $data['title'] = 'Gig Central';
 		$data['api'] = $this->config->item('googleMapsKey');
-		//$data['db'] = $this->load->database();
-		//$this->load('http://www.dohmang.com/ITC260/gigcentral/public/phpsqlajax_genxml.php', $data);
 		$this->load->view('welcome_page', $data);
         $this->load->view($this->config->item('theme') . 'header');
         $this->load->view($this->config->item('theme') . 'footer');
