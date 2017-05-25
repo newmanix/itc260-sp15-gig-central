@@ -62,9 +62,12 @@ class Gig_model extends CI_Model {
         $this->db->from('Company');
         $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
         $query = $this->db->get_where('',array('GigID'=> $slug));
+        //$query = $this->db->like('GigOutline', $slug);
         return $query->row_array();
     }#end get_gigs()
     
+
+
     /**
      * Add a new gig to the DB using POST parameters.
      *

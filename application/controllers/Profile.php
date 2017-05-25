@@ -163,13 +163,14 @@ class Profile extends CI_Controller {
                 'subscribed_to_newsletters' => set_value('subscribed_to_newsletters')
                 
             );
-            //encrypt password here
-            $form_data['password'] = pass_encrypt($form_data['password'], 'KEY_ENCRYPT');
+            //hash password here
+            $form_data['password'] = password_hash($form_data['password'], PASSWORD_BCRYPT);
             // run insert model to write data to db
             
             if ($this->profile_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
             {
-                $this->load->view('profiles/success');   // or whatever logic needs to occur
+                $data['title'] = 'Success!';
+                $this->load->view('profiles/success', $data);   // or whatever logic needs to occur
             }
             else
             {

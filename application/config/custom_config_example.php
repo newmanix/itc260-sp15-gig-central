@@ -16,21 +16,21 @@ $config['favicon-img'] = 'favicon.ico';
 $config['nav-active'] = '';//will change in controller to add active class to navigation
 
 
-$config['googleMapsKey']='AIzaSyC9Nt4dC5Xzf0Upj5hWzBaqNnKFGmCRA0w';
-
-# email
-$config['protocol'] = 'smpt';
+/**
+* Follow settings for email
+*/
+$config['protocol'] = 'smtp';
 $config['smtp_host'] = 'ssl://smtp.gmail.com';
-$config['smtp_user'] = '';
+$config['smtp_user'] = 'mdiediker@gmail.com';
 $config['smtp_pass'] = '';
 $config['smtp_port'] = '465';
 
 
 # XXX replace this with the email address to send web-contact form emails to
-$config['email_contact_sendto'] = "jgilme01@seattlecentral.edu";
+$config['email_contact_sendto'] = "webcontactform@gigcentral.com";
 
 // When sending automatic emails (eg, scheduled newsletters), use this as the "From" address (eg, to form noreply@gigcentral.com <GigCentral>)
-$config['autoemail_from_address'] = "noreply@sammchaney.com";
+$config['autoemail_from_address'] = "noreply@gigcentral.com";
 
 // When sending automatic emails (eg, scheduled newsletters), use this as the "From" name (eg, to form noreply@gigcentral.com <GigCentral>)
 $config['autoemail_from_name'] = "GigCentral";
@@ -38,7 +38,6 @@ $config['autoemail_from_name'] = "GigCentral";
 $config['charset'] = 'utf-8';
 $config['newline'] = "\r\n";
 
-#recaptcha
 /**
  * Recaptcha configuration settings
  * 
@@ -51,7 +50,13 @@ $config['newline'] = "\r\n";
  * 
  * @author Damar Riyadi <damar@tahutek.net>
  */
- 
-$config['recaptcha_sitekey'] = "6Lf5mxwUAAAAADBEZ1Y4FOrd_-B5Cl1lxs-BuDZc";
-$config['recaptcha_secretkey'] = "6Lf5mxwUAAAAAHPQS4ITbIqmCwBsV3LUvOzb6gv8";
-$config['lang'] = "en";
+
+$config['recaptcha_sitekey'] = "";
+$config['recaptcha_secretkey'] = "";
+$config['lang'] = "";
+
+/**
+*google maps api key
+*place your site's google maps api key here
+*/
+$config['googleMapsKey'] = "yourKeyHere";

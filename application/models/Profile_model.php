@@ -139,7 +139,8 @@ class Profile_model extends CI_Model
          $row = $query->row();    
         if (isset($row))
         {
-            if(pass_decrypt($row->password,KEY_ENCRYPT) == $pass)
+            //if(pass_decrypt($row->password,KEY_ENCRYPT) == $pass)
+            if(password_verify($pass, $row->password))
             {
                 return TRUE;
             }

@@ -18,8 +18,16 @@
 $this->load->view($this->config->item('theme').'header');
 //$this->load->library('passphraseclass');
 //$this->passphraseclass->passphrase();
-
 ?>
+
+
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Venues</a></li>
+  <li class="active"><?php echo $venue['VenueName']; ?></li>
+</ul>
+
+
 
 <div class="container">
     <h2><?php echo $venue['VenueName']; ?></h2>

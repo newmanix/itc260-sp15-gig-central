@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'YOUR_HOST_NAME',
-	'username' => 'YOUR_DB_USER_NAME',
-	'password' => 'YOUR_PASSWORD',
-	'database' => 'YOUR_DATABASE_NAME',
+	'hostname' => 'mysql.dohmang.com',
+	'username' => 'adminmang',
+	'password' => 'Database1!',
+	'database' => 'itc260_sp17',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
