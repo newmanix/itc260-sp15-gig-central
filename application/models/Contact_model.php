@@ -36,7 +36,7 @@ class Contact_model extends CI_Model
 	 * @return array() of array('name' => xxx, 'email' => xxx, 'message' => xxx) representing the messages stored in the database, filtered by any optional parameters.
 	 * @todo none
 	 */
-	public function get_emails($email = FALSE)
+	public function getEmails($email = FALSE)
 	{
 		if ($email === FALSE)
 		{
@@ -53,7 +53,7 @@ class Contact_model extends CI_Model
 	 * @return void
 	 * @todo Add validation to ensure invalid data cannot be entered; currently any POST value (however malformed) will be accepted.
 	 */
-	public function set_emails()
+	public function setEmails()
 	{
 		$this->load->helper('url');
 

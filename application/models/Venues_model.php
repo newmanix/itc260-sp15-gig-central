@@ -39,14 +39,14 @@ class Venues_model extends CI_Model {
 
 
     /**
-     * get_venues method retrieves added venues from database
+     * getVenues method retrieves added venues from database
      *loads database
      *
      * @param none
      * @return void
      * @todo none
      */
-    public function get_venues($slug = FALSE)
+    public function getVenues($slug = FALSE)
     {
 
         
@@ -70,18 +70,18 @@ class Venues_model extends CI_Model {
         $query = $this->db->get();
         return $query->row_array();
 
-    }//end get_venues method
+    }//end getVenues method
 
 
     /**
-     * add_venues loads CI base helper('url')
+     * addVenues loads CI base helper('url')
      *
      *
      * @param none
      * @return void
      * @todo none
      */
-    public function add_venues()
+    public function addVenues()
     {
          $this->load->helper('url');
 
@@ -108,5 +108,5 @@ class Venues_model extends CI_Model {
         
         return $this->db->insert('Venue', $data);
 
-}//end add_venues method
+}//end addVenues method
 }//end class

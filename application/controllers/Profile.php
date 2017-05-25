@@ -80,7 +80,7 @@ class Profile extends CI_Controller {
 	{
 		/*echo "test";
 		die;*/
-			$data['profiles'] = $this->profile_model->get_profiles();
+			$data['profiles'] = $this->profile_model->getProfiles();
 			$data['title'] = 'Profiles';
 			$this->load->view('profiles/index', $data);
 	}#end index()	
@@ -96,7 +96,7 @@ class Profile extends CI_Controller {
 
 	public function view($slug = NULL)
 	{
-			$data['profile'] = $this->profile_model->get_profiles($slug)[0];
+			$data['profile'] = $this->profile_model->getProfiles($slug)[0];
 
 			if (empty($data['profile']))
 			{
@@ -262,7 +262,7 @@ class Profile extends CI_Controller {
                 $this->form_validation->set_rules('password', 'password', 'required');
                 $this->form_validation->set_rules('re_password', 'Password Confirmation', 'required|matches[password]');
                 
-                if($this->profile_model->get_pass($_POST['old_password']) == TRUE){
+                if($this->profile_model->getPass($_POST['old_password']) == TRUE){
                     echo set_value('password');
               
                         $password = pass_encrypt(set_value('password'),KEY_ENCRYPT);
@@ -293,7 +293,7 @@ class Profile extends CI_Controller {
                 'subscribed_to_newsletters' => set_value('subscribed_to_newsletters')
             );
             //update database
-            if ($this->profile_model->update_profile($form_data) == TRUE) // the information has therefore been successfully saved in the db
+            if ($this->profile_model->updateProfile($form_data) == TRUE) // the information has therefore been successfully saved in the db
             {
                 $this->load->view('profiles/success');   // or whatever logic needs to occur
             }

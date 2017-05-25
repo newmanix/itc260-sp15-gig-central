@@ -71,8 +71,8 @@ class Admin extends CI_Controller {
                     'email' => set_value('email'),
                     'pass' => set_value('pass')
                     );
-                 if ($this->admin_model->get_infor($form_data)){
-                  $data['error'] = $this->admin_model->get_infor($form_data);   
+                 if ($this->admin_model->getInfor($form_data)){
+                  $data['error'] = $this->admin_model->getInfor($form_data);   
                  }else{
                    $data['error']='';
                  }

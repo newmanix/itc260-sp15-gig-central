@@ -51,7 +51,7 @@ class Customer extends CI_Controller {
          */
         public function index()
         {
-                $data['query'] = $this->customer_model->get_customers();
+                $data['query'] = $this->customer_model->getCustomers();
                 $data['title'] = 'Form';
                 $this->load->view('gig/index', $data);
  

@@ -28,13 +28,13 @@
  *$myProfileModel = new Profile_model();
  *</code>
  *
- * The get_profiles($slug) method of the Profile_model object created will return the profile of that $slug or all profiles if $slug=false
+ * The getProfiles($slug) method of the Profile_model object created will return the profile of that $slug or all profiles if $slug=false
  * 
  * The set_profile() method of the Profile_model object created will fill the array with data
  * 
  * The saveForm($form_data) method of the Profile_model object created will save the $form_data
  * 
- * The update_profile($form_data) method of the Profile_model object will update the form of the profile.
+ * The updateProfile($form_data) method of the Profile_model object will update the form of the profile.
  *
  * @todo none
  */
@@ -55,7 +55,7 @@ class Profile_model extends CI_Model
     }//end constructor
     
     /**
-	 * get_profiles method for Profile_model class. 
+	 * getProfiles method for Profile_model class. 
 	 *
 	 * @param int $slug
      * @param boolean $subscribed 
@@ -63,7 +63,7 @@ class Profile_model extends CI_Model
 	 * @todo none
 	 */ 
 
-    public function get_profiles($slug = FALSE)
+    public function getProfiles($slug = FALSE)
     {
         if ($slug === FALSE)
         {
@@ -86,14 +86,14 @@ class Profile_model extends CI_Model
         return $query->result_array();
     }    
     /**
-	 * set_profiles method for Profile_model class. 
-	 * get_profiles method for Profile_model class. 
+	 * setProfiles method for Profile_model class. 
+	 * getProfiles method for Profile_model class. 
 	 * 
 	 * @return void 
 	 * @todo none
 	 */ 
     
-    public function set_profiles()
+    public function setProfiles()
     {
          $this->load->helper('url');
 
@@ -105,7 +105,7 @@ class Profile_model extends CI_Model
             'email' => $this->input->post('email')
          );
         return $this->db->insert('Profile', $data);
-    }//end set_profiles method
+    }//end setProfiles method
 	
     
     /**
@@ -127,14 +127,14 @@ class Profile_model extends CI_Model
 	}//end function SaveForm
 	
 	/**
-	 * get_pass method for Profile_model class. 
+	 * getPass method for Profile_model class. 
 	 *
 	 * @param string $id
 	 * @param string $pass
 	 * @return void 
 	 * @todo none
 	 */ 
-    function get_pass($id,$pass){
+    function getPass($id,$pass){
         $query = $this->db->get_where('Profile', array('id'=>$this->session->id));
          $row = $query->row();    
         if (isset($row))
@@ -147,16 +147,16 @@ class Profile_model extends CI_Model
         }
         return FALSE;
         
-    }//end get_pass function
+    }//end getPass function
     
     /**
-	 * update_profile method for Profile_model class. 
+	 * updateProfile method for Profile_model class. 
 	 *
 	 * @param array $form_data 
 	 * @return void 
 	 * @todo none
 	 */ 
-    function update_profile($form_data)
+    function updateProfile($form_data)
     {
         $this->db->where('id',$this->session->id);
         $this->db->update('Profile',$form_data);
