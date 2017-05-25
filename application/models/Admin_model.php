@@ -37,7 +37,7 @@ class Admin_model extends CI_Model {
                 $this->load->database();
         }
         
-        public function get_infor($data)
+        public function getInfor($data)
         {
            
            if ($data == ""){

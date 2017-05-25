@@ -43,7 +43,7 @@ class Gig_model extends CI_Model {
      * @return array() of array(GigID, CompanyID, GigQualify, EmploymentType, GigOutline, SpInstructions, PayRate, GigPosted, LastUpdated, Name, Address, CompanyCity, State, ZipCode, CompanyPhone, Website, FirstName, LastName, Email, Phone). This is a join between the Gig and Company tables.
      * @todo none
      */
-    public function get_gigs($slug = FALSE, $sinceDate = FALSE)
+    public function getGigs($slug = FALSE, $sinceDate = FALSE)
     {
         if ($slug === FALSE)
         {
@@ -64,7 +64,7 @@ class Gig_model extends CI_Model {
         $query = $this->db->get_where('',array('GigID'=> $slug));
         //$query = $this->db->like('GigOutline', $slug);
         return $query->row_array();
-    }#end get_gigs()
+    }#end getGigs()
     
 
 
@@ -74,7 +74,7 @@ class Gig_model extends CI_Model {
      * @return void
      * @todo Refactor functino so POST parameters are replaced with function parameters, allowing bulk-imports of new gigs.
      */
-    public function add_gig()
+    public function addGig()
     {
         $this->load->helper('url');
 

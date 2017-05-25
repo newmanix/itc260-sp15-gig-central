@@ -39,7 +39,7 @@ class Contact extends CI_Controller
 
 		$data['title'] = 'Contact Us';
 		$data['name'] = 'Contact';
-		$data['contact'] = $this->contact_model->get_emails();
+		$data['contact'] = $this->contact_model->getEmails();
 
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('email', 'email', 'required');
@@ -60,7 +60,7 @@ class Contact extends CI_Controller
 			$captcha_googleresponse = $this->recaptcha->verifyResponse($captcha_answer);
 			if( !$captcha_googleresponse['success'] ) { echo "Validation Failure"; return; }
 
-			  $this->contact_model->set_emails();
+			  $this->contact_model->setEmails();
 
 			  //get the form data
 			    $name = $this->input->post('name');

@@ -51,7 +51,7 @@ class Gig extends CI_Controller
 
     public function index()
     {//begin function index
-        $data['gigs'] = $this->gig_model->get_gigs();
+        $data['gigs'] = $this->gig_model->getGigs();
         $data['title']= 'Gigs';
         
         $this->load->view('gigs/index', $data);
@@ -59,7 +59,7 @@ class Gig extends CI_Controller
 
     public function view($slug = NULL)
     {//begin function index
-        $data['gig'] = $this->gig_model->get_gigs($slug);
+        $data['gig'] = $this->gig_model->getGigs($slug);
         if (empty($data['gig']))
         {
                 show_404();
@@ -73,7 +73,7 @@ class Gig extends CI_Controller
     {
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->form_validation->set_message('check_dropdown', 'You need to select an employment type.');
+        $this->form_validation->set_message('checkDropdown', 'You need to select an employment type.');
         $data['title'] = 'Add a new gig';
         
         if ($this->form_validation->run() == FALSE)
@@ -82,15 +82,15 @@ class Gig extends CI_Controller
         }
         else
         {//this processes
-            $data['gigs'] = $this->gig_model->get_gigs();
+            $data['gigs'] = $this->gig_model->getGigs();
             $data['title']= 'Gigs';
-            $this->gig_model->add_gig();
+            $this->gig_model->addGig();
             $this->load->view('gigs/success', $data);
 
         }
     }#end function add()
 
-    public function sendnewsletter()
+    public function sendNewsletter()
     {
     	// XXX TODO FIXME add authentication to this so not just anybody can spam everybody with newsletters
     	
@@ -107,7 +107,7 @@ class Gig extends CI_Controller
             $subject = $this->config->item('autoemail_from_name');
             
             // time() will get a timestamp representing the current date/time. Used to filter the database for gigs posted today.
-            $data['gigs'] = $this->gig_model->get_gigs( /*slug=*/FALSE, /*sinceDate=*/time()  );
+            $data['gigs'] = $this->gig_model->getGigs( /*slug=*/FALSE, /*sinceDate=*/time()  );
             
             ob_start(); // Begin capture of view output for email
             $this->load->view('gigs/gignewsletter-email',$data);
@@ -137,9 +137,9 @@ class Gig extends CI_Controller
             $this->output->set_header("Allow: POST");
             echo "Sorry, we don't allow random GET requests to kick off subscription emails; perhaps try a POST?";
         }
-    }#end function sendnewsletter()
+    }#end function sendNewsletter()
 
-    public function check_dropdown($post_dropdown){
+    public function checkDropdown($post_dropdown){
         return $post_dropdown == '0' ? FALSE : TRUE;
     }
 }#end Gigs class/controller
