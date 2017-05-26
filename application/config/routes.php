@@ -101,7 +101,7 @@ $route['contact/success'] = 'contact/success';
 //bootswatch example route
 $route['example'] = 'customer/example';
 $route['profile/(:any)'] = 'profile/view/$1';
-$route['404_override'] = 'my404';
+$route['404_override'] = 'My404';
 
 //homepage routes
 $route['default_controller'] = 'welcome';
