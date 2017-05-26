@@ -113,5 +113,16 @@ class Gig_model extends CI_Model {
         return $this->db->insert('Gigs', $data2);
 
     }
+     
+    function search_gigs($slug)
+    {
+        $this->db->select('*');
+        $this->db->from('Company');
+        $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
+        // $query = $this->db->get_where('',array('GigID'=> $slug));
+        $this->db->like('GigOutline', $slug);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
 
 }#end of the Gig_model
