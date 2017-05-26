@@ -60,7 +60,7 @@ $config = array(
             array(
                 'field' => 'EmploymentType',
                 'label' => 'Employment type',
-                'rules' => 'required|callback_check_dropdown'
+                'rules' => 'required|callback_checkDropdown'
             )
         ),
         'venues/add' => array(
