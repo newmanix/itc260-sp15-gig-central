@@ -1,5 +1,4 @@
 <?php
-
 /**
  * controllers/Profile.php
  * 
@@ -42,8 +41,6 @@
  * @see Profile_model
  * @todo none
  */
-
-
 
 class Profile extends CI_Controller {
 
@@ -163,11 +160,11 @@ class Profile extends CI_Controller {
                 'subscribed_to_newsletters' => set_value('subscribed_to_newsletters')
                 
             );
-            //hash password here
-            $form_data['password'] = password_hash($form_data['password'], PASSWORD_BCRYPT);
+            //encrypt password here
+            $form_data['password'] = pass_encrypt($form_data['password'], 'KEY_ENCRYPT');
             // run insert model to write data to db
             
-            if ($this->profile_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
+            if ($this->profile_model->saveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
             {
                 $data['title'] = 'Success!';
                 $this->load->view('profiles/success', $data);   // or whatever logic needs to occur
@@ -311,3 +308,4 @@ class Profile extends CI_Controller {
         
         
     }
+}
