@@ -142,4 +142,11 @@ class Gig extends CI_Controller
     public function check_dropdown($post_dropdown){
         return $post_dropdown == '0' ? FALSE : TRUE;
     }
+    
+    //grabs keyword from POST, then sets it as slug. 
+    public function search()
+    {
+	$slug = $this->input->post('Keyword');
+	redirect('gig/'.$slug);
+    }
 }#end Gigs class/controller
