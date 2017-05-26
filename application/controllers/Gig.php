@@ -147,6 +147,14 @@ class Gig extends CI_Controller
     public function search()
     {
 	$slug = $this->input->post('Keyword');
-	redirect('gig/'.$slug);
+        $data['gig'] = $this->gig_model->search_gigs($slug);
+        if (empty($data['gig']))
+        {
+                show_404();
+        }
+        $data['title']= 'Searching for: '.$slug;
+        
+        //load the view
+        $this->load->view('gigs/search', $data);
     }
 }#end Gigs class/controller
