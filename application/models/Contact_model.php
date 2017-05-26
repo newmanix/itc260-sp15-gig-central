@@ -1,4 +1,5 @@
 <?php
+
 /**
  * models/Contact_model.php
  * controller for a generic Contact

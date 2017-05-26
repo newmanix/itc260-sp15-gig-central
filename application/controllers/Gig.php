@@ -1,4 +1,5 @@
 <?php
+
 /**
 * Gig.php controller for Gigs at SCC
 *

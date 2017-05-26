@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  *Welcome page for Gig Central
  *
