@@ -1,8 +1,8 @@
 <?php
 /**
-* add.php is the add gigs page for Gigs controller
+* edit.php is the edit gigs page for Gigs controller
 *
-* views/gigs/add.php
+* views/gigs/edit.php
 *
 * @package ITC 260 Gig Central CodeInitor
 * @subpackage Gig Controller
@@ -24,11 +24,11 @@
 <div class="container">
   <div class="col-lg-10">
 
-        <form class="form-horizontal" role="form" method="post" action="add">
+        <form class="form-horizontal" role="form" method="post" action="edit">
         <fieldset>
             
             <div class="form-group">
-                <h1><strong>Add a Gig</strong></h1><br />
+                <h1><strong>Edit a Gig</strong></h1><br />
                 <legend><h3><strong>Company Information</strong></h3></legend>
 
             </div>
@@ -177,7 +177,7 @@
         <br>
         <fieldset>
             <div class="col-xs-12 col-md-6 col-lg-9">
-                <button type="submit" class="btn btn-default pull-right">Submit</button>
+                <button type="submit" class="btn btn-default pull-right">Submit Changes</button>
             </div>
         </fieldset>
         </form>
