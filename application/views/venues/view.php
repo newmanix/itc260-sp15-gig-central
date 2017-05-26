@@ -37,7 +37,7 @@ $this->load->view($this->config->item('theme').'header');
     <p><b>State: </b><?php echo $venue['State']; ?></p>
     <p><b>Zip code: </b><?php echo $venue['ZipCode']; ?></p>
     <p><b>Website: </b><a target="blank" href="<?php echo $venue['VenueWebsite']; ?>"><?php echo $venue['VenueWebsite']; ?></a></p>
-    <p><b>Phone: </b><a href="tel:<?php echo $venue['VenuePhone']; ?>"></a></p>
+    <p><b>Phone: </b><a href="tel:<?php echo $venue['VenuePhone']; ?>"><?php echo $venue['VenuePhone']; ?></a></p>
     <p><b>Hours: </b><?php echo $venue['VenueHours']; ?></p>
     <h3>Amenities</h3>
     <p><b>WiFi: </b><?php echo $venue['WiFi']; ?></p>
