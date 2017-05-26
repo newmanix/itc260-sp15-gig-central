@@ -56,7 +56,7 @@ class Venues extends CI_Controller {
              $data['title'] = 'Venues';
              $this->load->view('venues/index', $data);
        }//end index()
-
+ 
     /**
      * view method allows you too view venues through venues/view.php
      *
@@ -99,6 +99,7 @@ class Venues extends CI_Controller {
         }
         else
         {
+            $data['title'] = 'Venues';
             $this->Venues_model->addVenues();
             $this->load->view('venues/success');
         }
