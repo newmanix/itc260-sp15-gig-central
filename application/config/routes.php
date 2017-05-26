@@ -69,6 +69,7 @@ $route['admin/logout'] = 'admin/logout';
 $route['gig'] = 'gig/index';
 $route['gig/add'] = 'gig/add';
 $route['gig/sendnewsletter'] = 'gig/sendnewsletter';
+$route['gig/search'] = 'gig/search';
 $route['gig/(:any)'] = 'gig/view/$1';
 
 //venues routes
