@@ -17,6 +17,11 @@
 ?>
 <?php $this->load->view($this->config->item('theme') . 'header'); ?>
 
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Gigs</a></li>
+  <li class="active"><?php echo $gig['Name']; ?></li>
+</ul>
 
 <div class="container">
     <h2><?php echo $gig['Name']; ?></h2>
@@ -35,12 +40,6 @@
     <p><b>Date Posted: </b><?php echo date('Y-m-d H:i:s'); ?></p>
     <!--<p><b>Last Update: </b><?php //echo $gig['LastUpdated']; ?></p>-->
 </div>
-
-<ul class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Gigs</a></li>
-  <li class="active"><?php echo $gig['Name']; ?></li>
-</ul>
 
     <div class="container list-group">
         <div class="list-group-item">
