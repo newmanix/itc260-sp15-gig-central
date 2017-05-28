@@ -1,4 +1,5 @@
 <?php
+
 /**
 * Gig_model.php model for Gig Controller
 *
@@ -43,13 +44,14 @@ class Gig_model extends CI_Model {
      * @return array() of array(GigID, CompanyID, GigQualify, EmploymentType, GigOutline, SpInstructions, PayRate, GigPosted, LastUpdated, Name, Address, CompanyCity, State, ZipCode, CompanyPhone, Website, FirstName, LastName, Email, Phone). This is a join between the Gig and Company tables.
      * @todo none
      */
-    public function get_gigs($slug = FALSE, $sinceDate = FALSE)
+    public function getGigs($slug = FALSE, $sinceDate = FALSE)
     {
         if ($slug === FALSE)
         {
              $this->db->select('*');
              $this->db->from('Company');
              $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
+             $this->db->join('CompanyContact', 'Gigs.CompanyID = CompanyContact.CompanyID');
              
              // If sinceDate is specified, load it as a PHP timestamp and filter out all listings created BEFORE that date. Time portion of timestamp is ignored.
              if($sinceDate !== FALSE) $this->db->where('GigPosted > ', date( 'Y-m-d 00:00:00', $sinceDate ) );
@@ -61,11 +63,11 @@ class Gig_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('Company');
         $this->db->join('Gigs', 'Gigs.CompanyID = Company.CompanyID');
-        // $query = $this->db->get_where('',array('GigID'=> $slug));
-        $this->db->like('GigOutline', $slug);
-        $query = $this->db->get();
+        $this->db->join('CompanyContact', 'Gigs.CompanyID = CompanyContact.CompanyID');
+        $query = $this->db->get_where('',array('GigID'=> $slug));
+        //$query = $this->db->like('GigOutline', $slug);
         return $query->row_array();
-    }#end get_gigs()
+    }#end getGigs()
     
 
 
@@ -75,7 +77,7 @@ class Gig_model extends CI_Model {
      * @return void
      * @todo Refactor functino so POST parameters are replaced with function parameters, allowing bulk-imports of new gigs.
      */
-    public function add_gig()
+    public function addGig()
     {
         $this->load->helper('url');
 
@@ -87,14 +89,10 @@ class Gig_model extends CI_Model {
             'ZipCode' => $this->input->post('ZipCode'),
             'CompanyPhone' => $this->input->post('CompanyPhone'),
             'Website' => $this->input->post('CompanyWebsite'),
-            'FirstName' => $this->input->post('FirstName'),
-            'LastName' => $this->input->post('LastName'),
-            'Email' => $this->input->post('Email'),
-            'Phone' => $this->input->post('Phone')
+            
         );
         
         $this->db->insert('Company', $data);
-        
         $this->db->order_by("CompanyID", "desc");
         $this->db->limit(0, 1);
         $query = $this->db->get('Company');
@@ -102,6 +100,17 @@ class Gig_model extends CI_Model {
         if(isset($row)) {
             $companyid = $row->CompanyID;//Joins CompanyID for gig and company tables
         }
+        
+        $data3= array(
+           'FirstName' => $this->input->post('FirstName'),
+            'LastName' => $this->input->post('LastName'),
+            'Email' => $this->input->post('Email'),
+            'Phone' => $this->input->post('Phone'),
+            'CompanyID' => $companyid
+ 
+        );
+
+        $this->db->insert('CompanyContact', $data3);
         
         $data2 = array(
             'CompanyID' => $companyid,    
@@ -115,7 +124,8 @@ class Gig_model extends CI_Model {
         );
         
         return $this->db->insert('Gigs', $data2);
-
+        
+        
     }
 
 }#end of the Gig_model
