@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * controllers/Admin.php
  *
@@ -29,9 +30,9 @@ class Admin extends CI_Controller {
             $this->load->library('form_validation');
             $this->load->database();
 		    $this->load->helper('form');
-		    $this->load->helper('email');
+		    //$this->load->helper('email');
             $this->load->library('session');
-            $this->load->library('recaptcha');
+            //$this->load->library('recaptcha');
         }#end constructor
         
         public function index(){
@@ -71,8 +72,8 @@ class Admin extends CI_Controller {
                     'email' => set_value('email'),
                     'pass' => set_value('pass')
                     );
-                 if ($this->admin_model->get_infor($form_data)){
-                  $data['error'] = $this->admin_model->get_infor($form_data);   
+                 if ($this->admin_model->getInfor($form_data)){
+                  $data['error'] = $this->admin_model->getInfor($form_data);   
                  }else{
                    $data['error']='';
                  }

@@ -60,7 +60,7 @@ $config = array(
             array(
                 'field' => 'EmploymentType',
                 'label' => 'Employment type',
-                'rules' => 'required|callback_check_dropdown'
+                'rules' => 'required|callback_checkDropdown'
             )
         ),
         'venues/add' => array(
@@ -141,4 +141,3 @@ $config = array(
 // These settings MAY not work if they are above custom validation rules.
 $config['error_prefix'] = '<div class="text-danger">';
 $config['error_suffix'] = '</div>';
-
