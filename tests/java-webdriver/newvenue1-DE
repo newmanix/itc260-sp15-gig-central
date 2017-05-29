@@ -1,15 +1,91 @@
-import junit.framework.Test;
-import junit.framework.TestSuite;
+package com.example.tests;
 
-public class Newvenue1 {
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
-  public static Test suite() {
-    TestSuite suite = new TestSuite();
-    suite.addTestSuite(newvenue1-DE.class);
-    return suite;
+public class Newvenue1DE {
+  private WebDriver driver;
+  private String baseUrl;
+  private boolean acceptNextAlert = true;
+  private StringBuffer verificationErrors = new StringBuffer();
+
+  @Before
+  public void setUp() throws Exception {
+    driver = new FirefoxDriver();
+    baseUrl = "http://lindese.com/gigcentral/";
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  public static void main(String[] args) {
-    junit.textui.TestRunner.run(suite());
+  @Test
+  public void testNewvenue1DE() throws Exception {
+    driver.get(baseUrl + "/gigcentral/");
+    driver.findElement(By.xpath("(//div[@id='post-gig']/div)[2]")).click();
+    driver.findElement(By.id("VenueName")).clear();
+    driver.findElement(By.id("VenueName")).sendKeys("Test3");
+    driver.findElement(By.id("VenueAddress")).clear();
+    driver.findElement(By.id("VenueAddress")).sendKeys("Test3");
+    driver.findElement(By.id("City")).clear();
+    driver.findElement(By.id("City")).sendKeys("Test3");
+    driver.findElement(By.id("State")).clear();
+    driver.findElement(By.id("State")).sendKeys("WA");
+    driver.findElement(By.id("ZipCode")).clear();
+    driver.findElement(By.id("ZipCode")).sendKeys("00000");
+    driver.findElement(By.id("VenuePhone")).clear();
+    driver.findElement(By.id("VenuePhone")).sendKeys("206-555-1212");
+    driver.findElement(By.id("VenueWebsite")).clear();
+    driver.findElement(By.id("VenueWebsite")).sendKeys("www.example.com");
+    driver.findElement(By.id("VenueHours")).clear();
+    driver.findElement(By.id("VenueHours")).sendKeys("all");
+    new Select(driver.findElement(By.id("VenueTypeKey"))).selectByVisibleText("Community Center");
+    driver.findElement(By.cssSelector("button.btn.btn-default")).click();
+    driver.findElement(By.linkText("Back to Venue List")).click();
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    driver.quit();
+    String verificationErrorString = verificationErrors.toString();
+    if (!"".equals(verificationErrorString)) {
+      fail(verificationErrorString);
+    }
+  }
+
+  private boolean isElementPresent(By by) {
+    try {
+      driver.findElement(by);
+      return true;
+    } catch (NoSuchElementException e) {
+      return false;
+    }
+  }
+
+  private boolean isAlertPresent() {
+    try {
+      driver.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
+  }
+
+  private String closeAlertAndGetItsText() {
+    try {
+      Alert alert = driver.switchTo().alert();
+      String alertText = alert.getText();
+      if (acceptNextAlert) {
+        alert.accept();
+      } else {
+        alert.dismiss();
+      }
+      return alertText;
+    } finally {
+      acceptNextAlert = true;
+    }
   }
 }

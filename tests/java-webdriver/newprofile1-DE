@@ -1,15 +1,88 @@
-import junit.framework.Test;
-import junit.framework.TestSuite;
+package com.example.tests;
 
-public class Newprofile1 {
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
-  public static Test suite() {
-    TestSuite suite = new TestSuite();
-    suite.addTestSuite(newprofile1-DE.class);
-    return suite;
+public class Newprofile1DE {
+  private WebDriver driver;
+  private String baseUrl;
+  private boolean acceptNextAlert = true;
+  private StringBuffer verificationErrors = new StringBuffer();
+
+  @Before
+  public void setUp() throws Exception {
+    driver = new FirefoxDriver();
+    baseUrl = "http://lindese.com/gigcentral/";
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  public static void main(String[] args) {
-    junit.textui.TestRunner.run(suite());
+  @Test
+  public void testNewprofile1DE() throws Exception {
+    driver.get(baseUrl + "/gigcentral/");
+    driver.findElement(By.xpath("(//a[contains(text(),'Profiles')])[3]")).click();
+    driver.findElement(By.xpath("(//a[contains(text(),'Add a Profile')])[2]")).click();
+    driver.findElement(By.id("userfile")).clear();
+    driver.findElement(By.id("userfile")).sendKeys("/Users/Lugano/Desktop/school/sp17/ITC260PHP/tests/bonesAUTOMATIONKEEPHERE.jpg");
+    driver.findElement(By.id("first_name")).clear();
+    driver.findElement(By.id("first_name")).sendKeys("Bones");
+    driver.findElement(By.id("last_name")).clear();
+    driver.findElement(By.id("last_name")).sendKeys("Hillman");
+    driver.findElement(By.id("email")).clear();
+    driver.findElement(By.id("email")).sendKeys("bones@example.com");
+    driver.findElement(By.id("password")).clear();
+    driver.findElement(By.id("password")).sendKeys("test");
+    driver.findElement(By.id("re_password")).clear();
+    driver.findElement(By.id("re_password")).sendKeys("test");
+    driver.findElement(By.name("bio")).clear();
+    driver.findElement(By.name("bio")).sendKeys("test");
+    driver.findElement(By.name("Submit")).click();
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    driver.quit();
+    String verificationErrorString = verificationErrors.toString();
+    if (!"".equals(verificationErrorString)) {
+      fail(verificationErrorString);
+    }
+  }
+
+  private boolean isElementPresent(By by) {
+    try {
+      driver.findElement(by);
+      return true;
+    } catch (NoSuchElementException e) {
+      return false;
+    }
+  }
+
+  private boolean isAlertPresent() {
+    try {
+      driver.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
+  }
+
+  private String closeAlertAndGetItsText() {
+    try {
+      Alert alert = driver.switchTo().alert();
+      String alertText = alert.getText();
+      if (acceptNextAlert) {
+        alert.accept();
+      } else {
+        alert.dismiss();
+      }
+      return alertText;
+    } finally {
+      acceptNextAlert = true;
+    }
   }
 }
