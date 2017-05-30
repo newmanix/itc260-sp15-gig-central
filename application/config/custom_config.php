@@ -2,7 +2,7 @@
 
 /**
  * Custom_config.php
- * Config file for hooking up theme
+ * Config file for hooking up theme, loading api keys and configurations, and email
  */
 
 $config['style'] = 'flatly.css';
@@ -15,28 +15,30 @@ $config['banner-img'] = 'img/Gig-logo.png';
 $config['favicon-img'] = 'favicon.ico';
 $config['nav-active'] = '';//will change in controller to add active class to navigation
 
+//Your own Google Maps Api key goes here.
+$config['googleMapsKey']='';
 
-$config['googleMapsKey']='AIzaSyC9Nt4dC5Xzf0Upj5hWzBaqNnKFGmCRA0w';
-
-# email
-$config['protocol'] = 'smpt';
+# configure email
+//tested and working with gmail. Not tested with others
+$config['protocol'] = 'smtp';
 $config['smtp_host'] = 'ssl://smtp.gmail.com';
-$config['smtp_user'] = '';
-$config['smtp_pass'] = '';
+$config['smtp_user'] = ''; // Required: Your email account goes here eg. 'example@gmail.com'
+$config['smtp_pass'] = ''; // Required: Your email password goes here eg. 'P@ssw0rd1'
 $config['smtp_port'] = '465';
 
 
-# XXX replace this with the email address to send web-contact form emails to
-$config['email_contact_sendto'] = "jgilme01@seattlecentral.edu";
+# replace this with the email address to send web-contact form emails to eg. 'example@gmail.com'
+$config['email_contact_sendto'] = ''; // Required
 
 // When sending automatic emails (eg, scheduled newsletters), use this as the "From" address (eg, to form noreply@gigcentral.com <GigCentral>)
-$config['autoemail_from_address'] = "noreply@sammchaney.com";
+$config['autoemail_from_address'] = "noreply@gigcentral.com";
 
 // When sending automatic emails (eg, scheduled newsletters), use this as the "From" name (eg, to form noreply@gigcentral.com <GigCentral>)
 $config['autoemail_from_name'] = "GigCentral";
 
 $config['charset'] = 'utf-8';
 $config['newline'] = "\r\n";
+
 
 #recaptcha
 /**
@@ -52,6 +54,6 @@ $config['newline'] = "\r\n";
  * @author Damar Riyadi <damar@tahutek.net>
  */
  
-$config['recaptcha_sitekey'] = "6Lf5mxwUAAAAADBEZ1Y4FOrd_-B5Cl1lxs-BuDZc";
-$config['recaptcha_secretkey'] = "6Lf5mxwUAAAAAHPQS4ITbIqmCwBsV3LUvOzb6gv8";
+$config['recaptcha_sitekey'] = "";
+$config['recaptcha_secretkey'] = "";
 $config['lang'] = "en";

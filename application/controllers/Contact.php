@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * controllers/Contact.php
  *
@@ -40,7 +39,7 @@ class Contact extends CI_Controller
 
 		$data['title'] = 'Contact Us';
 		$data['name'] = 'Contact';
-		$data['contact'] = $this->contact_model->getEmails();
+		$data['contact'] = $this->contact_model->get_emails();
 
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('email', 'email', 'required');
@@ -61,7 +60,7 @@ class Contact extends CI_Controller
 			$captcha_googleresponse = $this->recaptcha->verifyResponse($captcha_answer);
 			if( !$captcha_googleresponse['success'] ) { echo "Validation Failure"; return; }
 
-			  $this->contact_model->setEmails();
+			  $this->contact_model->set_emails();
 
 			  //get the form data
 			    $name = $this->input->post('name');
@@ -69,13 +68,9 @@ class Contact extends CI_Controller
 			    $subject = $this->input->post('subject');
 			    $message = $this->input->post('message');
 
-			    $this->config->load('email');
+			    // Set To and From email addresses in config/custom_config.php
 			    $this->load->helper('url');
 				$this->load->library('email');
-
-			    //set to_email id to which you want to receive mails
-			    $this->config->load('email');
-			    $this->load->helper('url');
 
 
 			    //send mail

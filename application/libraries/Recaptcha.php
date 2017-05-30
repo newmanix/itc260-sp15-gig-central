@@ -5,6 +5,8 @@
  * 
  * This library is based on official reCAPTCHA library for PHP
  * https://github.com/google/ReCAPTCHA
+ *
+ * 'recaptcha_secretkey', 'recaptcha_sitekey', and 'lang' must be set in config/custom_config.php
  * 
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -18,21 +20,21 @@ class ReCaptcha {
 
     function __construct() {
         $this->ci = & get_instance();
-        $this->ci->load->config('recaptcha', TRUE);
-        if ($this->ci->config->item('recaptcha_secretkey', 'recaptcha') == NULL || $this->ci->config->item('recaptcha_secretkey', 'recaptcha') == "") {
+        
+        if ($this->ci->config->item('recaptcha_secretkey') == NULL || $this->ci->config->item('recaptcha_secretkey') == "") {
             die("To use reCAPTCHA you must get an API key from <a href='"
                     . $this->signup_url . "'>" . $this->signup_url . "</a>");
         }
-        if ($this->ci->config->item('recaptcha_sitekey', 'recaptcha') == NULL || $this->ci->config->item('recaptcha_sitekey', 'recaptcha') == "") {
+        if ($this->ci->config->item('recaptcha_sitekey') == NULL || $this->ci->config->item('recaptcha_sitekey') == "") {
             die("To use reCAPTCHA you must get an API key from <a href='"
                     . $this->signup_url . "'>" . $this->signup_url . "</a>");
         }
-        $this->_secret = $this->ci->config->item('recaptcha_secretkey', 'recaptcha');
-        $this->_sitekey = $this->ci->config->item('recaptcha_sitekey', 'recaptcha');
-        if ($this->ci->config->item('lang', 'recaptcha') == NULL || $this->ci->config->item('lang', 'recaptcha') == "") {
+        $this->_secret = $this->ci->config->item('recaptcha_secretkey');
+        $this->_sitekey = $this->ci->config->item('recaptcha_sitekey');
+        if ($this->ci->config->item('lang') == NULL || $this->ci->config->item('lang') == "") {
             $this->_lang = 'en';
         } else {
-            $this->_lang = $this->ci->config->item('lang', 'recaptcha');
+            $this->_lang = $this->ci->config->item('lang');
         }
     }
 
