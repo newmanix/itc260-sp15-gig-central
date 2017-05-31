@@ -46,6 +46,20 @@ $attributes = array('class'=>'form-horizontal', 'role'=>'form');
                         <input type="text" class="form-control" id="VenueAddress" name="VenueAddress" placeholder="Venue Address" value="<?php echo set_value('VenueAddress'); ?>">
                     </div>
             </div>
+
+            <!--Date picker WHAT I'M WORKING ON -->
+            <div class="form-group">
+                <label for="VenueDate" class="col-lg-3 control-label" required><em>Date</em></label>
+                    <div class="col-md-6">
+                        <?php echo form_error('VenueAddress'); ?>
+                        <input type="text" class="datepicker" placeholder="Date">
+                        
+                    </div>
+            </div>
+            
+            <!--DATE PICKER END -->
+
+
             <div class="form-group">
                 <label for="City" class="col-lg-3 control-label"><em>City</em></label>
                     <div class="col-md-6">

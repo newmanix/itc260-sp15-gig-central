@@ -4,7 +4,7 @@
     <title><?php echo $title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?= base_url() . $this->config->item('favicon-img') . '?v=2';?>" type="image/x-icon">
-
+   
     <!--Bootstrap themes use style settings to change look and feel -->
     <link rel="stylesheet" href="<?=base_url()?>public/themes/bootswatch/css/<?=$this->config->item('style')?>" media="screen">
     <link rel="stylesheet" href="<?=base_url()?>public/themes/bootswatch/css/bootswatch.min.css">
@@ -16,6 +16,32 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- Homepage CSS Link -->
     <link rel="stylesheet" href="<?=base_url()?>css/welcome.css" media="screen">
+
+    <link href="<?php echo base_url();?>public/themes/bootswatch/css/datepicker.css" rel="stylesheet">
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="<?php echo base_url();?>public/themes/bootswatch/js/bootstrap.js"></script>
+    <script src="<?php echo base_url();?>public/themes/bootswatch/js/bootstrap-datepicker.js"></script>
+    <script>
+    
+    $(document).ready(function(){
+    $('.datepicker').datepicker();
+    });
+    </script>
+    
+    
+    
+    
+    
+
+    
+  
+
+
+
 </head>
   
 <body>
