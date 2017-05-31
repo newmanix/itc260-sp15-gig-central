@@ -74,6 +74,9 @@
                 <li>
                     <b>Date Posted: </b><?php echo date('Y-m-d H:i:s'); ?>
                 </li>
+                <li>
+                <a class="btn btn-warning" href="<?php echo $gig['Website']; ?>">Apply</a>
+                </li>
             </ul>
         </div>
     </div>
